@@ -1,0 +1,423 @@
+/* =========================================================================
+   SIPACAK — Revisi UI/UX: hero dashboard petugas + identitas halaman auth
+   Dimuat paling akhir. Seluruh selector memakai class khusus (.sph-*,
+   .auth-unified, .auth-identity) sehingga tidak mengubah halaman admin
+   maupun halaman lain.
+   Palet: biru #0093dd · oranye #ea891b · hijau #68b92e
+   ========================================================================= */
+
+:root {
+    --sx-blue: #0093dd;
+    --sx-blue-deep: #0a5f9e;
+    --sx-blue-ink: #0b3d66;
+    --sx-orange: #ea891b;
+    --sx-green: #68b92e;
+    --sx-line: #dfe9f2;
+}
+
+/* ------------------------------------------------------------------ */
+/* 1. HERO DASHBOARD PETUGAS                                          */
+/* ------------------------------------------------------------------ */
+.sph {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+    width: min(calc(100% - 40px), 1440px);
+    margin: 24px auto 0;
+    overflow: hidden;
+    border: 1px solid var(--sx-line);
+    border-radius: 24px;
+    background: #fff;
+    box-shadow: 0 14px 34px rgba(11, 61, 102, .10);
+}
+
+/* --- kiri: pengantar --- */
+.sph-intro {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(26px, 3.4vw, 44px);
+    color: #fff;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(104, 185, 46, .30), transparent 15rem),
+        radial-gradient(circle at 0% 100%, rgba(234, 137, 27, .26), transparent 14rem),
+        linear-gradient(135deg, var(--sx-blue-deep) 0%, #0079c2 55%, var(--sx-blue) 100%);
+}
+.sph-intro::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    content: "";
+    opacity: .16;
+    background-image:
+        linear-gradient(rgba(255,255,255,.35) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.35) 1px, transparent 1px);
+    background-size: 36px 36px;
+    -webkit-mask-image: linear-gradient(120deg, #000, transparent 70%);
+            mask-image: linear-gradient(120deg, #000, transparent 70%);
+}
+.sph-kicker {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 6px 13px 6px 11px;
+    border: 1px solid rgba(255,255,255,.28);
+    border-radius: 999px;
+    background: rgba(255,255,255,.12);
+    color: #fff;
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .15em;
+    line-height: 1;
+}
+.sph-kicker-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--sx-orange);
+    box-shadow: 0 0 0 4px rgba(234,137,27,.28);
+}
+.sph .sph-title {
+    margin: 16px 0 10px;
+    color: #fff;
+    font-size: clamp(1.9rem, 3.1vw, 2.85rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -.045em;
+}
+.sph .sph-title em {
+    color: #ffc27a;
+    font-style: normal;
+}
+.sph .sph-lead {
+    max-width: 480px;
+    margin: 0;
+    color: rgba(255,255,255,.88);
+    font-size: .98rem;
+    line-height: 1.65;
+}
+.sph-features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 22px 0 0;
+    padding: 0;
+    list-style: none;
+}
+.sph-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    padding: 13px 14px;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 14px;
+    background: rgba(255,255,255,.12);
+    -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+}
+.sph-feature-icon {
+    display: grid;
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 11px;
+    color: #fff;
+    font-size: 1.1rem;
+}
+.sph-feature--green  .sph-feature-icon { background: var(--sx-green); }
+.sph-feature--orange .sph-feature-icon { background: var(--sx-orange); }
+.sph-feature strong,
+.sph-feature small { display: block; }
+.sph-feature strong { color: #fff; font-size: .9rem; font-weight: 750; line-height: 1.25; }
+.sph-feature small  { margin-top: 3px; color: rgba(255,255,255,.80); font-size: .78rem; line-height: 1.45; }
+
+/* --- kanan: alur kerja --- */
+.sph-flow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+    padding: clamp(22px, 3vw, 38px);
+    background:
+        radial-gradient(circle at 100% 100%, rgba(104,185,46,.09), transparent 14rem),
+        linear-gradient(180deg, #f7fbff 0%, #fff 100%);
+}
+.sph-flow-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.sph-flow-head-icon {
+    display: grid;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1.15rem;
+    background: linear-gradient(135deg, var(--sx-blue), var(--sx-blue-deep));
+    box-shadow: 0 6px 14px rgba(0,147,221,.28);
+}
+.sph-flow-head small,
+.sph-flow-head strong { display: block; }
+.sph-flow-head small  { color: var(--sx-blue-deep); font-size: .68rem; font-weight: 800; letter-spacing: .15em; }
+.sph-flow-head strong { margin-top: 2px; color: var(--sx-blue-ink); font-size: 1.05rem; font-weight: 800; letter-spacing: -.02em; }
+
+.sph-steps {
+    position: relative;
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/* garis penghubung antar-tahap */
+.sph-steps::before {
+    position: absolute;
+    top: 26px;
+    bottom: 26px;
+    left: 25px;
+    width: 3px;
+    border-radius: 3px;
+    content: "";
+    background: linear-gradient(180deg, var(--sx-blue), var(--sx-orange) 50%, var(--sx-green));
+    opacity: .45;
+}
+.sph-step {
+    --c: var(--sx-blue);
+    position: relative;
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+}
+.sph-step--blue   { --c: var(--sx-blue); }
+.sph-step--orange { --c: var(--sx-orange); }
+.sph-step--green  { --c: var(--sx-green); }
+.sph-step-no {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: 52px;
+    height: 52px;
+    place-items: center;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 800;
+    letter-spacing: .02em;
+    background: var(--c);
+    box-shadow: 0 6px 14px rgba(11,61,102,.18);
+}
+.sph-step-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid var(--sx-line);
+    border-left: 4px solid var(--c);
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(11,61,102,.05);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+.sph-step-card:hover {
+    transform: translateX(3px);
+    box-shadow: 0 8px 18px rgba(11,61,102,.10);
+}
+.sph-step-icon {
+    display: grid;
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 11px;
+    color: var(--c);
+    font-size: 1.15rem;
+    background: color-mix(in srgb, var(--c) 13%, #fff);
+}
+.sph-step-text { min-width: 0; }
+.sph-step-text strong,
+.sph-step-text small { display: block; }
+.sph-step-text strong { color: var(--sx-blue-ink); font-size: .95rem; font-weight: 800; line-height: 1.25; }
+.sph-step-text small  { margin-top: 2px; color: #566b7f; font-size: .82rem; line-height: 1.45; }
+
+/* --- tablet: dua baris, tahapan berjajar tiga kolom --- */
+@media (max-width: 991.98px) {
+    .sph { grid-template-columns: 1fr; width: min(calc(100% - 32px), 1440px); }
+    .sph .sph-lead { max-width: 560px; }
+    .sph-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .sph-steps::before {
+        top: 25px; bottom: auto; left: 8%; right: 8%;
+        width: auto; height: 3px;
+        background: linear-gradient(90deg, var(--sx-blue), var(--sx-orange) 50%, var(--sx-green));
+    }
+    .sph-step { grid-template-columns: 1fr; justify-items: start; gap: 10px; }
+    .sph-step-card { width: 100%; box-sizing: border-box; flex-direction: column; align-items: flex-start; gap: 9px; border-left-width: 1px; border-top: 4px solid var(--c); }
+    .sph-step-card:hover { transform: translateY(-2px); }
+}
+
+/* --- ponsel: tumpuk vertikal --- */
+@media (max-width: 640px) {
+    .sph { width: calc(100% - 24px); margin-top: 14px; border-radius: 20px; }
+    .sph-intro { padding: 24px 20px; }
+    .sph-flow  { padding: 22px 16px; }
+    .sph-features { grid-template-columns: 1fr; }
+    .sph-steps { grid-template-columns: 1fr; gap: 11px; }
+    .sph-steps::before {
+        top: 26px; bottom: 26px; left: 25px; right: auto;
+        width: 3px; height: auto;
+        background: linear-gradient(180deg, var(--sx-blue), var(--sx-orange) 50%, var(--sx-green));
+    }
+    .sph-step { grid-template-columns: 52px minmax(0, 1fr); justify-items: stretch; gap: 12px; }
+    .sph-step-card { flex-direction: row; align-items: center; gap: 12px; border-top: 1px solid var(--sx-line); border-left: 4px solid var(--c); }
+    .sph-step-card:hover { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .sph-step-card { transition: none; }
+    .sph-step-card:hover { transform: none; }
+}
+
+/* ------------------------------------------------------------------ */
+/* 2. LOGIN & REGISTER — identitas SIPACAK menyatu dengan card form   */
+/*    Identitas dipindah ke panel form, tepat di atas card.           */
+/* ------------------------------------------------------------------ */
+.auth-unified { --auth-card-w: 470px; }
+.auth-unified.auth-register { --auth-card-w: 650px; }
+
+/* Panel: identitas + card diperlakukan sebagai satu grup, di tengah */
+.auth-unified .auth-panel {
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0 !important;
+    padding-top: clamp(24px, 4vh, 48px) !important;
+    padding-bottom: 72px !important;
+}
+
+/* Identitas di atas card */
+.auth-unified .auth-identity {
+    position: relative;
+    z-index: 1;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 6px !important;
+    width: min(100%, var(--auth-card-w)) !important;
+    max-width: 100% !important;
+    margin: 0 auto 16px !important;
+    text-align: center;
+}
+.auth-unified .auth-identity .auth-brand-main {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+}
+.auth-unified .auth-identity .auth-bps-logo {
+    width: 52px !important;
+    height: 52px !important;
+    flex: 0 0 52px !important;
+    padding: 6px !important;
+    border: 1px solid var(--sx-line) !important;
+    border-radius: 14px !important;
+    background: #fff !important;
+    box-shadow: 0 6px 16px rgba(11,61,102,.10) !important;
+}
+.auth-unified .auth-identity .auth-brand-name {
+    color: var(--sx-blue-deep) !important;
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    letter-spacing: .02em !important;
+}
+.auth-unified .auth-identity .auth-brand-copy {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    border: 0 !important;
+}
+.auth-unified .auth-identity .auth-brand-expansion {
+    max-width: 100% !important;
+    padding: 0 !important;
+    border: 0 !important;
+    color: #35566f !important;
+    font-size: .8rem !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    white-space: normal !important;
+}
+.auth-unified .auth-identity .auth-official {
+    display: block !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    color: var(--sx-orange) !important;
+    font-size: .64rem !important;
+    font-weight: 800 !important;
+    letter-spacing: .1em !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+    white-space: normal !important;
+}
+
+/* Card form: lebar mengikuti identitas, tanpa outline sisa */
+.auth-unified .auth-form-wrap {
+    width: min(100%, var(--auth-card-w)) !important;
+    margin: 0 auto !important;
+    padding: clamp(24px, 2.4vw, 32px) clamp(22px, 3vw, 40px) !important;
+    outline: 0 !important;
+}
+.auth-unified .auth-form-wrap .auth-switch { margin-bottom: 0 !important; }
+.auth-unified .auth-form-heading { margin-bottom: 20px !important; }
+.auth-unified .auth-form { gap: 15px !important; }
+.auth-unified .auth-register-grid { gap: 14px 18px !important; }
+.auth-unified .auth-register-form { width: min(100%, var(--auth-card-w)) !important; }
+
+/* Sisi kiri (biru): identitas sudah ada di atas card, jadi cukup pesan utama */
+.auth-unified .auth-showcase { justify-content: center !important; }
+.auth-unified .auth-showcase .auth-showcase-top { display: none !important; }
+.auth-unified .auth-showcase .auth-showcase-copy { margin-block: 0 !important; }
+.auth-unified .auth-showcase .auth-showcase-bottom {
+    position: absolute;
+    right: clamp(24px, 4vw, 62px);
+    bottom: 26px;
+    left: clamp(24px, 4vw, 62px);
+}
+
+/* Layar pendek: kecilkan sedikit agar grup tetap muat tanpa scroll */
+@media (min-width: 801px) and (max-height: 820px) {
+    .auth-unified .auth-panel { padding-top: 18px !important; padding-bottom: 56px !important; }
+    .auth-unified .auth-identity { margin-bottom: 12px !important; }
+    .auth-unified .auth-identity .auth-bps-logo { width: 44px !important; height: 44px !important; flex-basis: 44px !important; }
+    .auth-unified .auth-identity .auth-brand-name { font-size: 1.7rem !important; }
+}
+
+/* Tablet & ponsel: kolom biru tersembunyi, identitas tetap menempel pada card */
+@media (max-width: 800px) {
+    .auth-unified .auth-panel {
+        justify-content: flex-start !important;
+        padding: 26px 20px 80px !important;
+    }
+    .auth-unified .auth-identity { margin-bottom: 14px !important; }
+}
+@media (max-width: 480px) {
+    .auth-unified .auth-panel { padding: 22px 16px 78px !important; }
+    .auth-unified .auth-identity .auth-bps-logo { width: 44px !important; height: 44px !important; flex-basis: 44px !important; }
+    .auth-unified .auth-identity .auth-brand-name { font-size: 1.7rem !important; }
+    .auth-unified .auth-identity .auth-brand-expansion { font-size: .74rem !important; }
+    .auth-unified .auth-identity .auth-official { font-size: .58rem !important; letter-spacing: .07em !important; }
+}

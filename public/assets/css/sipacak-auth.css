@@ -1,0 +1,58 @@
+/* Halaman auth minimalis: satu kartu, satu tujuan ------------------------- */
+body.auth-body{background:linear-gradient(90deg,#e8f2fc 0%,#f2f8fd 45%,#fafcff 100%) fixed!important}
+.auth-layout>.app-footer{display:none}
+.auth-shell{position:relative;isolation:isolate;min-height:100vh;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:start}
+/* kiri: peta kontur lapangan (tetap di tempat saat form panjang di-scroll) */
+.auth-intro{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;padding:48px clamp(24px,4vw,64px)}
+/* satu latar menyatu kiri-kanan: kisi halus memudar ke kanan, tanpa garis pemisah */
+.auth-shell::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(rgba(11,111,184,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(11,111,184,.07) 1px,transparent 1px);background-size:40px 40px;-webkit-mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.55) 35%,transparent 72%);mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.55) 35%,transparent 72%)}
+.auth-main{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:40px clamp(20px,4vw,64px)}
+.auth-main::before{content:none}
+.auth-card{width:100%;max-width:440px;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 24px 48px -28px rgba(11,37,64,.28),0 2px 6px rgba(11,37,64,.05);padding:32px 32px 26px}
+.auth-card.is-wide{max-width:560px}
+.auth-brand{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;color:inherit;text-decoration:none;max-width:22rem}
+.auth-brand img{width:84px;height:auto;margin-bottom:10px}
+.auth-brand strong{font-family:var(--font-display);font-weight:800;font-size:2.4rem;letter-spacing:-.03em;line-height:1.05;color:var(--ink)}
+.auth-brand-desc{font-size:1.05rem;font-weight:500;color:var(--ink-2);line-height:1.4}
+.auth-brand-org{font-size:.95rem;font-weight:650;color:var(--blue)}
+.auth-head{text-align:center}
+.auth-head h1{font-family:var(--font-display);font-size:1.6rem;font-weight:800;letter-spacing:-.03em;line-height:1.15;margin:0 0 6px;color:var(--ink)}
+.auth-head p{margin:0;color:var(--ink-3);font-size:.94rem;line-height:1.5}
+.auth-head p strong{color:var(--ink);word-break:break-all}
+.auth-head{margin-bottom:18px}
+.auth-card .au-note{margin-bottom:18px}
+.auth-card .au-form{gap:14px}
+.auth-card .au-grid{gap:14px 14px}
+.auth-card .au-field label{font-size:.85rem}
+.auth-card .au-input .form-control,.auth-card .au-input .form-select{min-height:46px}
+.auth-card .au-btn{min-height:50px}
+.auth-card .au-alt{margin-top:18px;padding-top:16px}
+.auth-foot{margin:0;font-size:.78rem;color:var(--ink-3)}
+
+/* Bagian opsional pada registrasi */
+.auth-optional{grid-column:1/-1;border:1px dashed var(--line);border-radius:var(--r-md);background:#f8fafc}
+.auth-optional>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:11px 14px;font-size:.88rem;font-weight:600;color:var(--ink-2)}
+.auth-optional>summary::-webkit-details-marker{display:none}
+.auth-optional>summary::after{content:"\F282";font-family:"bootstrap-icons";margin-left:auto;font-size:.8rem;color:var(--ink-3);transition:transform .15s}
+.auth-optional[open]>summary::after{transform:rotate(180deg)}
+.auth-optional>summary em{font-style:normal;font-weight:500;color:var(--ink-3)}
+.auth-optional .au-grid{padding:4px 14px 14px}
+.auth-optional .au-input .form-control,.auth-optional .au-input .form-select{background-color:#fff}
+
+@media (max-width:991.98px){
+  body.auth-body{background:linear-gradient(180deg,#e3effb 0%,#eaf3fc 55%,#f3f8fd 100%) fixed!important}
+  .auth-shell::before{-webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.7) 100%);mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,.7) 100%)}
+  .auth-shell{grid-template-columns:1fr;grid-auto-rows:max-content;align-content:start}
+  .auth-intro{position:relative;height:auto;padding:30px 20px 26px}
+  .auth-brand img{width:56px;margin-bottom:2px}
+  .auth-brand strong{font-size:1.7rem}
+  .auth-brand-desc{font-size:.9rem}
+  .auth-brand-org{font-size:.85rem}
+  .auth-main{min-height:0;justify-content:flex-start;padding:22px 16px 32px}
+}
+@media (max-width:575.98px){
+  .auth-card,.auth-card.is-wide{padding:24px 18px 20px;border-radius:18px}
+  .auth-head h1{font-size:1.4rem}
+  .auth-card .au-grid{grid-template-columns:1fr}
+  .auth-card .au-input .form-control,.auth-card .au-input .form-select{font-size:16px}
+}

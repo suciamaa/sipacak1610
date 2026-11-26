@@ -1,0 +1,797 @@
+{
+  "INDRALAYA": {
+    "TANJUNG SETEKO": {
+      "RT 009 DUSUN 5": [
+        "[01] RT 009 DUSUN 5",
+        "[02] RT 009 DUSUN 5"
+      ],
+      "RT 013 DUSUN 6": [
+        "[01] RT 013 DUSUN 6",
+        "[02] RT 013 DUSUN 6"
+      ]
+    },
+    "INDRALAYA MULYA": {
+      "RT 001 LINGKUNGAN I": [
+        "[01] RT 001 LINGKUNGAN I",
+        "[02] RT 001 LINGKUNGAN I",
+        "[03] RT 001 LINGKUNGAN I",
+        "[04] RT 001 LINGKUNGAN I",
+        "[05] RT 001 LINGKUNGAN I",
+        "[06] RT 001 LINGKUNGAN I"
+      ],
+      "RT 006 LINGKUNGAN III": [
+        "[01] RT 006 LINGKUNGAN III",
+        "[02] RT 006 LINGKUNGAN III"
+      ],
+      "RT 008 LINGKUNGAN IV": [
+        "[01] RT 008 LINGKUNGAN IV",
+        "[02] RT 008 LINGKUNGAN IV"
+      ]
+    },
+    "INDRALAYA RAYA": {
+      "RT 001 LINGKUNGAN LK 1": [
+        "[01] RT 001 LINGKUNGAN LK 1",
+        "[02] RT 001 LINGKUNGAN LK 1"
+      ],
+      "RT 002 LINGKUNGAN LK 1": [
+        "[01] RT 002 LINGKUNGAN LK 1",
+        "[02] RT 002 LINGKUNGAN LK 1"
+      ],
+      "RT 005 LINGKUNGAN LK 3": [
+        "[01] RT 005 LINGKUNGAN LK 3",
+        "[02] RT 005 LINGKUNGAN LK 3",
+        "[03] RT 005 LINGKUNGAN LK 3",
+        "[04] RT 005 LINGKUNGAN LK 3"
+      ],
+      "RT 006 LINGKUNGAN LK 3": [
+        "[01] RT 006 LINGKUNGAN LK 3",
+        "[02] RT 006 LINGKUNGAN LK 3"
+      ],
+      "RT 007 LINGKUNGAN LK 4": [
+        "[01] RT 007 LINGKUNGAN LK 4",
+        "[02] RT 007 LINGKUNGAN LK 4"
+      ],
+      "RT 008 LINGKUNGAN LK 4": [
+        "[01] RT 008 LINGKUNGAN LK 4",
+        "[02] RT 008 LINGKUNGAN LK 4",
+        "[03] RT 008 LINGKUNGAN LK 4"
+      ]
+    },
+    "INDRALAYA INDAH": {
+      "RT 001 LINGKUNGAN I": [
+        "[01] RT 001 LINGKUNGAN I",
+        "[02] RT 001 LINGKUNGAN I",
+        "[03] RT 001 LINGKUNGAN I"
+      ],
+      "RT 002 LINGKUNGAN I": [
+        "[01] RT 002 LINGKUNGAN I",
+        "[02] RT 002 LINGKUNGAN I",
+        "[03] RT 002 LINGKUNGAN I",
+        "[04] RT 002 LINGKUNGAN I"
+      ],
+      "RT 003 LINGKUNGAN II": [
+        "[01] RT 003 LINGKUNGAN II",
+        "[02] RT 003 LINGKUNGAN II",
+        "[03] RT 003 LINGKUNGAN II"
+      ],
+      "RT 004 LINGKUNGAN II": [
+        "[01] RT 004 LINGKUNGAN II",
+        "[02] RT 004 LINGKUNGAN II",
+        "[03] RT 004 LINGKUNGAN II",
+        "[04] RT 004 LINGKUNGAN II",
+        "[05] RT 004 LINGKUNGAN II",
+        "[06] RT 004 LINGKUNGAN II",
+        "[07] RT 004 LINGKUNGAN II",
+        "[08] RT 004 LINGKUNGAN II",
+        "[09] RT 004 LINGKUNGAN II"
+      ]
+    }
+  },
+  "INDRALAYA SELATAN": {
+    "MERANJAT II": {
+      "DUSUN I": [
+        "[01] DUSUN I",
+        "[02] DUSUN I"
+      ]
+    },
+    "TEBING GERINTING UTARA": {
+      "DUSUN I": [
+        "[01] DUSUN I",
+        "[02] DUSUN I"
+      ]
+    }
+  },
+  "INDRALAYA UTARA": {
+    "TANJUNG PERING": {
+      "RT 06 DUSUN III": [
+        "[01] RT 06 DUSUN III",
+        "[02] RT 06 DUSUN III",
+        "[03] RT 06 DUSUN III"
+      ],
+      "RT 08 DUSUN IV": [
+        "[01] RT 08 DUSUN IV",
+        "[02] RT 08 DUSUN IV",
+        "[03] RT 08 DUSUN IV",
+        "[04] RT 08 DUSUN IV",
+        "[05] RT 08 DUSUN IV"
+      ]
+    },
+    "SUNGAI RAMBUTAN": {
+      "RT 04 DUSUN 2": [
+        "[01] RT 04 DUSUN 2",
+        "[02] RT 04 DUSUN 2"
+      ]
+    },
+    "TIMBANGAN": {
+      "RT 001 LINGKUNGAN I": [
+        "[01] RT 001 LINGKUNGAN I",
+        "[02] RT 001 LINGKUNGAN I",
+        "[03] RT 001 LINGKUNGAN I"
+      ],
+      "RT 002 LINGKUNGAN I": [
+        "[01] RT 002 LINGKUNGAN I",
+        "[02] RT 002 LINGKUNGAN I",
+        "[03] RT 002 LINGKUNGAN I",
+        "[04] RT 002 LINGKUNGAN I",
+        "[05] RT 002 LINGKUNGAN I",
+        "[06] RT 002 LINGKUNGAN I",
+        "[07] RT 002 LINGKUNGAN I",
+        "[08] RT 002 LINGKUNGAN I",
+        "[09] RT 002 LINGKUNGAN I",
+        "[10] RT 002 LINGKUNGAN I",
+        "[11] RT 002 LINGKUNGAN I",
+        "[12] RT 002 LINGKUNGAN I",
+        "[13] RT 002 LINGKUNGAN I",
+        "[14] RT 002 LINGKUNGAN I",
+        "[15] RT 002 LINGKUNGAN I",
+        "[16] RT 002 LINGKUNGAN I",
+        "[17] RT 002 LINGKUNGAN I",
+        "[18] RT 002 LINGKUNGAN I",
+        "[19] RT 002 LINGKUNGAN I",
+        "[20] RT 002 LINGKUNGAN I"
+      ],
+      "RT 003 LINGKUNGAN II": [
+        "[01] RT 003 LINGKUNGAN II",
+        "[02] RT 003 LINGKUNGAN II",
+        "[03] RT 003 LINGKUNGAN II",
+        "[04] RT 003 LINGKUNGAN II",
+        "[05] RT 003 LINGKUNGAN II",
+        "[06] RT 003 LINGKUNGAN II"
+      ],
+      "RT 004 LINGKUNGAN II": [
+        "[01] RT 004 LINGKUNGAN II",
+        "[02] RT 004 LINGKUNGAN II",
+        "[03] RT 004 LINGKUNGAN II",
+        "[04] RT 004 LINGKUNGAN II",
+        "[05] RT 004 LINGKUNGAN II",
+        "[06] RT 004 LINGKUNGAN II",
+        "[07] RT 004 LINGKUNGAN II"
+      ],
+      "RT 005 LINGKUNGAN III": [
+        "[01] RT 005 LINGKUNGAN III",
+        "[02] RT 005 LINGKUNGAN III",
+        "[03] RT 005 LINGKUNGAN III"
+      ],
+      "RT 006 LINGKUNGAN III": [
+        "[01] RT 006 LINGKUNGAN III",
+        "[02] RT 006 LINGKUNGAN III",
+        "[03] RT 006 LINGKUNGAN III",
+        "[04] RT 006 LINGKUNGAN III"
+      ],
+      "RT 007 LINGKUNGAN IV": [
+        "[01] RT 007 LINGKUNGAN IV",
+        "[02] RT 007 LINGKUNGAN IV",
+        "[03] RT 007 LINGKUNGAN IV",
+        "[04] RT 007 LINGKUNGAN IV"
+      ],
+      "RT 008 LINGKUNGAN IV": [
+        "[01] RT 008 LINGKUNGAN IV",
+        "[02] RT 008 LINGKUNGAN IV",
+        "[03] RT 008 LINGKUNGAN IV"
+      ],
+      "RT 009 LINGKUNGAN V": [
+        "[01] RT 009 LINGKUNGAN V",
+        "[02] RT 009 LINGKUNGAN V"
+      ],
+      "RT 010 LINGKUNGAN V": [
+        "[01] RT 010 LINGKUNGAN V",
+        "[02] RT 010 LINGKUNGAN V",
+        "[03] RT 010 LINGKUNGAN V",
+        "[04] RT 010 LINGKUNGAN V",
+        "[05] RT 010 LINGKUNGAN V",
+        "[06] RT 010 LINGKUNGAN V",
+        "[07] RT 010 LINGKUNGAN V",
+        "[08] RT 010 LINGKUNGAN V",
+        "[09] RT 010 LINGKUNGAN V",
+        "[10] RT 010 LINGKUNGAN V",
+        "[11] RT 010 LINGKUNGAN V",
+        "[12] RT 010 LINGKUNGAN V",
+        "[13] RT 010 LINGKUNGAN V"
+      ],
+      "RT 011 LINGKUNGAN II": [
+        "[01] RT 011 LINGKUNGAN II",
+        "[02] RT 011 LINGKUNGAN II"
+      ],
+      "RT 012 LINGKUNGAN III": [
+        "[01] RT 012 LINGKUNGAN III",
+        "[02] RT 012 LINGKUNGAN III",
+        "[03] RT 012 LINGKUNGAN III",
+        "[04] RT 012 LINGKUNGAN III",
+        "[05] RT 012 LINGKUNGAN III",
+        "[06] RT 012 LINGKUNGAN III"
+      ],
+      "RT 013 LINGKUNGAN IV": [
+        "[01] RT 013 LINGKUNGAN IV",
+        "[02] RT 013 LINGKUNGAN IV",
+        "[03] RT 013 LINGKUNGAN IV"
+      ]
+    },
+    "PERMATA BARU": {
+      "RT 01 DUSUN I": [
+        "[01] RT 01 DUSUN I",
+        "[02] RT 01 DUSUN I"
+      ],
+      "RT 02 DUSUN I": [
+        "[01] RT 02 DUSUN I",
+        "[02] RT 02 DUSUN I",
+        "[03] RT 02 DUSUN I"
+      ]
+    },
+    "PALEM RAYA": {
+      "RT 05 DUSUN II": [
+        "[01] RT 05 DUSUN II",
+        "[02] RT 05 DUSUN II"
+      ]
+    }
+  },
+  "LUBUK KELIAT": {
+    "LUBUK KELIAT": {
+      "RT 001 DUSUN I": [
+        "[01] RT 001 DUSUN I",
+        "[02] RT 001 DUSUN I"
+      ]
+    }
+  },
+  "MUARA KUANG": {
+    "MUARA KUANG": {
+      "RT 02 LINGKUNGAN 1": [
+        "[01] RT 02 LINGKUNGAN 1",
+        "[02] RT 02 LINGKUNGAN 1"
+      ]
+    },
+    "SUKA CINTA": {
+      "RT 02 DUSUN 1": [
+        "[01] RT 02 DUSUN 1",
+        "[02] RT 02 DUSUN 1"
+      ],
+      "RT 05 DUSUN 3": [
+        "[01] RT 05 DUSUN 3",
+        "[02] RT 05 DUSUN 3"
+      ]
+    }
+  },
+  "PAYARAMAN": {
+    "TEBEDAK I": {
+      "RT 03 DUSUN II": [
+        "[01] RT 03 DUSUN II",
+        "[02] RT 03 DUSUN II"
+      ],
+      "RT 4 DUSUN II": [
+        "[01] RT 4 DUSUN II",
+        "[02] RT 4 DUSUN II"
+      ]
+    },
+    "LUBUK BANDUNG": {
+      "RT 04 DUSUN II": [
+        "[01] RT 04 DUSUN II",
+        "[02] RT 04 DUSUN II"
+      ]
+    },
+    "RENGAS I": {
+      "RT 02 DUSUN I": [
+        "[01] RT 02 DUSUN I",
+        "[02] RT 02 DUSUN I"
+      ]
+    },
+    "TALANG SELEMAN": {
+      "RT 04 DUSUN II": [
+        "[01] RT 04 DUSUN II",
+        "[02] RT 04 DUSUN II"
+      ]
+    },
+    "PAYARAMAN TIMUR": {
+      "RT 08 LINGKUNGAN 4": [
+        "[01] RT 08 LINGKUNGAN 4",
+        "[02] RT 08 LINGKUNGAN 4"
+      ]
+    },
+    "TANJUNG LALANG": {
+      "RT 01 DUSUN 1": [
+        "[01] RT 01 DUSUN 1",
+        "[02] RT 01 DUSUN 1"
+      ],
+      "RT 04 DUSUN 2": [
+        "[01] RT 04 DUSUN 2",
+        "[02] RT 04 DUSUN 2",
+        "[03] RT 04 DUSUN 2"
+      ]
+    },
+    "SERI KEMBANG II": {
+      "RT 03 DUSUN 2": [
+        "[01] RT 03 DUSUN 2",
+        "[02] RT 03 DUSUN 2"
+      ]
+    },
+    "SERI KEMBANG III": {
+      "RT 02 DUSUN 1": [
+        "[01] RT 02 DUSUN 1",
+        "[02] RT 02 DUSUN 1"
+      ],
+      "RT 04 DUSUN 2": [
+        "[01] RT 04 DUSUN 2",
+        "[02] RT 04 DUSUN 2"
+      ]
+    },
+    "TEBEDAK II": {
+      "RT 01 DUSUN I": [
+        "[01] RT 01 DUSUN I",
+        "[02] RT 01 DUSUN I"
+      ],
+      "RT 02 DUSUN I": [
+        "[01] RT 02 DUSUN I",
+        "[02] RT 02 DUSUN I"
+      ],
+      "RT 03 DUSUN II": [
+        "[01] RT 03 DUSUN II",
+        "[02] RT 03 DUSUN II"
+      ],
+      "RT 04 DUSUN II": [
+        "[01] RT 04 DUSUN II",
+        "[02] RT 04 DUSUN II"
+      ]
+    },
+    "RENGAS II": {
+      "RT 03 DUSUN II": [
+        "[01] RT 03 DUSUN II",
+        "[02] RT 03 DUSUN II"
+      ],
+      "RT 04 DUSUN II": [
+        "[01] RT 04 DUSUN II",
+        "[02] RT 04 DUSUN II"
+      ]
+    }
+  },
+  "PEMULUTAN": {
+    "TELUK KECAPI": {
+      "RT 2 DUSUN 1": [
+        "[01] RT 2 DUSUN 1",
+        "[02] RT 2 DUSUN 1"
+      ]
+    },
+    "PELABUHAN DALAM": {
+      "RT 001 DUSUN 001": [
+        "[01] RT 001 DUSUN 001",
+        "[02] RT 001 DUSUN 001"
+      ],
+      "RT 005 DUSUN 003": [
+        "[01] RT 005 DUSUN 003",
+        "[02] RT 005 DUSUN 003"
+      ],
+      "RT 006 DUSUN 003": [
+        "[01] RT 006 DUSUN 003",
+        "[02] RT 006 DUSUN 003"
+      ]
+    },
+    "PEGAYUT": {
+      "RT 003 DUSUN II": [
+        "[01] RT 003 DUSUN II",
+        "[02] RT 003 DUSUN II"
+      ]
+    },
+    "SUNGAI BUAYA": {
+      "RT 006 DUSUN 3": [
+        "[01] RT 006 DUSUN 3",
+        "[02] RT 006 DUSUN 3"
+      ]
+    }
+  },
+  "RAMBANG KUANG": {
+    "KUANG DALAM BARAT": {
+      "RT 02 DUSUN 3": [
+        "[01] RT 02 DUSUN 3",
+        "[02] RT 02 DUSUN 3"
+      ]
+    },
+    "TAMBANG RAMBANG": {
+      "RT 01 DUSUN 4": [
+        "[01] RT 01 DUSUN 4",
+        "[02] RT 01 DUSUN 4"
+      ],
+      "RT 02 DUSUN 4": [
+        "[01] RT 02 DUSUN 4",
+        "[02] RT 02 DUSUN 4"
+      ],
+      "RT 01 DUSUN 5": [
+        "[01] RT 01 DUSUN 5",
+        "[02] RT 01 DUSUN 5",
+        "[03] RT 01 DUSUN 5",
+        "[04] RT 01 DUSUN 5"
+      ]
+    },
+    "TANJUNG MIRING": {
+      "RT 02 DUSUN 3": [
+        "[01] RT 02 DUSUN 3",
+        "[02] RT 02 DUSUN 3"
+      ],
+      "RT 01 DUSUN 4": [
+        "[01] RT 01 DUSUN 4",
+        "[02] RT 01 DUSUN 4"
+      ]
+    },
+    "TANJUNG BULAN": {
+      "RT 01 DUSUN 1": [
+        "[01] RT 01 DUSUN 1",
+        "[02] RT 01 DUSUN 1"
+      ],
+      "RT 01 DUSUN 2": [
+        "[01] RT 01 DUSUN 2",
+        "[02] RT 01 DUSUN 2",
+        "[03] RT 01 DUSUN 2",
+        "[04] RT 01 DUSUN 2"
+      ],
+      "RT 01 DUSUN 3": [
+        "[01] RT 01 DUSUN 3",
+        "[02] RT 01 DUSUN 3"
+      ]
+    }
+  },
+  "SUNGAI PINANG": {
+    "PINANG JAYA": {
+      "RT 03 DUSUN II": [
+        "[01] RT 03 DUSUN II",
+        "[02] RT 03 DUSUN II"
+      ]
+    },
+    "PINANG MAS": {
+      "RT 01 DUSUN 01": [
+        "[01] RT 01 DUSUN 01",
+        "[02] RT 01 DUSUN 01"
+      ]
+    },
+    "SUNGAI PINANG LAGATI": {
+      "RT 01 DUSUN 1": [
+        "[01] RT 01 DUSUN 1",
+        "[02] RT 01 DUSUN 1"
+      ],
+      "RT 02 DUSUN 1": [
+        "[01] RT 02 DUSUN 1",
+        "[02] RT 02 DUSUN 1"
+      ]
+    }
+  },
+  "TANJUNG BATU": {
+    "SERI BANDUNG": {
+      "RT 01 DUSUN 1": [
+        "[01] RT 01 DUSUN 1",
+        "[02] RT 01 DUSUN 1",
+        "[03] RT 01 DUSUN 1"
+      ],
+      "RT 02 DUSUN 2": [
+        "[01] RT 02 DUSUN 2",
+        "[02] RT 02 DUSUN 2"
+      ],
+      "RT 03 DUSUN 3": [
+        "[01] RT 03 DUSUN 3",
+        "[02] RT 03 DUSUN 3"
+      ],
+      "RT 04 DUSUN 4": [
+        "[01] RT 04 DUSUN 4",
+        "[02] RT 04 DUSUN 4",
+        "[03] RT 04 DUSUN 4",
+        "[04] RT 04 DUSUN 4"
+      ]
+    },
+    "SERI TANJUNG": {
+      "RT 9 DUSUN V": [
+        "[01] RT 9 DUSUN V",
+        "[02] RT 9 DUSUN V"
+      ],
+      "RT 10 DUSUN V": [
+        "[01] RT 10 DUSUN V",
+        "[02] RT 10 DUSUN V",
+        "[03] RT 10 DUSUN V",
+        "[04] RT 10 DUSUN V"
+      ]
+    },
+    "BANGUN JAYA": {
+      "RT 02 DUSUN I": [
+        "[01] RT 02 DUSUN I",
+        "[02] RT 02 DUSUN I",
+        "[03] RT 02 DUSUN I"
+      ],
+      "RT 04 DUSUN II": [
+        "[01] RT 04 DUSUN II",
+        "[02] RT 04 DUSUN II"
+      ]
+    },
+    "TANJUNG TAMBAK": {
+      "RT 002 DUSUN 01": [
+        "[01] RT 002 DUSUN 01",
+        "[02] RT 002 DUSUN 01"
+      ]
+    },
+    "TANJUNG BARU PETAI": {
+      "RT 001 DUSUN 01": [
+        "[01] RT 001 DUSUN 01",
+        "[02] RT 001 DUSUN 01"
+      ],
+      "RT 002 DUSUN 01": [
+        "[01] RT 002 DUSUN 01",
+        "[02] RT 002 DUSUN 01"
+      ]
+    },
+    "TANJUNG BATU SEBERANG": {
+      "RT 001 DUSUN 01": [
+        "[01] RT 001 DUSUN 01",
+        "[02] RT 001 DUSUN 01"
+      ],
+      "RT 002 DUSUN 01": [
+        "[01] RT 002 DUSUN 01",
+        "[02] RT 002 DUSUN 01",
+        "[03] RT 002 DUSUN 01"
+      ]
+    },
+    "TANJUNG ATAP": {
+      "RT 005 DUSUN 03": [
+        "[01] RT 005 DUSUN 03",
+        "[02] RT 005 DUSUN 03"
+      ]
+    },
+    "LIMBANG JAYA I": {
+      "RT 001 DUSUN I": [
+        "[01] RT 001 DUSUN I",
+        "[02] RT 001 DUSUN I"
+      ],
+      "RT 002 DUSUN I": [
+        "[01] RT 002 DUSUN I",
+        "[02] RT 002 DUSUN I"
+      ]
+    },
+    "TANJUNG LAUT": {
+      "RT 002 DUSUN I": [
+        "[01] RT 002 DUSUN I",
+        "[02] RT 002 DUSUN I",
+        "[03] RT 002 DUSUN I"
+      ],
+      "RT 003 DUSUN II": [
+        "[01] RT 003 DUSUN II",
+        "[02] RT 003 DUSUN II"
+      ]
+    },
+    "TANJUNG PINANG I": {
+      "RT 007 DUSUN IV": [
+        "[01] RT 007 DUSUN IV",
+        "[02] RT 007 DUSUN IV"
+      ],
+      "RT 008 DUSUN IV": [
+        "[01] RT 008 DUSUN IV",
+        "[02] RT 008 DUSUN IV",
+        "[03] RT 008 DUSUN IV",
+        "[04] RT 008 DUSUN IV"
+      ]
+    },
+    "TANJUNG BATU": {
+      "RT 007 LINGKUNGAN IIII": [
+        "[01] RT 007 LINGKUNGAN IIII",
+        "[02] RT 007 LINGKUNGAN IIII"
+      ],
+      "RT 008 LINGKUNGAN IIII": [
+        "[01] RT 008 LINGKUNGAN IIII",
+        "[02] RT 008 LINGKUNGAN IIII"
+      ]
+    },
+    "PAJAR BULAN": {
+      "RT 001 DUSUN 01": [
+        "[01] RT 001 DUSUN 01",
+        "[02] RT 001 DUSUN 01"
+      ],
+      "RT 004 DUSUN 02": [
+        "[01] RT 004 DUSUN 02",
+        "[02] RT 004 DUSUN 02"
+      ]
+    },
+    "SENURO TIMUR": {
+      "RT 001 DUSUN 01": [
+        "[01] RT 001 DUSUN 01",
+        "[02] RT 001 DUSUN 01"
+      ],
+      "RT 004 DUSUN 02": [
+        "[01] RT 004 DUSUN 02",
+        "[02] RT 004 DUSUN 02"
+      ]
+    },
+    "SENTUL": {
+      "RT 003 DUSUN II": [
+        "[01] RT 003 DUSUN II",
+        "[02] RT 003 DUSUN II"
+      ]
+    },
+    "BURAI": {
+      "RT 004 DUSUN IV": [
+        "[01] RT 004 DUSUN IV",
+        "[02] RT 004 DUSUN IV"
+      ]
+    },
+    "TANJUNG BATU TIMUR": {
+      "RT 003 LINGKUNGAN III": [
+        "[01] RT 003 LINGKUNGAN III",
+        "[02] RT 003 LINGKUNGAN III"
+      ],
+      "RT 010 LINGKUNGAN V": [
+        "[01] RT 010 LINGKUNGAN V",
+        "[02] RT 010 LINGKUNGAN V",
+        "[03] RT 010 LINGKUNGAN V"
+      ]
+    },
+    "LIMBANG JAYA II": {
+      "RT 001 DUSUN I": [
+        "[01] RT 001 DUSUN I",
+        "[02] RT 001 DUSUN I"
+      ],
+      "RT 003 DUSUN II": [
+        "[01] RT 003 DUSUN II",
+        "[02] RT 003 DUSUN II"
+      ],
+      "RT 004 DUSUN II": [
+        "[01] RT 004 DUSUN II",
+        "[02] RT 004 DUSUN II",
+        "[03] RT 004 DUSUN II",
+        "[04] RT 004 DUSUN II"
+      ]
+    },
+    "SENURO BARAT": {
+      "RT 003 DUSUN 02": [
+        "[01] RT 003 DUSUN 02",
+        "[02] RT 003 DUSUN 02"
+      ],
+      "RT 004 DUSUN 02": [
+        "[01] RT 004 DUSUN 02",
+        "[02] RT 004 DUSUN 02",
+        "[03] RT 004 DUSUN 02"
+      ]
+    },
+    "TANJUNG PINANG II": {
+      "RT 001 DUSUN I": [
+        "[01] RT 001 DUSUN I",
+        "[02] RT 001 DUSUN I"
+      ],
+      "RT 004 DUSUN 11": [
+        "[01] RT 004 DUSUN 11",
+        "[02] RT 004 DUSUN 11",
+        "[03] RT 004 DUSUN 11"
+      ]
+    },
+    "TANJUNG ATAP BARAT": {
+      "RT 004 DUSUN 02": [
+        "[01] RT 004 DUSUN 02",
+        "[02] RT 004 DUSUN 02"
+      ]
+    }
+  },
+  "TANJUNG RAJA": {
+    "SERIDALAM": {
+      "RT 001 DUSUN I": [
+        "[01] RT 001 DUSUN I",
+        "[02] RT 001 DUSUN I"
+      ],
+      "RT 004 DUSUN II": [
+        "[01] RT 004 DUSUN II",
+        "[02] RT 004 DUSUN II"
+      ]
+    },
+    "TANJUNG RAJA": {
+      "RT 001 LINGKUNGAN I": [
+        "[01] RT 001 LINGKUNGAN I",
+        "[02] RT 001 LINGKUNGAN I"
+      ],
+      "RT 002 LINGKUNGAN I": [
+        "[01] RT 002 LINGKUNGAN I",
+        "[02] RT 002 LINGKUNGAN I"
+      ],
+      "RT 003 LINGKUNGAN II": [
+        "[01] RT 003 LINGKUNGAN II",
+        "[02] RT 003 LINGKUNGAN II",
+        "[03] RT 003 LINGKUNGAN II"
+      ],
+      "RT 004 LINGKUNGAN IV": [
+        "[01] RT 004 LINGKUNGAN IV",
+        "[02] RT 004 LINGKUNGAN IV"
+      ],
+      "RT 005 LINGKUNGAN V": [
+        "[01] RT 005 LINGKUNGAN V",
+        "[02] RT 005 LINGKUNGAN V"
+      ],
+      "RT 006 LINGKUNGAN VI": [
+        "[01] RT 006 LINGKUNGAN VI",
+        "[02] RT 006 LINGKUNGAN VI"
+      ]
+    },
+    "TANJUNG RAJA BARAT": {
+      "RT 01 LINGKUNGAN I": [
+        "[01] RT 01 LINGKUNGAN I",
+        "[02] RT 01 LINGKUNGAN I"
+      ],
+      "RT 02 LINGKUNGAN I": [
+        "[01] RT 02 LINGKUNGAN I",
+        "[02] RT 02 LINGKUNGAN I"
+      ],
+      "RT 03 LINGKUNGAN II": [
+        "[01] RT 03 LINGKUNGAN II",
+        "[02] RT 03 LINGKUNGAN II"
+      ],
+      "RT 04 LINGKUNGAN II": [
+        "[01] RT 04 LINGKUNGAN II",
+        "[02] RT 04 LINGKUNGAN II"
+      ],
+      "RT 05 LINGKUNGAN III": [
+        "[01] RT 05 LINGKUNGAN III",
+        "[02] RT 05 LINGKUNGAN III"
+      ],
+      "RT 08 LINGKUNGAN IV": [
+        "[01] RT 08 LINGKUNGAN IV",
+        "[02] RT 08 LINGKUNGAN IV"
+      ]
+    },
+    "TANJUNG RAJA UTARA": {
+      "RT 007 LINGKUNGAN IV": [
+        "[01] RT 007 LINGKUNGAN IV",
+        "[02] RT 007 LINGKUNGAN IV",
+        "[03] RT 007 LINGKUNGAN IV",
+        "[04] RT 007 LINGKUNGAN IV"
+      ]
+    },
+    "TANJUNG RAJA TIMUR": {
+      "RT 003 LINGKUNGAN II": [
+        "[01] RT 003 LINGKUNGAN II",
+        "[02] RT 003 LINGKUNGAN II",
+        "[03] RT 003 LINGKUNGAN II",
+        "[04] RT 003 LINGKUNGAN II"
+      ],
+      "RT 004 LINGKUNGAN II": [
+        "[01] RT 004 LINGKUNGAN II",
+        "[02] RT 004 LINGKUNGAN II"
+      ],
+      "RT 005 LINGKUNGAN III": [
+        "[01] RT 005 LINGKUNGAN III",
+        "[02] RT 005 LINGKUNGAN III",
+        "[03] RT 005 LINGKUNGAN III"
+      ],
+      "RT 006 LINGKUNGAN III": [
+        "[01] RT 006 LINGKUNGAN III",
+        "[02] RT 006 LINGKUNGAN III",
+        "[03] RT 006 LINGKUNGAN III",
+        "[04] RT 006 LINGKUNGAN III"
+      ]
+    },
+    "BELANTI": {
+      "RT 001 DUSUN 001": [
+        "[01] RT 001 DUSUN 001",
+        "[02] RT 001 DUSUN 001"
+      ],
+      "RT 007 DUSUN 004": [
+        "[01] RT 007 DUSUN 004",
+        "[02] RT 007 DUSUN 004"
+      ],
+      "RT 008 DUSUN 004": [
+        "[01] RT 008 DUSUN 004",
+        "[02] RT 008 DUSUN 004"
+      ]
+    },
+    "SKONJING": {
+      "RT 06 DUSUN 3": [
+        "[01] RT 06 DUSUN 3",
+        "[02] RT 06 DUSUN 3"
+      ]
+    }
+  }
+}

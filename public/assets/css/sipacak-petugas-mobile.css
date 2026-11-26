@@ -1,0 +1,127 @@
+/* SIPACAK – penyempurnaan tampilan petugas (mobile-first). Dimuat paling akhir. */
+
+/* ===== Tabel riwayat progress (desktop/tablet) ===== */
+.progress-row-actions { display:flex; flex-wrap:nowrap; align-items:center; justify-content:center; gap:8px; }
+.progress-row-actions .btn { white-space:nowrap; }
+.progress-history-table { min-width:0 !important; width:100%; }
+.progress-history-table td.col-sls,
+.progress-history-table th.col-sls { width:110px; min-width:0 !important; max-width:130px; white-space:normal; word-break:break-word; }
+.progress-history-table td.col-desa,
+.progress-history-table th.col-desa { min-width:0 !important; white-space:normal; }
+.progress-history-table td.col-aksi,
+.progress-history-table th.col-aksi { width:1%; min-width:0 !important; white-space:nowrap; }
+
+/* ===== Kartu progress / dokumen (HP) ===== */
+.progress-card-list { display:flex; flex-direction:column; gap:10px; padding:10px; }
+.progress-day-card { border:1px solid #dfe9f1; border-radius:14px; background:#fff; overflow:hidden; }
+.progress-day-head { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:8px 8px 8px 12px; background:#f3f8fc; border-bottom:1px solid #e3ecf3; }
+.progress-day-date { min-width:0; display:flex; align-items:baseline; flex-wrap:wrap; gap:0 8px; }
+.progress-day-date strong { font-size:.95rem; color:#17466F; line-height:1.3; }
+.progress-day-date span { font-size:.8rem; color:#6b8196; font-variant-numeric:tabular-nums; }
+.progress-day-head .progress-row-actions { gap:6px; flex:none; }
+.progress-day-head .btn { padding:6px 12px; font-size:.82rem; min-height:40px; display:inline-flex; align-items:center; justify-content:center; }
+.progress-day-head .btn-outline-danger { width:40px; padding:0; }
+.progress-day-detail { display:grid; grid-template-columns:max-content minmax(0,1fr); gap:0 12px; align-items:baseline; padding:8px 12px; font-size:.86rem; }
+.progress-day-detail + .progress-day-detail { border-top:1px dashed #e3ecf3; }
+.progress-day-time { white-space:nowrap; font-weight:700; color:#254b6b; font-variant-numeric:tabular-nums; line-height:1.4; }
+.progress-day-place { min-width:0; color:#46596b; overflow-wrap:anywhere; line-height:1.4; }
+.progress-sls-chip { display:inline-block; margin-right:6px; padding:0 8px; border-radius:6px; background:#e8f1f9; color:#17466F; font-weight:700; font-size:.8rem; }
+.progress-day-place span { color:#5b7084; }
+.progress-day-detail.is-empty { display:block; color:#6b8196; }
+.progress-day-foot { display:flex; flex-wrap:wrap; gap:8px; padding:10px 12px 12px; border-top:1px dashed #e3ecf3; }
+.progress-day-foot .doc-slot { flex:1 1 120px; min-width:0; }
+.progress-day-foot .doc-slot small { display:block; margin-bottom:4px; font-size:.7rem; font-weight:700; letter-spacing:.06em; color:#7b8da0; text-transform:uppercase; }
+.progress-day-foot .doc-slot .btn { width:100%; }
+.progress-day-foot .doc-slot .doc-none { display:block; padding:9px 0; color:#8a99a8; font-size:.84rem; }
+.progress-day-nominal { font-weight:700; color:#254b6b; font-size:.9rem; white-space:nowrap; font-variant-numeric:tabular-nums; }
+
+/* ===== Foto dokumentasi: tombol Hapus ===== */
+.progress-form .documentation-remove { cursor:pointer; position:relative; z-index:2; }
+.progress-form .documentation-remove:not(:disabled):hover { background:#fdecec; border-color:#f0b4b4; color:#b42318; }
+
+/* ===== HP (<= 767px) ===== */
+@media (max-width: 767.98px) {
+    html { -webkit-text-size-adjust:100%; }
+    body.petugas-app { font-size:.94rem; }
+    .petugas-app .btn, .petugas-app .form-control, .petugas-app .form-select { min-height:44px; }
+    .petugas-app .btn-sm { min-height:38px; }
+    .petugas-app .form-control, .petugas-app .form-select { font-size:16px; } /* cegah auto-zoom iOS */
+
+    /* Navbar: tinggi ringkas, tanpa subjudul */
+    .petugas-app .app-navbar { min-height:58px; }
+    .petugas-app .app-navbar .container { padding-inline:14px; flex-wrap:nowrap; }
+    .petugas-app .app-brand small { display:none; }
+    .petugas-app .app-brand { font-size:.98rem; margin-right:8px; }
+
+    /* Kontainer: satu gutter saja (14px), bukan dua lapis */
+    body.petugas-app .app-container { width:100% !important; max-width:none !important; padding-inline:14px !important; padding-top:14px !important; padding-bottom:24px !important; }
+    .petugas-app h2 { font-size:1.3rem; line-height:1.25; }
+    .petugas-app .card { border-radius:14px; }
+    .petugas-app .card.p-4 { padding:14px !important; }
+    .petugas-app .app-footer { padding-top:18px; margin-top:8px; }
+
+    /* Dashboard */
+    .petugas-app .pt-hero-inner { width:calc(100% - 28px) !important; grid-template-columns:1fr !important; gap:14px !important; padding:18px 0 18px !important; }
+    .pt-hero h1 { font-size:1.5rem; margin-bottom:6px; }
+    .pt-hero p { font-size:.9rem; }
+    .pt-today { margin-bottom:8px; font-size:.84rem; }
+    .pt-stats { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .pt-stat { padding:10px 8px; }
+    .pt-stat strong { font-size:1.35rem; }
+    .pt-stat span { font-size:.68rem; line-height:1.3; margin-top:4px; overflow-wrap:anywhere; }
+    .pt-list-head { margin:4px 0 12px; }
+    .pt-list-head h2 { font-size:1.2rem; }
+    .pt-list-head p { font-size:.86rem; }
+    .pt-item { grid-template-columns:minmax(0,1fr) !important; gap:12px !important; padding:14px 14px 14px 18px !important; }
+    .pt-name { font-size:1rem; margin-bottom:8px; }
+    .pt-period { margin-bottom:6px; }
+    .pt-action { display:flex; flex-direction:row-reverse; align-items:center; justify-content:space-between; gap:12px; }
+    .pt-action .pt-btn { flex:1; justify-content:center; min-height:46px; }
+
+    /* Ringkasan progress */
+    .progress-overview-heading { gap:10px !important; margin-bottom:14px !important; }
+    .progress-overview-copy { width:100%; }
+    .progress-overview-copy .progress-back-button { margin-bottom:10px !important; }
+    .progress-overview-heading .progress-create-button { width:100%; min-height:48px; justify-content:center; }
+    .progress-assignment-meta { display:flex; flex-wrap:wrap; gap:6px; }
+    .progress-assignment-meta span:not(.progress-meta-divider) { font-size:.78rem; padding:6px 10px; }
+    .progress-meta-divider { display:none; }
+    .progress-history-heading { padding:14px !important; min-height:0 !important; }
+    .progress-history-heading p, .progress-history-icon { display:none !important; }
+    .table-scroll-hint { display:none !important; }
+
+    /* Unduh dokumen */
+    .progress-download-area { flex-direction:column; align-items:stretch; gap:12px; padding:14px; }
+    .progress-download-intro small { display:block; margin-top:2px; }
+    .progress-download-actions { display:flex; flex-direction:column; gap:10px; width:100%; }
+    .progress-download-actions .download-menu, .progress-download-actions summary { width:100%; }
+    .progress-download-actions summary { display:flex; justify-content:center; align-items:center; min-height:48px; }
+    .download-menu-panel { position:static !important; width:100% !important; margin-top:8px; padding:12px; box-shadow:none; }
+    .download-menu-panel .btn { min-height:44px; white-space:normal; }
+
+    /* Paginasi */
+    .progress-history-pagination { padding:10px 12px 14px; overflow-x:hidden; }
+    .progress-history-pagination nav > div:first-child { display:flex !important; justify-content:space-between; gap:8px; }
+    .progress-history-pagination .pagination { flex-wrap:wrap; justify-content:center; margin:0; gap:6px; }
+    .progress-history-pagination .page-link { min-height:42px; display:inline-flex; align-items:center; padding:0 14px; border-radius:10px; }
+    .progress-history-pagination .small, .progress-history-pagination p.small { text-align:center; margin-bottom:8px; }
+
+    /* Halaman dokumen */
+    .doc-page-title { font-size:1.2rem !important; margin-bottom:12px; }
+}
+
+@media (max-width: 340px) {
+    .petugas-app .app-brand { font-size:.9rem; }
+    .progress-day-detail { gap:4px 8px; }
+    .pt-stat span { font-size:.64rem; }
+}
+
+/* Pengaman: tampilan tabel vs kartu tidak bergantung pada utilitas Bootstrap */
+.progress-card-list { display:none; }
+@media (max-width: 767.98px) {
+    .progress-card-list { display:flex !important; }
+    .progress-history-table-wrap, .doc-table-wrap { display:none !important; }
+}
+@media (min-width: 768px) {
+    .progress-card-list { display:none !important; }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://getcomposer.org/schema.json",
+  "name": "sipacak/sipacak",
+  "type": "project",
+  "description": "SIPACAK - Sistem Informasi Pengelolaan Administrasi dan Capaian Kegiatan",
+  "keywords": ["laravel", "sipacak"],
+  "license": "proprietary",
+  "require": {
+    "php": "^8.2",
+    "barryvdh/laravel-dompdf": "^3.1",
+    "laravel/framework": "^12.0",
+    "laravel/tinker": "^2.10",
+    "maatwebsite/excel": "^3.1",
+    "setasign/fpdi": "^2.6",
+    "tecnickcom/tcpdf": "6.11.4"
+  },
+  "require-dev": {
+    "fakerphp/faker": "^1.23",
+    "laravel/pail": "^1.2",
+    "laravel/pint": "^1.24",
+    "mockery/mockery": "^1.6",
+    "phpunit/phpunit": "^11.5"
+  },
+  "autoload": {
+    "psr-4": { "App\\": "app/", "Database\\Factories\\": "database/factories/", "Database\\Seeders\\": "database/seeders/" }
+  },
+  "autoload-dev": { "psr-4": { "Tests\\": "tests/" } },
+  "scripts": {
+    "post-autoload-dump": ["Illuminate\\Foundation\\ComposerScripts::postAutoloadDump", "@php artisan package:discover --ansi"],
+    "post-create-project-cmd": ["@php artisan key:generate --ansi"]
+  },
+  "extra": { "laravel": { "dont-discover": [] } },
+  "config": { "optimize-autoloader": true, "preferred-install": "dist", "sort-packages": true, "allow-plugins": { "php-http/discovery": true } },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

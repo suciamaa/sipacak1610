@@ -1,0 +1,23 @@
+/* Dropdown profil di navbar petugas -------------------------------------- */
+.profile-menu{position:relative}
+.profile-trigger{display:flex;align-items:center;gap:12px;padding:0;border:0;background:transparent;cursor:pointer;color:var(--ink)}
+.profile-trigger:focus-visible{outline:2px solid var(--blue);outline-offset:4px;border-radius:14px}
+.profile-text{display:flex;flex-direction:column;align-items:flex-end;text-align:right;min-width:0}
+.profile-name{max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:650;font-size:.88rem;line-height:1.15;color:var(--ink);margin-bottom:3px}
+.profile-role{font-size:.64rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1;color:var(--ink-3)}
+.profile-avatar{width:40px;height:40px;flex:none;border-radius:12px;display:grid;place-items:center;color:#fff;font-size:1.05rem;background:linear-gradient(135deg,#0b6fb8 0%,#3f8a1c 100%);box-shadow:0 6px 14px -6px rgba(11,111,184,.7);transition:transform .15s}
+.profile-trigger:hover .profile-avatar,.profile-trigger[aria-expanded="true"] .profile-avatar{transform:scale(1.06)}
+.profile-dropdown.dropdown-menu{min-width:13rem;margin-top:.6rem!important;padding:.4rem 0;border:1px solid var(--line);border-radius:var(--r-md);background:#fff;box-shadow:var(--shadow-2)}
+.profile-dropdown-head{padding:.55rem 1rem .65rem;border-bottom:1px solid var(--line-2)}
+.profile-dropdown-head small{display:block;font-size:.66rem;color:var(--ink-3);margin-bottom:1px}
+.profile-dropdown-head strong{display:block;font-size:.8rem;font-weight:700;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:15rem}
+.profile-logout{display:flex;align-items:center;gap:.7rem;width:100%;padding:.65rem 1rem;border:0;background:transparent;color:#c0392b;font-size:.88rem;font-weight:650;text-align:left}
+.profile-logout:hover,.profile-logout:focus-visible{background:#fdeceb;color:#a52f23;outline:0}
+@media (max-width:991.98px){
+  /* di dalam navbar yang terbuka: menu tampil rata kanan di bawah tombol */
+  .navbar-collapse .profile-menu{width:100%;display:flex;justify-content:flex-end;padding:8px 0 4px}
+  .profile-dropdown.dropdown-menu{position:absolute}
+}
+@media (max-width:575.98px){
+  .profile-text{display:none}
+}

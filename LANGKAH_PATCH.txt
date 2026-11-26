@@ -1,0 +1,3 @@
+Salin isi ZIP ini ke ROOT project SIPACAK Anda (folder yang berisi artisan, app, public), timpa file yang sama.
+Lalu:  php artisan view:clear   dan buka halaman dengan Ctrl+F5.
+Cek: buka http://127.0.0.1:8000/assets/css/sipacak-ui-revision.css  -> harus tampil isi CSS (bukan 404).

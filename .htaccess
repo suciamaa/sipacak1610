@@ -1,0 +1,11 @@
+Options -Indexes
+<FilesMatch "^(\.env|composer\.(json|lock)|artisan|README\.md|LARAVEL_MIGRATION_STATUS\.md)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # Semua request aplikasi diarahkan ke Laravel public/.
+    RewriteRule ^$ public/ [L]
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

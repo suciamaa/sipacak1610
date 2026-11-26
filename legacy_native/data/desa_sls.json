@@ -1,0 +1,2081 @@
+{
+  "MUARA KUANG": {
+    "KASAH": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2"
+    ],
+    "KELAMPADU": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "PERKEBUNAN"
+    ],
+    "KUANG ANYAR": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "MUARA KUANG": [
+      "RT 01 LINGKUNGAN 1",
+      "RT 02 LINGKUNGAN 1",
+      "RT 03 LINGKUNGAN 2",
+      "RT 04 LINGKUNGAN 2",
+      "RT 05 LINGKUNGAN 3",
+      "RT 06 LINGKUNGAN 3"
+    ],
+    "MUNGGU": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3",
+      "PERKEBUNAN"
+    ],
+    "NAGA SARI": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 3",
+      "RT 06 DUSUN 3",
+      "PERKEBUNAN"
+    ],
+    "RAMA KASIH": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "RANTAU SIALANG": [
+      "RT 001 DUSUN 01",
+      "RT 002 DUSUN 02",
+      "RT 003 DUSUN 03",
+      "RT 004 DUSUN 04",
+      "PERKEBUNAN"
+    ],
+    "SERI KEMBANG": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2"
+    ],
+    "SERI MENANTI": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "SUKA CINTA": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 3",
+      "RT 06 DUSUN 3",
+      "RT 07 DUSUN 4",
+      "RT 08 DUSUN 4",
+      "PERKEBUNAN"
+    ],
+    "SUKAJADI": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3",
+      "PERKEBUNAN"
+    ],
+    "TANABANG ILIR": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 3",
+      "RT 06 DUSUN 3",
+      "RT 07 DUSUN 4",
+      "RT 08 DUSUN 4",
+      "PERKEBUNAN"
+    ],
+    "TANABANG ULU": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 3",
+      "RT 06 DUSUN 3",
+      "RT 07 DUSUN 4",
+      "RT 08 DUSUN 4",
+      "RT 09 DUSUN 5",
+      "RT 10 DUSUN 5"
+    ]
+  },
+  "RAMBANG KUANG": {
+    "BERINGIN DALAM": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 3",
+      "RT 06 DUSUN 3",
+      "PERKEBUNAN KARET"
+    ],
+    "IBUL DALAM": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "KAYU ARA": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 06 DUSUN 3",
+      "RT 05 DUSUN 2"
+    ],
+    "KUANG DALAM BARAT": [
+      "RT 01 DUSUN 1",
+      "RT 01 DUSUN 2",
+      "RT 01 DUSUN 3",
+      "RT 01 DUSUN 4",
+      "RT 02 DUSUN 1",
+      "RT 02 DUSUN 2",
+      "RT 02 DUSUN 3",
+      "RT 02 DUSUN 4"
+    ],
+    "KUANG DALAM TIMUR": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 01 DUSUN 2",
+      "RT 02 DUSUN 2",
+      "RT 01 DUSUN 3",
+      "RT 02 DUSUN 3",
+      "RT 01 DUSUN 4",
+      "RT 02 DUSUN 4"
+    ],
+    "LUBUK TUNGGAL": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 1"
+    ],
+    "SUKANANTI": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1"
+    ],
+    "SUNUR": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 01 DUSUN 2",
+      "RT 02 DUSUN 2"
+    ],
+    "TAMBANG RAMBANG": [
+      "RT 01 DUSUN 1",
+      "RT 01 DUSUN 2",
+      "RT 01 DUSUN 3",
+      "RT 02 DUSUN 3",
+      "RT 01 DUSUN 4",
+      "RT 02 DUSUN 4",
+      "RT 01 DUSUN 5"
+    ],
+    "TANGAI": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 01 DUSUN 2",
+      "RT 02 DUSUN 2"
+    ],
+    "TANJUNG BULAN": [
+      "RT 01 DUSUN 1",
+      "RT 01 DUSUN 2",
+      "RT 01 DUSUN 3"
+    ],
+    "TANJUNG MIRING": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 01 DUSUN 2",
+      "RT 02 DUSUN 2",
+      "RT 01 DUSUN 3",
+      "RT 02 DUSUN 3",
+      "RT 01 DUSUN 4",
+      "RT 03 DUSUN 1"
+    ],
+    "ULAK SEGARA": [
+      "RT 01 DUSUN 01",
+      "RT 02 DUSUN 01",
+      "RT 03 DUSUN 01"
+    ]
+  },
+  "LUBUK KELIAT": {
+    "BETUNG I": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III"
+    ],
+    "BETUNG II": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3"
+    ],
+    "EMBACANG": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2"
+    ],
+    "KASIH RAJA": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II"
+    ],
+    "KETIAU": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 5",
+      "RT 006 DUSUN 6",
+      "RT 007 DUSUN 6",
+      "RT 008 DUSUN 3",
+      "RT 009 DUSUN 3",
+      "RT 010 DUSUN 5",
+      "RT 011 DUSUN 4",
+      "RT 012 DUSUN 4",
+      "RT 013 DUSUN 2"
+    ],
+    "LUBUK KELIAT": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II"
+    ],
+    "PAYALINGKUNG": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II"
+    ],
+    "TALANG TENGAH": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III",
+      "RT 007 DUSUN IV",
+      "RT 008 DUSUN IV",
+      "RT 009 DUSUN V",
+      "RT 010 DUSUN V"
+    ],
+    "TALANG TENGAH LAUT": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II"
+    ],
+    "ULAK KEMBAHANG": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III",
+      "RT 007 DUSUN IV",
+      "RT 008 DUSUN IV"
+    ]
+  },
+  "TANJUNG BATU": {
+    "BANGUN JAYA": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III"
+    ],
+    "BURAI": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN II",
+      "RT 003 DUSUN III",
+      "RT 004 DUSUN IV",
+      "RT 005 DUSUN V",
+      "RT 006 DUSUN VI"
+    ],
+    "LIMBANG JAYA I": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III"
+    ],
+    "LIMBANG JAYA II": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II"
+    ],
+    "PAJAR BULAN": [
+      "RT 001 DUSUN 01",
+      "RT 002 DUSUN 01",
+      "RT 003 DUSUN 02",
+      "RT 004 DUSUN 02"
+    ],
+    "SENTUL": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II"
+    ],
+    "SENURO BARAT": [
+      "RT 001 DUSUN 01",
+      "RT 002 DUSUN 01",
+      "RT 003 DUSUN 02",
+      "RT 004 DUSUN 02"
+    ],
+    "SENURO TIMUR": [
+      "RT 001 DUSUN 01",
+      "RT 002 DUSUN 01",
+      "RT 003 DUSUN 02",
+      "RT 004 DUSUN 02"
+    ],
+    "SERI BANDUNG": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 2",
+      "RT 03 DUSUN 3",
+      "RT 04 DUSUN 4",
+      "RT 05 DUSUN 2"
+    ],
+    "SERI TANJUNG": [
+      "RT 1 DUSUN I",
+      "RT 2 DUSUN I",
+      "RT 3 DUSUN II",
+      "RT 4 DUSUN II",
+      "RT 5 DUSUN III",
+      "RT 6 DUSUN III",
+      "RT 7 DUSUN IV",
+      "RT 8 DUSUN IV",
+      "RT 9 DUSUN V",
+      "RT 10 DUSUN V"
+    ],
+    "TANJUNG ATAP": [
+      "RT 001 DUSUN 01",
+      "RT 002 DUSUN 01",
+      "RT 003 DUSUN 02",
+      "RT 004 DUSUN 02",
+      "RT 005 DUSUN 03",
+      "RT 006 DUSUN 03",
+      "RAWA LEBAK"
+    ],
+    "TANJUNG ATAP BARAT": [
+      "RT 001 DUSUN 01",
+      "RT 002 DUSUN 01",
+      "RT 003 DUSUN 02",
+      "RT 004 DUSUN 02"
+    ],
+    "TANJUNG BARU PETAI": [
+      "RT 001 DUSUN 01",
+      "RT 002 DUSUN 01"
+    ],
+    "TANJUNG BATU": [
+      "RT 001 LINGKUNGAN I",
+      "RT 002 LINGKUNGAN I",
+      "RT 003 LINGKUNGAN II",
+      "RT 004 LINGKUNGAN II",
+      "RT 005 LINGKUNGAN III",
+      "RT 006 LINGKUNGAN III",
+      "RT 007 LINGKUNGAN IIII",
+      "RT 008 LINGKUNGAN IIII",
+      "RT 009 LINGKUNGAN V",
+      "RT 010 LINGKUNGAN V"
+    ],
+    "TANJUNG BATU SEBERANG": [
+      "RT 001 DUSUN 01",
+      "RT 002 DUSUN 01"
+    ],
+    "TANJUNG BATU TIMUR": [
+      "RT 001 LINGKUNGAN I",
+      "RT 005 LINGKUNGAN I",
+      "RT 002 LINGKUNGAN II",
+      "RT 004 LINGKUNGAN II",
+      "RT 003 LINGKUNGAN III",
+      "RT 008 LINGKUNGAN III",
+      "RT 006 LINGKUNGAN IIII",
+      "RT 007 LINGKUNGAN IIII",
+      "RT 009 LINGKUNGAN V",
+      "RT 010 LINGKUNGAN V"
+    ],
+    "TANJUNG LAUT": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II"
+    ],
+    "TANJUNG PINANG I": [
+      "RT 001 DUSUN 01",
+      "RT 002 DUSUN 01",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III",
+      "RT 007 DUSUN IV",
+      "RT 008 DUSUN IV"
+    ],
+    "TANJUNG PINANG II": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN 11"
+    ],
+    "TANJUNG TAMBAK": [
+      "RT 001 DUSUN 01",
+      "RT 002 DUSUN 01",
+      "RT 003 DUSUN 02",
+      "RT 004 DUSUN 02",
+      "PERKEBUNAN KARET",
+      "LEBAK TANJUNG"
+    ],
+    "TANJUNG TAMBAK BARU": [
+      "RT 001 DUSUN 0I",
+      "RT 002 DUSUN 0I",
+      "RT 003 DUSUN 02",
+      "RT 004 DUSUN 02"
+    ]
+  },
+  "PAYARAMAN": {
+    "LUBUK BANDUNG": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II"
+    ],
+    "PAYA BESAR": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II"
+    ],
+    "PAYARAMAN BARAT": [
+      "RT 01 LINGKUNGAN 01",
+      "RT 02 LINGKUNGAN 01",
+      "RT 04 LINGKUNGAN 02",
+      "RT 03 LINGKUNGAN 02",
+      "RT 05 LINGKUNGAN 03",
+      "RT 06 LINGKUNGAN 03",
+      "RT 07 LINGKUNGAN 04",
+      "RT 08 LINGKUNGAN 04"
+    ],
+    "PAYARAMAN TIMUR": [
+      "RT 01 LINGKUNGAN 1",
+      "RT 02 LINGKUNGAN 1",
+      "RT 03 LINGKUNGAN 2",
+      "RT 04 LINGKUNGAN 2",
+      "RT 05 LINGKUNGAN 3",
+      "RT 06 LINGKUNGAN 3",
+      "RT 07 LINGKUNGAN 4",
+      "RT 08 LINGKUNGAN 4"
+    ],
+    "RENGAS I": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II"
+    ],
+    "RENGAS II": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN II"
+    ],
+    "SERI KEMBANG I": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III",
+      "RT 07 DUSUN IV",
+      "RT 08 DUSUN IV"
+    ],
+    "SERI KEMBANG II": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "SERI KEMBANG III": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "TALANG SELEMAN": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II"
+    ],
+    "TANJUNG LALANG": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "TEBEDAK I": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 4 DUSUN II"
+    ],
+    "TEBEDAK II": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II"
+    ]
+  },
+  "RANTAU ALAI": {
+    "KELAMPAIAN": [
+      "RT 01 DUSUN 01",
+      "RT 02 DUSUN 01",
+      "RT 03 DUSUN 02",
+      "RT 04 DUSUN 02"
+    ],
+    "KERTABAYANG": [
+      "RT 01 DUSUN 01",
+      "RT 02 DUSUN 01",
+      "RT 03 DUSUN 02",
+      "RT 04 DUSUN 02",
+      "RT 05 DUSUN 03",
+      "RT 06 DUSUN 03"
+    ],
+    "LEBUNG BANDUNG": [
+      "RT 1 DUSUN 01",
+      "RT 2 DUSUN 01",
+      "RT 3 DUSUN 02",
+      "RT 4 DUSUN 02"
+    ],
+    "MEKAR SARI": [
+      "RT 01 DUSUN 01",
+      "RT 02 DUSUN 01",
+      "RT 03 DUSUN 02",
+      "RT 04 DUSUN 02",
+      "RT 06 DUSUN 03",
+      "RT 07 DUSUN 03",
+      "RT 08 DUSUN 04",
+      "RT 09 DUSUN 04",
+      "RT 10 DUSUN 05",
+      "RT 011 DUSUN 05",
+      "RT 012 DUSUN 06",
+      "RT 013 DUSUN 06",
+      "RT 05 DUSUN 02"
+    ],
+    "RANTAU ALAI": [
+      "RT 01 DUSUN 01",
+      "RT 02 DUSUN 01",
+      "RT 03 DUSUN 02",
+      "RT 04 DUSUN 02",
+      "RT 05 DUSUN 03",
+      "RT 06 DUSUN 03",
+      "RT 07 DUSUN 04",
+      "RT 08 DUSUN 04",
+      "RT 09 DUSUN 05",
+      "RT 010 DUSUN 05"
+    ],
+    "SANDING MARGA": [
+      "RT 1 DUSUN 01",
+      "RT 2 DUSUN 01",
+      "RT 3 DUSUN 02",
+      "RT 4 DUSUN 02",
+      "RT 5 DUSUN 03",
+      "RT 6 DUSUN 03",
+      "RT 7 DUSUN 04",
+      "RT 8 DUSUN 04"
+    ],
+    "SIRAH PULAU KILIP": [
+      "RT 01 DUSUN 01",
+      "RT 02 DUSUN 01",
+      "RT 03 DUSUN 02",
+      "RT 04 DUSUN 02",
+      "RT 05 DUSUN 03",
+      "RT 06 DUSUN 03",
+      "RT 07 DUSUN 04",
+      "RT 08 DUSUN 04"
+    ],
+    "SUKA MAJU": [
+      "RT 01 DUSUN 01",
+      "RT 02 DUSUN 01",
+      "RT 03 DUSUN 02",
+      "RT 04 DUSUN 02"
+    ],
+    "SUKA NANTI": [
+      "RT 01 DUSUN 01",
+      "RT 02 DUSUN 01",
+      "RT 03 DUSUN 02",
+      "RT 04 DUSUN 02"
+    ],
+    "SUKAMARGA": [
+      "RT 01 DUSUN 01",
+      "RT 02 DUSUN 01",
+      "RT 03 DUSUN 02",
+      "RT 04 DUSUN 02"
+    ],
+    "SUKANANTI BARU": [
+      "RT 01 DUSUN 01",
+      "RT 03 DUSUN 02",
+      "RT 02 DUSUN 01",
+      "RT 04 DUSUN 02"
+    ],
+    "TALANG SARI": [
+      "RT 01 DUSUN 01",
+      "RT 02 DUSUN 01",
+      "RT 03 DUSUN 02",
+      "RT 04 DUSUN 02"
+    ],
+    "TANJUNG MAS": [
+      "RT 01 DUSUN 01",
+      "RT 02 DUSUN 01",
+      "RT 03 DUSUN 02",
+      "RT 04 DUSUN 02",
+      "RT 05 DUSUN 03",
+      "RT 06 DUSUN 03",
+      "RT 07 DUSUN 04"
+    ]
+  },
+  "KANDIS": {
+    "KANDIS I": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 3",
+      "RT 06 DUSUN 3"
+    ],
+    "KANDIS II": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "KUMBANG ILIR": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1"
+    ],
+    "KUMBANG ULU": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "LUBUK RUKAM": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "LUBUK SEGONANG": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "MIJI": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "MUARA KUMBANG": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "PANDAN ARANG": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "SANTAPAN BARAT": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 3",
+      "RT 06 DUSUN 3"
+    ],
+    "SANTAPAN TIMUR": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "TANJUNG ALAI": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1"
+    ]
+  },
+  "TANJUNG RAJA": {
+    "BELANTI": [
+      "RT 001 DUSUN 001",
+      "RT 002 DUSUN 001",
+      "RT 003 DUSUN 002",
+      "RT 004 DUSUN 002",
+      "RT 005 DUSUN 003",
+      "RT 006 DUSUN 003",
+      "RT 007 DUSUN 004",
+      "RT 008 DUSUN 004"
+    ],
+    "KERINJING": [
+      "RT 001 DUSUN 01",
+      "RT 002 DUSUN 01",
+      "RT 003 DUSUN 02",
+      "RT 004 DUSUN 02"
+    ],
+    "SERIDALAM": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III"
+    ],
+    "SIRING ALAM": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2"
+    ],
+    "SKONJING": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 3",
+      "RT 06 DUSUN 3"
+    ],
+    "SUKA PINDAH": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III"
+    ],
+    "TALANG BALAI BARU I": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3",
+      "RT 007 DUSUN 4",
+      "RT 008 DUSUN 4",
+      "RT 009 DUSUN 5",
+      "RT 010 DUSUN 5",
+      "RT 011 DUSUN 6",
+      "RT 012 DUSUN 6"
+    ],
+    "TALANG BALAI BARU II": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III",
+      "RT 007 DUSUN IV",
+      "RT 008 DUSUN IV",
+      "SAWAH"
+    ],
+    "TALANG BALAI LAMA": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III",
+      "RT 007 DUSUN IV",
+      "RT 008 DUSUN IV"
+    ],
+    "TANJUNG AGAS": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II"
+    ],
+    "TANJUNG HARAPAN": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3"
+    ],
+    "TANJUNG RAJA": [
+      "RT 001 LINGKUNGAN I",
+      "RT 002 LINGKUNGAN I",
+      "RT 003 LINGKUNGAN II",
+      "RT 004 LINGKUNGAN IV",
+      "RT 005 LINGKUNGAN V",
+      "RT 006 LINGKUNGAN VI"
+    ],
+    "TANJUNG RAJA BARAT": [
+      "RT 01 LINGKUNGAN I",
+      "RT 02 LINGKUNGAN I",
+      "RT 03 LINGKUNGAN II",
+      "RT 04 LINGKUNGAN II",
+      "RT 05 LINGKUNGAN III",
+      "RT 06 LINGKUNGAN III",
+      "RT 07 LINGKUNGAN IV",
+      "RT 08 LINGKUNGAN IV"
+    ],
+    "TANJUNG RAJA SELATAN": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 3",
+      "RT 06 DUSUN 3",
+      "RT 07 DUSUN 4",
+      "RT 08 DUSUN 4",
+      "RT 09 DUSUN 5",
+      "RT 10 DUSUN 5"
+    ],
+    "TANJUNG RAJA TIMUR": [
+      "RT 001 LINGKUNGAN I",
+      "RT 002 LINGKUNGAN I",
+      "RT 003 LINGKUNGAN II",
+      "RT 004 LINGKUNGAN II",
+      "RT 005 LINGKUNGAN III",
+      "RT 006 LINGKUNGAN III"
+    ],
+    "TANJUNG RAJA UTARA": [
+      "RT 001 LINGKUNGAN I",
+      "RT 002 LINGKUNGAN I",
+      "RT 003 LINGKUNGAN II",
+      "RT 004 LINGKUNGAN II",
+      "RT 005 LINGKUNGAN III",
+      "RT 006 LINGKUNGAN III",
+      "RT 007 LINGKUNGAN IV",
+      "RT 008 LINGKUNGAN IV",
+      "RT 009 LINGKUNGAN V",
+      "RT 010 LINGKUNGAN V",
+      "RT 011 LINGKUNGAN VI",
+      "RT 012 LINGKUNGAN VI"
+    ],
+    "TANJUNG TEMIANG": [
+      "RT 001 DUSUN 01",
+      "RT 002 DUSUN 01",
+      "RT 003 DUSUN 02",
+      "RT 004 DUSUN 02",
+      "RT 005 DUSUN 03",
+      "RT 006 DUSUN 03",
+      "RT 007 DUSUN 04",
+      "RT 008 DUSUN 04"
+    ],
+    "ULAK KERBAU BARU": [
+      "RT 001 DUSUN 01",
+      "RT 002 DUSUN 01",
+      "RT 003 DUSUN 02",
+      "RT 004 DUSUN 02",
+      "RT 005 DUSUN 03",
+      "RT 006 DUSUN 03"
+    ],
+    "ULAK KERBAU LAMA": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 3",
+      "RT 06 DUSUN 3",
+      "RT 07 DUSUN 4",
+      "RT 08 DUSUN 4",
+      "RT 09 DUSUN 5",
+      "RT 10 DUSUN 5",
+      "RT 11 DUSUN 6",
+      "RT 12 DUSUN 6"
+    ]
+  },
+  "RANTAU PANJANG": {
+    "ARISAN DERAS": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 3",
+      "RT 06 DUSUN 3",
+      "SAWAH"
+    ],
+    "JAGALANA": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3",
+      "RT 007 DUSUN 4",
+      "RT 008 DUSUN 4"
+    ],
+    "JAGARAJA": [
+      "RT 001 DUSUN 001",
+      "RT 002 DUSUN 001",
+      "RT 003 DUSUN 002",
+      "RT 004 DUSUN 002",
+      "RT 005 DUSUN 003",
+      "RT 006 DUSUN 003"
+    ],
+    "KETAPANG I": [
+      "RT 001 DUSUN 001",
+      "RT 002 DUSUN 001",
+      "RT 003 DUSUN 002",
+      "RT 004 DUSUN 002"
+    ],
+    "KETAPANG II": [
+      "RT 001 DUSUN 001",
+      "RT 002 DUSUN 001",
+      "RT 003 DUSUN 002",
+      "RT 004 DUSUN 002"
+    ],
+    "KOTA DARO I": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 1",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 2",
+      "RT 06 DUSUN 2",
+      "RT 07 DUSUN 2",
+      "RT 08 DUSUN 2",
+      "RT 09 DUSUN 2",
+      "RT 10 DUSUN 3",
+      "RT 11 DUSUN 3"
+    ],
+    "KOTA DARO II": [
+      "RT 001 DUSUN 001",
+      "RT 002 DUSUN 001",
+      "RT 003 DUSUN 001",
+      "RT 004 DUSUN 002",
+      "RT 005 DUSUN 002",
+      "RT 006 DUSUN 002",
+      "RT 007 DUSUN 003",
+      "RT 008 DUSUN 003",
+      "RT 009 DUSUN 003",
+      "RT 010 DUSUN 004",
+      "RT 011 DUSUN 004",
+      "RT 012 DUSUN 004"
+    ],
+    "RANTAU PANJANG ILIR": [
+      "RT 001 DUSUN 001",
+      "RT 002 DUSUN 001",
+      "RT 003 DUSUN 002",
+      "RT 004 DUSUN 002",
+      "RT 005 DUSUN 003",
+      "RT 006 DUSUN 003",
+      "RT 007 DUSUN 004",
+      "RT 008 DUSUN 004"
+    ],
+    "RANTAU PANJANG ULU": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3",
+      "RT 007 DUSUN 4",
+      "RT 008 DUSUN 4"
+    ],
+    "SEJANGKO I": [
+      "RT 001 DUSUN 001",
+      "RT 002 DUSUN 001",
+      "RT 003 DUSUN 002",
+      "RT 004 DUSUN 002",
+      "RT 005 DUSUN 003",
+      "RT 006 DUSUN 003",
+      "RT 007 DUSUN 004",
+      "RT 008 DUSUN 004",
+      "RT 009 DUSUN 005",
+      "RT 010 DUSUN 005"
+    ],
+    "SEJANGKO II": [
+      "RT 001 DUSUN 001",
+      "RT 002 DUSUN 001",
+      "RT 003 DUSUN 002",
+      "RT 004 DUSUN 002",
+      "RT 005 DUSUN 003",
+      "RT 006 DUSUN 003",
+      "RT 007 DUSUN 004",
+      "RT 008 DUSUN 004"
+    ],
+    "SUNGAI ROTAN": [
+      "RT 001 DUSUN 001",
+      "RT 002 DUSUN 001",
+      "RT 003 DUSUN 002",
+      "RT 004 DUSUN 002",
+      "RT 005 DUSUN 003",
+      "RT 006 DUSUN 003"
+    ]
+  },
+  "SUNGAI PINANG": {
+    "PENYANDINGAN": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 3",
+      "RT 06 DUSUN 3"
+    ],
+    "PINANG JAYA": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II"
+    ],
+    "PINANG MAS": [
+      "RT 01 DUSUN 01",
+      "RT 02 DUSUN 01",
+      "RT 03 DUSUN 02",
+      "RT 04 DUSUN 02"
+    ],
+    "SERIJABO": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III",
+      "RT 07 DUSUN IV",
+      "RT 08 DUSUN IV",
+      "RT 09 DUSUN 2",
+      "RT 10 DUSUN 3"
+    ],
+    "SERIJABO BARU": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "SUNGAI PINANG": [
+      "RT 01 LINGKUNGAN I",
+      "RT 02 LINGKUNGAN I",
+      "RT 03 LINGKUNGAN II",
+      "RT 04 LINGKUNGAN II",
+      "RT 05 LINGKUNGAN III",
+      "RT 06 LINGKUNGAN III",
+      "RT 07 LINGKUNGAN IV",
+      "RT 08 LINGKUNGAN IV"
+    ],
+    "SUNGAI PINANG I": [
+      "RT 1 DUSUN 1",
+      "RT 2 DUSUN 1",
+      "RT 3 DUSUN 2",
+      "RT 4 DUSUN 2"
+    ],
+    "SUNGAI PINANG II": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III",
+      "RT 07 DUSUN IV",
+      "RT 08 DUSUN IV",
+      "RT 09 DUSUN V",
+      "RT 10 DUSUN V"
+    ],
+    "SUNGAI PINANG III": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III"
+    ],
+    "SUNGAI PINANG LAGATI": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "SUNGAI PINANG NIBUNG": [
+      "RT 1 DUSUN I",
+      "RT 2 DUSUN I",
+      "RT 3 DUSUN II",
+      "RT 4 DUSUN II"
+    ],
+    "TALANG DUKUN": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III"
+    ],
+    "TANJUNG SERIAN": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III",
+      "SAWAH"
+    ]
+  },
+  "PEMULUTAN": {
+    "AURSTANDING": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3",
+      "RT 007 DUSUN 4",
+      "RT 008 DUSUN 4",
+      "RT 009 DUSUN 5",
+      "RT 010 DUSUN 5"
+    ],
+    "BABATAN SAUDAGAR": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN II",
+      "RT 06 DUSUN III",
+      "RT 07 DUSUN III",
+      "RT 08 DUSUN III"
+    ],
+    "HARAPAN": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III",
+      "RT 07 DUSUN IV",
+      "RT 08 DUSUN IV"
+    ],
+    "IBUL BESAR I": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN I",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN II",
+      "RT 06 DUSUN III",
+      "RT 07 DUSUN III",
+      "RT 08 DUSUN III",
+      "RT 09 DUSUN III",
+      "RT 10 DUSUN II",
+      "RT 011 DUSUN III"
+    ],
+    "IBUL BESAR II": [
+      "RT 001 DUSUN 02",
+      "RT 002 DUSUN 01",
+      "RT 003 DUSUN 03",
+      "RT 004 DUSUN 04",
+      "RT 005 DUSUN 05",
+      "RT 006 DUSUN 04",
+      "RT 007 DUSUN 06",
+      "RT 008 DUSUN 06",
+      "RT 009 DUSUN 03",
+      "RT 010 DUSUN 05",
+      "RT 011 DUSUN 01",
+      "RT 012 DUSUN 02"
+    ],
+    "IBUL BESAR III": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN I",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN II",
+      "RT 06 DUSUN II",
+      "RT 07 DUSUN III",
+      "RT 08 DUSUN III",
+      "RT 09 DUDUN III",
+      "RT 10 DUSUN IV",
+      "RT 11 DUSUN IV",
+      "RT 12 DUSUN IV"
+    ],
+    "KEDUKAN BUJANG": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN III",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III",
+      "RT 007 DUSUN II",
+      "RT 008 DUSUN II"
+    ],
+    "LEBUNG JANGKAR": [
+      "RT 01 DUSUN 1",
+      "RT 2 DUSUN 1",
+      "RT 3 DUSUN II",
+      "RT 4 DUSUN II",
+      "RT 5 DUSUN III",
+      "RT 6 DUSUN III"
+    ],
+    "MEKAR JAYA": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III"
+    ],
+    "MUARA BARU": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN I",
+      "RT 005 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 006 DUSUN II"
+    ],
+    "MUARA DUA": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3",
+      "RT 007 DUSUN 4",
+      "RT 008 DUSUN 4",
+      "RT 009 DUSUN 5",
+      "RT 010 DUSUN 5"
+    ],
+    "PALU": [
+      "RT 1 DUSUN 1",
+      "RT 2 DUSUN 1",
+      "RT 3 DUSUN 2",
+      "RT 4 DUSUN 2",
+      "RT 5 DUSUN 3",
+      "RT 6 DUSUN 3",
+      "RT 7 DUSUN 4",
+      "RT 8 DUSUN 4",
+      "RT 9 DUSUN 5",
+      "RT 10 DUSUN 5",
+      "RT 11 DUSUN 6",
+      "RT 12 DUSUN 6"
+    ],
+    "PEGAYUT": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN II",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN IV",
+      "RT 006 DUSUN III",
+      "RT 007 DUSUN I",
+      "RT 008 DUSUN III",
+      "RT 005 DUSUN IV"
+    ],
+    "PELABUHAN DALAM": [
+      "RT 001 DUSUN 001",
+      "RT 002 DUSUN 001",
+      "RT 003 DUSUN 002",
+      "RT 004 DUSUN 002",
+      "RT 005 DUSUN 003",
+      "RT 006 DUSUN 003"
+    ],
+    "PEMULUTAN ILIR": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III",
+      "RT 007 DUSUN IV",
+      "RT 008 DUSUN IV",
+      "RT 009 DUSUN V",
+      "RT 010 DUSUN V"
+    ],
+    "PEMULUTAN ULU": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III",
+      "RT 007 DUSUN III",
+      "RT 008 DUSUN III"
+    ],
+    "PIPA PUTIH": [
+      "RT 1 DUSUN 1",
+      "RT 2 DUSUN 1",
+      "RT 3 DUSUN 2",
+      "RT 4 DUSUN 2",
+      "RT 5 DUSUN 3",
+      "RT 6 DUSUN 3",
+      "RT 7 DUSUN 4",
+      "RT 8 DUSUN 4",
+      "RT 9 DUSUN 5",
+      "RT 10 DUSUN 5"
+    ],
+    "RAWA JAYA": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III"
+    ],
+    "SEMBADAK": [
+      "RT 1 DUSUN 1",
+      "RT 2 DUSUN 1",
+      "RT 3 DUSUN 2",
+      "RT 4 DUSUN 2"
+    ],
+    "SIMPANG PELABUHAN DALAM": [
+      "RT 1 DUSUN 1",
+      "RT 2 DUSUN 1",
+      "RT 3 DUSUN 2",
+      "RT 4 DUSUN 2",
+      "RT 5 DUSUN 2",
+      "RT 6 DUSUN 3",
+      "RT 7 DUSUN 3"
+    ],
+    "SUKA RAMI": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3"
+    ],
+    "SUNGAI BUAYA": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3"
+    ],
+    "SUNGAI RASAU": [
+      "RT 1 DUSUN 1",
+      "RT 2 DUSUN 1",
+      "RT 3 DUSUN 2",
+      "RT 4 DUSUN 2",
+      "RT 5 DUSUN 3",
+      "RT 6 DUSUN 3"
+    ],
+    "TANJUNG PASIR": [
+      "RT 1 DUSUN 1",
+      "RT 02 DUSUN II",
+      "RT 03 DUSUN III",
+      "RT 04 DUSUN III"
+    ],
+    "TELUK KECAPI": [
+      "RT 1 DUSUN 1",
+      "RT 2 DUSUN 1",
+      "RT 3 DUSUN 2",
+      "RT 4 DUSUN 2",
+      "RT 5 DUSUN 3",
+      "RT 6 DUSUN 3"
+    ]
+  },
+  "PEMULUTAN SELATAN": {
+    "CAHAYA MARGA": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II"
+    ],
+    "HARIMAU TANDANG": [
+      "RT 001 DUSUN 001",
+      "RT 002 DUSUN 001",
+      "RT 003 DUSUN 002",
+      "RT 004 DUSUN 002",
+      "RT 006 DUSUN 003",
+      "RT 005 DUSUN 003"
+    ],
+    "KAPUK": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN III",
+      "RT 04 DUSUN III",
+      "RT 05 DUSUN IV",
+      "RT 06 DUSUN II",
+      "RT 07 DUSUN IV",
+      "RT 08 DUSUN II"
+    ],
+    "LEBAK PERING": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III"
+    ],
+    "MAJU JAYA": [
+      "RT 001 DUSUN 001",
+      "RT 002 DUSUN 001",
+      "RT 003 DUSUN 002",
+      "RT 004 DUSUN 002",
+      "RT 005 DUSUN 003",
+      "RT 006 DUSUN 003"
+    ],
+    "MAYAPATI": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN II",
+      "RT 006 DUSUN III"
+    ],
+    "NAIKAN TEMBAKANG": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 001 DUSUN II",
+      "RT 002 DUSUN II"
+    ],
+    "PEMATANG BANGSAL": [
+      "RT 001 DUSUN 001",
+      "RT 003 DUSUN 001",
+      "RT 004 DUSUN 002",
+      "RT 006 DUSUN 002",
+      "RT 005 DUSUN 02",
+      "RT 002 DUSUN 001"
+    ],
+    "PEMATANG BUNGUR": [
+      "RT 001 DUSUN 001",
+      "RT 002 DUSUN 001",
+      "RT 003 DUSUN 002",
+      "RT 004 DUSUN 002",
+      "RT 005 DUSUN 003",
+      "RT 006 DUSUN 003",
+      "RT 008 DUSUN 004",
+      "RT 007 DUSUN 004"
+    ],
+    "SEGAYAM": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III",
+      "RT 007 DUSUN IV",
+      "RT 008 DUSUN IV"
+    ],
+    "SUNGAI KELI": [
+      "RT 001 DUSUN 001",
+      "RT 002 DUSUN 001",
+      "RT 003 DUSUN 002",
+      "RT 004 DUSUN 002",
+      "RT 005 DUSUN 003",
+      "RT 006 DUSUN 003"
+    ],
+    "SUNGAI LEBUNG": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III",
+      "RT 007 DUSUN IV",
+      "RT 008 DUSUN IV",
+      "RT 009 DUSUN V",
+      "RT 010 DUSUN V",
+      "RT 011 DUSUN I"
+    ],
+    "SUNGAI LEBUNG ULU": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III"
+    ],
+    "SUNGAI ONDOK": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2"
+    ],
+    "ULAK AURSTANDING": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III"
+    ]
+  },
+  "PEMULUTAN BARAT": {
+    "ARISAN JAYA": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN I",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN II",
+      "RT 06 DUSUN III"
+    ],
+    "KAMAL": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "PULAU NEGARA": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 3",
+      "RT 06 DUSUN 3"
+    ],
+    "SARANGLANG": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "SERIBANDING": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 3",
+      "RT 06 DUSUN 3"
+    ],
+    "SUKA MERINDU": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "TALANG PANGERAN ILIR": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III",
+      "RT 007 DUSUN III"
+    ],
+    "TALANG PANGERAN ULU": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III",
+      "RT 07 DUSUN IV",
+      "RT 08 DUSUN IV"
+    ],
+    "ULAK KEMBAHANG I": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 01 DUSUN 2",
+      "RT 02 DUSUN 2",
+      "RT 01 DUSUN 3",
+      "RT 02 DUSUN 3"
+    ],
+    "ULAK KEMBAHANG II": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 01 DUSUN 2",
+      "RT 02 DUSUN 2",
+      "RT 01 DUSUN 3",
+      "RT 02 DUSUN 3"
+    ],
+    "ULAK PETANGISAN": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ]
+  },
+  "INDRALAYA": {
+    "INDRALAYA INDAH": [
+      "RT 001 LINGKUNGAN I",
+      "RT 002 LINGKUNGAN I",
+      "RT 003 LINGKUNGAN II",
+      "RT 004 LINGKUNGAN II"
+    ],
+    "INDRALAYA MULYA": [
+      "RT 001 LINGKUNGAN I",
+      "RT 002 LINGKUNGAN I",
+      "RT 003 LINGKUNGAN II",
+      "RT 004 LINGKUNGAN II",
+      "RT 005 LINGKUNGAN III",
+      "RT 006 LINGKUNGAN III",
+      "RT 007 LINGKUNGAN IV",
+      "RT 008 LINGKUNGAN IV",
+      "RT 009 LINGKUNGAN V",
+      "RT 010 LINGKUNGAN V"
+    ],
+    "INDRALAYA RAYA": [
+      "RT 001 LINGKUNGAN LK 1",
+      "RT 002 LINGKUNGAN LK 1",
+      "RT 003 LINGKUNGAN LK 2",
+      "RT 004 LINGKUNGAN LK 2",
+      "RT 005 LINGKUNGAN LK 3",
+      "RT 006 LINGKUNGAN LK 3",
+      "RT 007 LINGKUNGAN LK 4",
+      "RT 008 LINGKUNGAN LK 4"
+    ],
+    "LUBUK SAKTI": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN II",
+      "RT 003 DUSUN III",
+      "RT 004 DUSUN IIII",
+      "RT 005 DUSUN IIIII",
+      "RT 006 DUSUN IIIIII"
+    ],
+    "MUARA PENIMBUNG ILIR": [
+      "RT 001 DUSUN 002",
+      "RT 002 DUSUN 002",
+      "RT 003 DUSUN 001",
+      "RT 004 DUSUN 001",
+      "SAWAH PERAIRAN"
+    ],
+    "MUARA PENIMBUNG ULU": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3",
+      "RT 007 DUSUN 4",
+      "RT 008 DUSUN 4",
+      "RT 009 DUSUN 5",
+      "RT 010 DUSUN 5",
+      "RT 011 DUSUN 6",
+      "RT 012 DUSUN 6"
+    ],
+    "PENYANDINGAN": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "KAWASAN PERSAWAHAN"
+    ],
+    "SAKATIGA": [
+      "RT 001 DUSUN 001",
+      "RT 002 DUSUN 001",
+      "RT 003 DUSUN 002",
+      "RT 004 DUSUN 002",
+      "RT 005 DUSUN 003",
+      "RT 006 DUSUN 003",
+      "RT 007 DUSUN 004",
+      "RT 008 DUSUN 004",
+      "RT 009 DUSUN 005",
+      "RT 010 DUSUN 005",
+      "RT 011 DUSUN 006",
+      "RT 012 DUSUN 006",
+      "RT 013 DUSUN 007",
+      "RT 014 DUSUN 008",
+      "RT 015 DUSUN 008",
+      "RT 016 DUSUN 008"
+    ],
+    "SAKATIGA SEBERANG": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3",
+      "KAWASAN RAWA"
+    ],
+    "SEJARO SAKTI": [
+      "RT 001 DUSUN 1",
+      "RT 006 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 005 DUSUN 2",
+      "RT 002 DUSUN 1",
+      "RT 004 DUSUN 2",
+      "KAWASAN SEMAK BELUKAR"
+    ],
+    "SUDI MAMPIR": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3",
+      "RT 007 DUSUN 4",
+      "RT 008 DUSUN 4",
+      "SAWAH"
+    ],
+    "TALANG AUR": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3",
+      "RT 007 DUSUN 4",
+      "RT 008 DUSUN 4",
+      "RT 009 DUSUN 5",
+      "RT 010 DUSUN 5",
+      "RT 011 DUSUN 6",
+      "RT 012 DUSUN 6",
+      "RAWA-RAWA"
+    ],
+    "TANJUNG AGUNG": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II"
+    ],
+    "TANJUNG GELAM": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III"
+    ],
+    "TANJUNG SEJARO": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3",
+      "RT 007 DUSUN 4",
+      "RT 008 DUSUN 4"
+    ],
+    "TANJUNG SETEKO": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3",
+      "RT 007 DUSUN 4",
+      "RT 008 DUSUN 4",
+      "RT 009 DUSUN 5",
+      "RT 010 DUSUN 5",
+      "RT 012 DUSUN 6",
+      "RT 016 DUSUN 7",
+      "RT 017 DUSUN 7",
+      "RT 015 DUSUN 6",
+      "RT 014 DUSUN 6",
+      "RT 013 DUSUN 6",
+      "RT 011 DUSUN 6"
+    ],
+    "TUNAS AUR": [
+      "RT 001 DUSUN 001",
+      "RT 003 DUSUN 002",
+      "RT 002 DUSUN 001",
+      "RT 004 DUSUN 002"
+    ],
+    "ULAK BANDING": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1"
+    ],
+    "ULAK BEDIL": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3"
+    ],
+    "ULAK SEGELUNG": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3"
+    ]
+  },
+  "INDRALAYA UTARA": {
+    "BAKUNG": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III"
+    ],
+    "LOROK": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III"
+    ],
+    "PALEM RAYA": [
+      "RT 02 DUSUN I",
+      "RT 004 DUSUN I",
+      "RT 05 DUSUN II",
+      "RT 006 DUSUN II",
+      "RT 010 DUSUN III",
+      "RT 009 DUSUN III",
+      "RT 012 DUSUN III",
+      "RT 01 DUSUN I",
+      "RT 008 DUSUN I",
+      "RT 003 DUSUN I",
+      "RT 011 DUSUN III",
+      "RT 007 DUSUN II"
+    ],
+    "PARIT": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 3",
+      "RT 06 DUSUN 3"
+    ],
+    "PAYAKABUNG": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN I",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN II",
+      "RT 006 DUSUN II",
+      "RT 007 DUSUN III",
+      "RT 008 DUSUN III",
+      "RT 009 DUSUN III"
+    ],
+    "PERMATA BARU": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III",
+      "RT 07 DUSUN IV",
+      "RT 08 DUSUN IV"
+    ],
+    "PULAU KABAL": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III",
+      "PERKEBUNAN SAWIT"
+    ],
+    "PULAU SEMAMBU": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III",
+      "RT 07 DUSUN IV",
+      "RT 08 DUSUN IV",
+      "RT 09 DUSUN V",
+      "RT 10 DUSUN V",
+      "RT 11 DUSUN VI",
+      "RT 12 DUSUN VI"
+    ],
+    "PURNAJAYA": [
+      "RT 001 DUSUN I",
+      "RT 002 DUSUN I",
+      "RT 003 DUSUN II",
+      "RT 004 DUSUN II",
+      "RT 005 DUSUN III",
+      "RT 006 DUSUN III"
+    ],
+    "SUAK BATOK": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN IV",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III"
+    ],
+    "SUKA MULIA": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 2",
+      "RT 006 DUSUN 3",
+      "RT 007 DUSUN 3",
+      "RT 008 DUSUN 4",
+      "RT 009 DUSUN 4"
+    ],
+    "SUNGAI RAMBUTAN": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2",
+      "RT 05 DUSUN 3",
+      "RT 06 DUSUN 3",
+      "RT 07 DUSUN 3",
+      "RT 08 DUSUN 3",
+      "RT 09 DUSUN 4",
+      "RT 10 DUSUN 4",
+      "RT 11 DUSUN 4",
+      "RT 12 DUSUN 4",
+      "WILAYAH PERKEBUNAN SAWIT DAN KARET",
+      "RT 13 DUSUN 5 5",
+      "RT 14 DUSUN 5 5"
+    ],
+    "TANJUNG BARU": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 3",
+      "RT 04 DUSUN 3",
+      "RT 05 DUSUN 2",
+      "RT 06 DUSUN 2",
+      "RT 07 DUSUN 02"
+    ],
+    "TANJUNG PERING": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III",
+      "RT 07 DUSUN IV",
+      "RT 08 DUSUN IV"
+    ],
+    "TANJUNG PULE": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III",
+      "RT 07 DUSUN IV",
+      "RT 08 DUSUN IV",
+      "RT 09 DUSUN I",
+      "RT 10 DUSUN I",
+      "PERKEBUNAN SAWIT DAN KARET",
+      "PERKEBUNAN SAWIT DAB KARET"
+    ],
+    "TIMBANGAN": [
+      "RT 001 LINGKUNGAN I",
+      "RT 002 LINGKUNGAN I",
+      "RT 003 LINGKUNGAN II",
+      "RT 004 LINGKUNGAN II",
+      "RT 005 LINGKUNGAN III",
+      "RT 006 LINGKUNGAN III",
+      "RT 007 LINGKUNGAN IV",
+      "RT 008 LINGKUNGAN IV",
+      "RT 009 LINGKUNGAN V",
+      "RT 010 LINGKUNGAN V",
+      "RT 011 LINGKUNGAN II",
+      "RT 012 LINGKUNGAN III",
+      "RT 013 LINGKUNGAN IV"
+    ]
+  },
+  "INDRALAYA SELATAN": {
+    "ARISAN GADING": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3"
+    ],
+    "BETI": [
+      "RT 01 DUSUN 1",
+      "RT 02 DUSUN 1",
+      "RT 03 DUSUN 2",
+      "RT 04 DUSUN 2"
+    ],
+    "MANDI ANGIN": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 01 DUSUN II",
+      "RT 02 DUSUN II"
+    ],
+    "MERANJAT I": [
+      "DUSUN I",
+      "DUSUN II",
+      "DUSUN III",
+      "DUSUN IV",
+      "DUSUN V",
+      "DUSUN VI",
+      "DUSUN VII",
+      "DUSUN VIII"
+    ],
+    "MERANJAT II": [
+      "DUSUN I",
+      "DUSUN II",
+      "DUSUN III",
+      "DUSUN IV",
+      "DUSUN V",
+      "DUSUN VI"
+    ],
+    "MERANJAT III": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 001 DUSUN 2",
+      "RT 002 DUSUN 2",
+      "RT 001 DUSUN 3",
+      "RT 002 DUSUN 3"
+    ],
+    "MERANJAT ILIR": [
+      "RT 001 DUSUN I",
+      "RT 001 DUSUN 2",
+      "RT 002 DUSUN I",
+      "RT 002 DUSUN 2"
+    ],
+    "SUKARAJA BARU": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2",
+      "RT 005 DUSUN 3",
+      "RT 006 DUSUN 3",
+      "RT 007 DUSUN 4",
+      "RT 008 DUSUN 4"
+    ],
+    "SUKARAJA LAMA": [
+      "RT 01 DUSUN I",
+      "RT 02 DUSUN I",
+      "RT 03 DUSUN II",
+      "RT 04 DUSUN II",
+      "RT 05 DUSUN III",
+      "RT 06 DUSUN III"
+    ],
+    "TANJUNG DAYANG SELATAN": [
+      "RT 001 DUSUN 001",
+      "RT 002 DUSUN 001",
+      "RT 003 DUSUN 002",
+      "RT 004 DUSUN 002",
+      "RT 005 DUSUN 003",
+      "RT 006 DUSUN 003",
+      "RT 007 DUSUN 004",
+      "RT 008 DUSUN 004",
+      "RT 009 DUSUN 005",
+      "RT 010 DUSUN 005"
+    ],
+    "TANJUNG DAYANG UTARA": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 003 DUSUN 2",
+      "RT 004 DUSUN 2"
+    ],
+    "TANJUNG LUBUK": [
+      "RT 001 DUSUN 1",
+      "RT 002 DUSUN 1",
+      "RT 001 DUSUN 2",
+      "RT 002 DUSUN 2",
+      "RT 001 DUSUN 3",
+      "RT 002 DUSUN 3",
+      "RT 001 DUSUN 4",
+      "RT 002 DUSUN 4"
+    ],
+    "TEBING GERINTING SELATAN": [
+      "DUSUN I",
+      "DUSUN II",
+      "DUSUN III",
+      "DUSUN IV"
+    ],
+    "TEBING GERINTING UTARA": [
+      "DUSUN I",
+      "DUSUN II",
+      "DUSUN III",
+      "DUSUN IV"
+    ]
+  }
+}
