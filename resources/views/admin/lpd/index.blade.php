@@ -7,7 +7,6 @@
             <h2>Kelola LPD</h2>
             <p>Setiap progress yang tersimpan pada kegiatan <strong>{{ $kegiatan->nama_kegiatan }}</strong> otomatis dibuat menjadi dokumen LPD dan tersedia untuk diunduh.</p>
         </div>
-        <a class="btn btn-outline-primary admin-lpd-manage" href="{{ route('admin.lpd.fields', $kegiatan) }}"><i class="bi bi-sliders"></i> Kelola Uraian & Permasalahan</a>
     </div>
 
     <div class="card admin-lpd-card">

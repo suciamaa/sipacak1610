@@ -125,3 +125,30 @@
 @media (min-width: 768px) {
     .progress-card-list { display:none !important; }
 }
+
+
+/* Dropdown riwayat progress per tanggal pada HP */
+.progress-day-dropdown{border:1px solid #dfe9f1;border-radius:14px;background:#fff;overflow:hidden}
+.progress-day-dropdown[open]{border-color:#c8d9e8;box-shadow:0 5px 16px rgba(28,67,100,.06)}
+.progress-day-summary{display:flex;align-items:center;gap:10px;min-height:58px;padding:10px 13px;list-style:none;cursor:pointer;background:#f7fafc}
+.progress-day-summary::-webkit-details-marker{display:none}
+.progress-day-summary-date{display:flex;flex:1;min-width:0;align-items:baseline;flex-wrap:wrap;gap:0 8px}
+.progress-day-summary-date strong{font-size:.94rem;color:#17466f}
+.progress-day-summary-date span{font-size:.82rem;color:#6b8196;font-variant-numeric:tabular-nums}
+.progress-day-summary-meta{font-size:.75rem;color:#6b8196;white-space:nowrap}
+.progress-day-chevron{color:#55718a;transition:transform .18s ease}
+.progress-day-dropdown[open] .progress-day-chevron{transform:rotate(180deg)}
+.progress-day-dropdown-content{padding:4px 0 0}
+.progress-day-dropdown-content .progress-day-detail{grid-template-columns:100px minmax(0,1fr);gap:4px 10px;padding:11px 13px}
+.progress-day-place{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.progress-day-village{font-weight:650;color:#46596b}
+.progress-day-place .progress-sls-chip{margin:0}
+.progress-day-dropdown-actions{display:flex;gap:9px;padding:12px 13px 13px;border-top:1px solid #edf1f5;margin-top:4px}
+.progress-day-dropdown-actions form,.progress-day-dropdown-actions a,.progress-day-dropdown-actions button{flex:1}
+.progress-day-dropdown-actions .btn{width:100%;min-height:42px;display:inline-flex;align-items:center;justify-content:center}
+@media(max-width:575.98px){
+ .pt-filters{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}
+ .pt-search-wrap{grid-column:1/-1;min-width:0}
+ .pt-filter-control{min-width:0}
+ .pt-filter-submit,.pt-filter-reset{width:100%}
+}

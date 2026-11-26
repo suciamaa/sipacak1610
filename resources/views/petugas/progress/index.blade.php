@@ -93,33 +93,42 @@
             </tbody>
         </table>
     </div>
-    {{-- Tampilan kartu untuk layar kecil (HP) --}}
+    {{-- Tampilan dropdown per tanggal untuk layar HP --}}
     <div class="progress-card-list d-md-none">
         @forelse($progress as $p)
-            <article class="progress-day-card">
-                <header class="progress-day-head">
-                    <div class="progress-day-date">
+            <details class="progress-day-dropdown">
+                <summary class="progress-day-summary">
+                    <span class="progress-day-summary-date">
                         <strong>{{ $p->tanggal->locale('id')->translatedFormat('l') }}</strong>
                         <span>{{ $p->tanggal->format('d/m/Y') }}</span>
-                    </div>
-                    <div class="progress-row-actions">
-                        <a class="btn btn-sm btn-outline-primary" href="{{ route('petugas.progress.edit',[$penugasan,$p]) }}" aria-label="Edit progress {{ $p->tanggal->format('d/m/Y') }}"><i class="bi bi-pencil-square me-1"></i><span class="btn-label">Edit</span></a>
+                    </span>
+                    <span class="progress-day-summary-meta">{{ $p->details->count() }} lokasi</span>
+                    <i class="bi bi-chevron-down progress-day-chevron" aria-hidden="true"></i>
+                </summary>
+                <div class="progress-day-dropdown-content">
+                    @forelse($p->details as $d)
+                        <div class="progress-day-detail">
+                            <div class="progress-day-time">{{ substr($d->jam_mulai,0,5) }}–{{ substr($d->jam_selesai,0,5) }}</div>
+                            <div class="progress-day-place">
+                                <span class="progress-day-village">{{ $d->desa }}</span>
+                                <b class="progress-sls-chip">{{ $d->sls }}</b>
+                            </div>
+                        </div>
+                    @empty
+                        <div class="progress-day-detail is-empty">Belum ada detail lokasi.</div>
+                    @endforelse
+                    <div class="progress-day-dropdown-actions">
+                        <a class="btn btn-sm btn-outline-primary" href="{{ route('petugas.progress.edit',[$penugasan,$p]) }}">
+                            <i class="bi bi-pencil-square me-1"></i>Edit
+                        </a>
                         <form class="m-0" method="POST" action="{{ route('petugas.progress.destroy',[$penugasan,$p]) }}" onsubmit="return confirm('Hapus seluruh progress tanggal ini?')">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-sm btn-outline-danger" type="submit" aria-label="Hapus progress {{ $p->tanggal->format('d/m/Y') }}"><i class="bi bi-trash3"></i><span class="visually-hidden">Hapus</span></button>
+                            <button class="btn btn-sm btn-outline-danger" type="submit"><i class="bi bi-trash3 me-1"></i>Hapus</button>
                         </form>
                     </div>
-                </header>
-                @forelse($p->details as $d)
-                    <div class="progress-day-detail">
-                        <div class="progress-day-time">{{ substr($d->jam_mulai,0,5) }}–{{ substr($d->jam_selesai,0,5) }}</div>
-                        <div class="progress-day-place"><b class="progress-sls-chip">{{ $d->sls }}</b><span>{{ $d->desa }}</span></div>
-                    </div>
-                @empty
-                    <div class="progress-day-detail is-empty">Belum ada detail lokasi.</div>
-                @endforelse
-            </article>
+                </div>
+            </details>
         @empty
             <div class="empty-state">
                 <div class="empty-state-icon"><i class="bi bi-journal-x"></i></div>

@@ -66,8 +66,6 @@ class LpdController extends Controller {
   return Storage::disk('local')->download($photo->file_path, $photo->nama_file);
  }
 
- public function fields(Kegiatan $kegiatan){abort_unless(in_array($kegiatan->tujuan_akhir,['lpd','keduanya']),404);$uraian=MasterUraianLpd::where(fn($q)=>$q->whereNull('kegiatan_id')->orWhere('kegiatan_id',$kegiatan->id))->orderBy('tipe_uraian')->get();$masalah=MasterPermasalahanLpd::where(fn($q)=>$q->whereNull('kegiatan_id')->orWhere('kegiatan_id',$kegiatan->id))->get();return view('admin.lpd.fields',compact('kegiatan','uraian','masalah'));}
- public function saveFields(Request $r,Kegiatan $kegiatan){$d=$r->validate(['uraian'=>'nullable|array','uraian.*.id'=>'nullable|integer','uraian.*.nama'=>'required|string|max:180','uraian.*.tipe'=>'required|in:penguasa_wilayah,aktivitas','permasalahan'=>'nullable|array','permasalahan.*.id'=>'nullable|integer','permasalahan.*.nama'=>'required|string|max:180']);foreach($d['uraian']??[] as $x){$m=isset($x['id'])?MasterUraianLpd::where('kegiatan_id',$kegiatan->id)->find($x['id']):new MasterUraianLpd();$m->fill(['kegiatan_id'=>$kegiatan->id,'nama_uraian'=>$x['nama'],'tipe_uraian'=>$x['tipe'],'is_default'=>false,'is_active'=>true])->save();}foreach($d['permasalahan']??[] as $x){$m=isset($x['id'])?MasterPermasalahanLpd::where('kegiatan_id',$kegiatan->id)->find($x['id']):new MasterPermasalahanLpd();$m->fill(['kegiatan_id'=>$kegiatan->id,'nama_permasalahan'=>$x['nama'],'is_default'=>false,'is_active'=>true])->save();}return back()->with('status','Konfigurasi pilihan LPD disimpan.');}
  public function download(Kegiatan $kegiatan, Lpd $document, DocumentService $service)
  {
   abort_unless(in_array($kegiatan->tujuan_akhir, ['lpd', 'keduanya']), 404);
