@@ -249,6 +249,9 @@
                                         <span class="documentation-file-name">{{ $photo->nama_file }}</span>
                                         @if($photo->latitude !== null && $photo->longitude !== null)
                                             <small class="doc-gps-saved">GPS: {{ number_format((float)$photo->latitude, 6, '.', '') }}, {{ number_format((float)$photo->longitude, 6, '.', '') }} · Akurasi {{ $photo->gps_accuracy }} m</small>
+                                            @if($photo->desa || $photo->kecamatan || $photo->kabupaten || $photo->provinsi)
+                                                <small class="doc-gps-saved">{{ collect([$photo->desa, $photo->kecamatan ? 'Kec. '.$photo->kecamatan : null, $photo->kabupaten ? 'Kab. '.$photo->kabupaten : null, $photo->provinsi])->filter()->implode(', ') }}</small>
+                                            @endif
                                             @if($photo->captured_at)
                                                 <small class="doc-gps-saved">Diambil: {{ $photo->captured_at->copy()->timezone($photo->captured_timezone ?: 'Asia/Jakarta')->format('d-m-Y H:i:s') }} WIB</small>
                                             @endif
@@ -617,64 +620,247 @@
         if (line) lines.push(line);
         return lines;
     };
+
+    /* --- format teks watermark ------------------------------------------------ */
+    const toDms = (value, positive, negative) => {
+        const abs = Math.abs(value);
+        const deg = Math.floor(abs);
+        const minFloat = (abs - deg) * 60;
+        const min = Math.floor(minFloat);
+        const sec = ((minFloat - min) * 60).toFixed(3).replace('.', ',');
+        return `${deg}°${min}'${sec}"${value >= 0 ? positive : negative}`;
+    };
+    const compass = degrees => {
+        if (!Number.isFinite(degrees)) return '';
+        const names = ['U', 'TL', 'T', 'TG', 'S', 'BD', 'B', 'BL'];
+        return `${Math.round(degrees)}° ${names[Math.round(degrees / 45) % 8]}`;
+    };
+    const formatStamp = date => {
+        const parts = Object.fromEntries(new Intl.DateTimeFormat('id-ID', {
+            timeZone: 'Asia/Jakarta', day: '2-digit', month: 'short', year: 'numeric',
+            hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
+        }).formatToParts(date).map(part => [part.type, part.value]));
+        return `${parts.day} ${parts.month.replace('.', '')} ${parts.year} ${parts.hour}.${parts.minute}.${parts.second} WIB`;
+    };
+    const cleanArea = (value, prefixes) => {
+        if (!value) return null;
+        let text = String(value).trim();
+        prefixes.forEach(prefix => { text = text.replace(new RegExp(`^${prefix}\\s+`, 'i'), ''); });
+        return text || null;
+    };
+
+    /* --- alamat (Desa, Kecamatan, Kabupaten, Provinsi) lewat reverse geocoding -- */
+    const fetchExternalJson = async (url, ms = 7000) => {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), ms);
+        try {
+            const response = await fetch(url, { signal: controller.signal, headers: { Accept: 'application/json' } });
+            if (!response.ok) throw new Error('http');
+            return await response.json();
+        } finally { clearTimeout(timer); }
+    };
+    const normalizeAddress = raw => ({
+        desa: cleanArea(raw.desa, ['Desa', 'Kelurahan', 'Kel\\.?']),
+        kecamatan: cleanArea(raw.kecamatan, ['Kecamatan', 'Kec\\.?']),
+        kabupaten: cleanArea(raw.kabupaten, ['Kabupaten', 'Kab\\.?']),
+        provinsi: cleanArea(raw.provinsi, ['Provinsi', 'Prov\\.?'])
+    });
+    async function reverseGeocode(lat, lng) {
+        try {
+            const data = await fetchExternalJson(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&addressdetails=1&zoom=18&accept-language=id&lat=${lat}&lon=${lng}`);
+            const a = data.address || {};
+            const desa = a.village || a.hamlet || a.neighbourhood || a.quarter || a.suburb || null;
+            const kecamatan = a.municipality || a.city_district || a.district || a.town
+                || (a.suburb && a.suburb !== desa ? a.suburb : null);
+            const result = normalizeAddress({
+                desa, kecamatan: kecamatan !== desa ? kecamatan : null,
+                kabupaten: a.county || a.regency || a.city || a.state_district,
+                provinsi: a.state
+            });
+            if (result.kabupaten || result.provinsi || result.desa) return result;
+        } catch (e) { /* lanjut ke penyedia cadangan */ }
+        try {
+            const data = await fetchExternalJson(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=id`);
+            const byLevel = {};
+            (data.localityInfo?.administrative || []).forEach(item => { byLevel[item.adminLevel] = item.name; });
+            const result = normalizeAddress({
+                desa: byLevel[7] || data.locality, kecamatan: byLevel[6],
+                kabupaten: byLevel[5] || data.city, provinsi: byLevel[4] || data.principalSubdivision
+            });
+            if (result.kabupaten || result.provinsi || result.desa) return result;
+        } catch (e) { /* alamat tidak tersedia */ }
+        return normalizeAddress({});
+    }
+
+    /* --- peta mini bergambar pin (tile OpenStreetMap) ---------------------------- */
+    const TILE_ZOOM = 17;
+    const loadTile = (x, y) => new Promise(resolve => {
+        const tile = new Image();
+        tile.crossOrigin = 'anonymous';
+        const timer = setTimeout(() => resolve(null), 7000);
+        tile.onload = () => { clearTimeout(timer); resolve(tile); };
+        tile.onerror = () => { clearTimeout(timer); resolve(null); };
+        tile.src = `https://tile.openstreetmap.org/${TILE_ZOOM}/${x}/${y}.png`;
+    });
+    async function buildMapCanvas(lat, lng) {
+        const size = 512; // tampilan peta ±2 tile, titik tepat di tengah
+        const n = 2 ** TILE_ZOOM;
+        const latRad = lat * Math.PI / 180;
+        const worldX = (lng + 180) / 360 * n;
+        const worldY = (1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2 * n;
+        const originX = worldX * 256 - size / 2;
+        const originY = worldY * 256 - size / 2;
+        const canvas = document.createElement('canvas');
+        canvas.width = canvas.height = size;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#e9e5dc';
+        ctx.fillRect(0, 0, size, size);
+        const jobs = [];
+        for (let tx = Math.floor(originX / 256); tx <= Math.floor((originX + size) / 256); tx++) {
+            for (let ty = Math.floor(originY / 256); ty <= Math.floor((originY + size) / 256); ty++) {
+                if (ty < 0 || ty >= n) continue;
+                const wrappedX = ((tx % n) + n) % n;
+                jobs.push(loadTile(wrappedX, ty).then(tile => ({ tile, dx: tx * 256 - originX, dy: ty * 256 - originY })));
+            }
+        }
+        const tiles = await Promise.all(jobs);
+        let loaded = 0;
+        tiles.forEach(({ tile, dx, dy }) => { if (tile) { ctx.drawImage(tile, dx, dy, 256, 256); loaded++; } });
+        if (!loaded) { // offline: kotak abu dengan garis bantu agar pin tetap terbaca
+            ctx.strokeStyle = 'rgba(0,0,0,.08)';
+            ctx.lineWidth = 2;
+            for (let i = 0; i <= size; i += 64) {
+                ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, size); ctx.stroke();
+                ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(size, i); ctx.stroke();
+            }
+        }
+        return { canvas, hasTiles: loaded > 0 };
+    }
+    function drawPin(ctx, x, y, h) {
+        const r = h * 0.3;
+        const cy = y - h + r;
+        ctx.save();
+        ctx.shadowColor = 'rgba(0,0,0,.45)'; ctx.shadowBlur = h * 0.16; ctx.shadowOffsetY = h * 0.05;
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.bezierCurveTo(x - r * 1.5, cy + r * 0.9, x - r, cy - r * 0.2, x - r, cy);
+        ctx.arc(x, cy, r, Math.PI, 0);
+        ctx.bezierCurveTo(x + r, cy - r * 0.2, x + r * 1.5, cy + r * 0.9, x, y);
+        ctx.closePath();
+        ctx.fillStyle = '#e53935'; ctx.fill();
+        ctx.shadowColor = 'transparent';
+        ctx.lineWidth = Math.max(1, h * 0.05); ctx.strokeStyle = '#a82320'; ctx.stroke();
+        ctx.beginPath(); ctx.arc(x, cy, r * 0.42, 0, Math.PI * 2);
+        ctx.fillStyle = '#7f1513'; ctx.fill();
+        ctx.restore();
+    }
+
+    /* --- gambar watermark ke foto -------------------------------------------- */
+    function paintWatermark(img, maxSide, meta) {
+        const scale = Math.min(1, maxSide / Math.max(img.naturalWidth, img.naturalHeight));
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.max(1, Math.round(img.naturalWidth * scale));
+        canvas.height = Math.max(1, Math.round(img.naturalHeight * scale));
+        const ctx = canvas.getContext('2d', { alpha: false });
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+        const shortSide = Math.min(canvas.width, canvas.height);
+        const fontSize = Math.max(12, Math.round(shortSide * 0.027));
+        const lineHeight = Math.round(fontSize * 1.25);
+        const pad = Math.max(10, Math.round(fontSize * 0.75));
+        const mapSize = Math.round(Math.min(canvas.width * 0.3, shortSide * 0.3));
+        const textMaxWidth = canvas.width - mapSize - pad * 3;
+
+        const address = meta.address;
+        const rows = [
+            { text: meta.stamp, bold: true },
+            { text: `${meta.dms_lat} ${meta.dms_lng}  ±${meta.accuracy_label}m` },
+            { text: `Lat ${meta.latitude}  Long ${meta.longitude}` }
+        ];
+        if (meta.heading_label) rows.push({ text: meta.heading_label });
+        if (address.desa) rows.push({ text: address.desa, bold: true });
+        if (address.kecamatan) rows.push({ text: `Kecamatan ${address.kecamatan}` });
+        if (address.kabupaten) rows.push({ text: /^kota\s/i.test(address.kabupaten) ? address.kabupaten : `Kabupaten ${address.kabupaten}` });
+        if (address.provinsi) rows.push({ text: address.provinsi });
+        if (!address.desa && !address.kecamatan && !address.kabupaten && !address.provinsi) rows.push({ text: 'Alamat tidak tersedia (tanpa sinyal)' });
+        rows.push({ text: `Altitude:${meta.altitude_label}msnm` });
+        rows.push({ text: `Speed:${meta.speed_label}km/h` });
+        rows.push({ text: ACTIVITY_NAME });
+        rows.push({ text: `#${OFFICER_NAME}`, bold: true });
+
+        const lines = [];
+        rows.forEach(row => {
+            ctx.font = `${row.bold ? 700 : 500} ${fontSize}px Arial, sans-serif`;
+            wrapText(ctx, row.text, textMaxWidth).forEach(part => lines.push({ text: part, bold: row.bold }));
+        });
+        const blockHeight = lines.length * lineHeight;
+        const scrimHeight = Math.min(canvas.height, Math.max(blockHeight, mapSize) + pad * 3);
+
+        const scrim = ctx.createLinearGradient(0, canvas.height - scrimHeight, 0, canvas.height);
+        scrim.addColorStop(0, 'rgba(0,0,0,0)');
+        scrim.addColorStop(0.45, 'rgba(0,0,0,.42)');
+        scrim.addColorStop(1, 'rgba(0,0,0,.72)');
+        ctx.fillStyle = scrim;
+        ctx.fillRect(0, canvas.height - scrimHeight, canvas.width, scrimHeight);
+
+        // teks rata kanan, bawah
+        ctx.textAlign = 'right';
+        ctx.textBaseline = 'alphabetic';
+        ctx.shadowColor = 'rgba(0,0,0,.9)'; ctx.shadowBlur = Math.max(2, fontSize * 0.18); ctx.shadowOffsetY = 1;
+        let y = canvas.height - pad - blockHeight + fontSize;
+        lines.forEach(line => {
+            ctx.font = `${line.bold ? 700 : 500} ${fontSize}px Arial, sans-serif`;
+            ctx.fillStyle = line.bold ? '#ffd23f' : '#ffffff';
+            ctx.fillText(line.text, canvas.width - pad, y);
+            y += lineHeight;
+        });
+        ctx.shadowColor = 'transparent'; ctx.textAlign = 'left';
+
+        // peta mini kiri bawah + pin
+        const mapX = pad;
+        const mapY = canvas.height - pad - mapSize;
+        ctx.save();
+        ctx.beginPath();
+        if (ctx.roundRect) ctx.roundRect(mapX, mapY, mapSize, mapSize, Math.round(mapSize * 0.06));
+        else ctx.rect(mapX, mapY, mapSize, mapSize);
+        ctx.clip();
+        ctx.drawImage(meta.map.canvas, 0, 0, meta.map.canvas.width, meta.map.canvas.height, mapX, mapY, mapSize, mapSize);
+        drawPin(ctx, mapX + mapSize / 2, mapY + mapSize / 2 + mapSize * 0.02, mapSize * 0.3);
+        const credit = `© OpenStreetMap`;
+        const creditSize = Math.max(8, Math.round(mapSize * 0.065));
+        ctx.font = `500 ${creditSize}px Arial, sans-serif`;
+        const creditWidth = ctx.measureText(credit).width + creditSize;
+        ctx.fillStyle = 'rgba(255,255,255,.82)';
+        ctx.fillRect(mapX + mapSize - creditWidth, mapY + mapSize - creditSize * 1.5, creditWidth, creditSize * 1.5);
+        ctx.fillStyle = '#333';
+        ctx.fillText(credit, mapX + mapSize - creditWidth + creditSize / 2, mapY + mapSize - creditSize * 0.45);
+        ctx.restore();
+        ctx.lineWidth = Math.max(2, mapSize * 0.018);
+        ctx.strokeStyle = '#ffffff';
+        ctx.beginPath();
+        if (ctx.roundRect) ctx.roundRect(mapX, mapY, mapSize, mapSize, Math.round(mapSize * 0.06));
+        else ctx.rect(mapX, mapY, mapSize, mapSize);
+        ctx.stroke();
+        return canvas;
+    }
     async function makeWatermarkedImage(file, meta) {
         const imageUrl = URL.createObjectURL(file);
         try {
             const img = new Image();
             img.src = imageUrl;
-            await new Promise((resolve, reject) => {
-                img.onload = resolve;
-                img.onerror = reject;
-            });
-            const maxSide = 1920;
-            const scale = Math.min(1, maxSide / Math.max(img.naturalWidth, img.naturalHeight));
-            const canvas = document.createElement('canvas');
-            canvas.width = Math.max(1, Math.round(img.naturalWidth * scale));
-            canvas.height = Math.max(1, Math.round(img.naturalHeight * scale));
-            const ctx = canvas.getContext('2d', { alpha: false });
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-            const fontSize = Math.max(13, Math.round(Math.min(canvas.width, canvas.height) * 0.026));
-            const padding = Math.max(12, Math.round(fontSize * 0.8));
-            const lineGap = Math.round(fontSize * 1.38);
-            const maxTextWidth = canvas.width - padding * 2;
-            const lines = [
-                'SIPACAK',
-                `Nama Petugas: ${OFFICER_NAME}`,
-                `Kegiatan: ${ACTIVITY_NAME}`,
-                `Latitude: ${meta.latitude}`,
-                `Longitude: ${meta.longitude}`,
-                `Tanggal: ${meta.date_label}`,
-                `Jam: ${meta.time_label} WIB`,
-                `Akurasi GPS: ${meta.gps_accuracy} meter`
-            ];
-            ctx.font = `600 ${fontSize}px Arial, sans-serif`;
-            const wrapped = [];
-            lines.forEach((line, index) => {
-                const split = wrapText(ctx, line, maxTextWidth);
-                split.forEach((part, partIndex) => wrapped.push({ text: part, bold: index === 0, gap: index === 0 && partIndex === 0 ? fontSize * .2 : 0 }));
-            });
-            const panelHeight = padding * 2 + wrapped.reduce((sum, item) => sum + lineGap + item.gap, 0);
-            const panelY = Math.max(0, canvas.height - panelHeight);
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.68)';
-            ctx.fillRect(0, panelY, canvas.width, panelHeight);
-            let y = panelY + padding + fontSize;
-            wrapped.forEach(item => {
-                y += item.gap;
-                ctx.font = `${item.bold ? '700' : '500'} ${item.bold ? Math.round(fontSize * 1.12) : fontSize}px Arial, sans-serif`;
-                ctx.fillStyle = '#ffffff';
-                ctx.fillText(item.text, padding, y);
-                y += lineGap;
-            });
-            let blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', 0.88));
-            if (!blob) throw new Error('canvas');
-            let quality = 0.82;
-            while (blob.size > MAX_BYTES && quality >= 0.40) {
-                blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
-                quality -= 0.06;
+            await new Promise((resolve, reject) => { img.onload = resolve; img.onerror = reject; });
+            // Coba resolusi turun bertahap sampai ukuran file <= batas.
+            for (const maxSide of [1920, 1600, 1280, 1024, 800]) {
+                const canvas = paintWatermark(img, maxSide, meta);
+                for (const quality of [0.86, 0.78, 0.70, 0.62, 0.54, 0.46]) {
+                    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
+                    if (!blob) throw new Error('canvas');
+                    if (blob.size <= MAX_BYTES) {
+                        return new File([blob], `sipacak-${Date.now()}.jpg`, { type: 'image/jpeg', lastModified: Date.now() });
+                    }
+                }
             }
-            if (!blob || blob.size > MAX_BYTES) throw new Error('size');
-            return new File([blob], `sipacak-${Date.now()}.jpg`, { type: 'image/jpeg', lastModified: Date.now() });
+            throw new Error('size');
         } finally {
             URL.revokeObjectURL(imageUrl);
         }
@@ -758,19 +944,42 @@
                     }
                     const lat = Number(position.coords.latitude).toFixed(7);
                     const lng = Number(position.coords.longitude).toFixed(7);
-                    const dateLabel = formatWib(capturedDate);
-                    const timeLabel = formatClockWib(capturedDate);
+                    const accuracyRounded = Math.round(accuracy * 100) / 100;
+                    const altitude = Number.isFinite(position.coords.altitude) ? Math.round(position.coords.altitude * 10) / 10 : null;
+                    const speedKmh = Number.isFinite(position.coords.speed) ? Math.round(position.coords.speed * 3.6 * 10) / 10 : null;
+                    const heading = Number.isFinite(position.coords.heading) ? position.coords.heading : null;
+                    status.textContent = 'Mengambil alamat & peta lokasi...';
+                    const [address, map] = await Promise.all([
+                        reverseGeocode(lat, lng),
+                        buildMapCanvas(Number(lat), Number(lng))
+                    ]);
                     metadata = {
                         capture_source: 'camera',
                         latitude: Number(lat), longitude: Number(lng),
                         gps_accuracy: accuracy,
                         captured_at: capturedDate.toISOString(),
-                        captured_timezone: 'Asia/Jakarta'
+                        captured_timezone: 'Asia/Jakarta',
+                        desa: address.desa, kecamatan: address.kecamatan,
+                        kabupaten: address.kabupaten, provinsi: address.provinsi,
+                        altitude, speed_kmh: speedKmh
                     };
-                    const watermarkMeta = { ...metadata, date_label: dateLabel, time_label: timeLabel };
-                    finalFile = await makeWatermarkedImage(selectedFile, watermarkMeta);
-                    status.textContent = 'Foto kamera berhasil diproses dengan watermark GPS.';
-                    info.innerHTML = `<strong>${OFFICER_NAME}</strong><br>${ACTIVITY_NAME}<br>${lat}, ${lng}<br>${dateLabel} · ${timeLabel} WIB<br>Akurasi GPS: ${Math.round(accuracy * 10) / 10} meter`;
+                    const stamp = formatStamp(capturedDate);
+                    const num = (value, digits = 1) => value === null ? '-' : value.toFixed(digits).replace('.', ',');
+                    finalFile = await makeWatermarkedImage(selectedFile, {
+                        ...metadata, address, map, stamp,
+                        dms_lat: toDms(Number(lat), 'N', 'S'),
+                        dms_lng: toDms(Number(lng), 'E', 'W'),
+                        accuracy_label: accuracyRounded.toFixed(2).replace('.', ','),
+                        heading_label: compass(heading),
+                        altitude_label: num(altitude), speed_label: num(speedKmh)
+                    });
+                    const addressLines = [address.desa, address.kecamatan && `Kec. ${address.kecamatan}`, address.kabupaten && `Kab. ${address.kabupaten}`, address.provinsi].filter(Boolean);
+                    status.textContent = addressLines.length
+                        ? 'Foto kamera berhasil diberi watermark peta & alamat.'
+                        : 'Foto diberi watermark koordinat. Alamat belum bisa diambil (cek sinyal), foto tetap bisa disimpan.';
+                    if (!addressLines.length) showPhotoMessage('Alamat (Desa/Kecamatan/Kabupaten) belum terbaca karena sinyal. Koordinat tetap tersimpan; ulangi foto bila ingin alamat lengkap.', 'warning');
+                    const esc = text => String(text).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+                    info.innerHTML = `<strong>${esc(OFFICER_NAME)}</strong><br>${esc(ACTIVITY_NAME)}<br>${esc(addressLines.join(', ') || 'Alamat tidak tersedia')}<br>${lat}, ${lng}<br>${esc(stamp)}<br>Akurasi GPS: ${accuracyRounded} meter`;
                     info.hidden = false;
                     mapLink.href = `https://www.google.com/maps?q=${encodeURIComponent(lat)},${encodeURIComponent(lng)}`;
                     mapLink.hidden = false;

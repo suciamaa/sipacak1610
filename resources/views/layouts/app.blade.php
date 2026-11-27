@@ -18,6 +18,7 @@
     @stack('styles')
     <link href="{{ asset('assets/css/sipacak-final-polish.css') }}?v=20261127-v2" rel="stylesheet">
     <link href="{{ asset('assets/css/sipacak-petugas-refresh.css') }}?v=20261127-v8" rel="stylesheet">
+    <link href="{{ asset('assets/css/sipacak-genz.css') }}?v=20261127-genz-v1" rel="stylesheet">
 </head>
 @php($isAuth = request()->routeIs('login', 'register', 'password.request', 'password.reset', 'password.otp.verify', 'password.otp.reset'))
 <body class="{{ $isAuth ? 'auth-body' : (auth()->check() && auth()->user()->role === 'petugas' ? 'petugas-app' : '') }}">

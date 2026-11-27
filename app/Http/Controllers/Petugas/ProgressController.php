@@ -372,6 +372,15 @@ class ProgressController extends Controller
                 if ($accuracy > $maxAccuracy) {
                     $this->validationError('foto', 'Akurasi GPS melebihi batas ' . $maxAccuracy . ' meter. Ambil lokasi kembali.');
                 }
+                foreach (['desa', 'kecamatan', 'kabupaten', 'provinsi'] as $addressKey) {
+                    $value = $meta[$addressKey] ?? null;
+                    $meta[$addressKey] = is_string($value) && trim($value) !== ''
+                        ? mb_substr(trim(strip_tags($value)), 0, 120) : null;
+                }
+                foreach (['altitude', 'speed_kmh'] as $numberKey) {
+                    $number = filter_var($meta[$numberKey] ?? null, FILTER_VALIDATE_FLOAT);
+                    $meta[$numberKey] = ($number === false || abs($number) > 100000) ? null : round($number, 2);
+                }
             }
             $validatedMetadata[$fileIndex] = $meta;
         }
@@ -643,6 +652,12 @@ class ProgressController extends Controller
                     'captured_timezone' => $isCamera ? 'Asia/Jakarta' : null,
                     'server_received_at' => now(),
                     'capture_source' => $meta['capture_source'] ?? 'gallery',
+                    'desa' => $isCamera ? ($meta['desa'] ?? null) : null,
+                    'kecamatan' => $isCamera ? ($meta['kecamatan'] ?? null) : null,
+                    'kabupaten' => $isCamera ? ($meta['kabupaten'] ?? null) : null,
+                    'provinsi' => $isCamera ? ($meta['provinsi'] ?? null) : null,
+                    'altitude' => $isCamera ? ($meta['altitude'] ?? null) : null,
+                    'speed_kmh' => $isCamera ? ($meta['speed_kmh'] ?? null) : null,
                 ]);
             } catch (\Throwable $exception) {
                 Storage::disk('local')->delete($path);
