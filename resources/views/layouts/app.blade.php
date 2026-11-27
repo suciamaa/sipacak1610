@@ -7,7 +7,7 @@
     <title>@yield('title', 'SIPACAK')</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="{{ asset('assets/css/app.css') }}?v=20261111-admin-lpd-spacing-auto-v2" rel="stylesheet">
@@ -18,7 +18,7 @@
     @stack('styles')
     <link href="{{ asset('assets/css/sipacak-final-polish.css') }}?v=20261127-v2" rel="stylesheet">
     <link href="{{ asset('assets/css/sipacak-petugas-refresh.css') }}?v=20261127-v8" rel="stylesheet">
-    <link href="{{ asset('assets/css/sipacak-genz.css') }}?v=20261127-genz-v1" rel="stylesheet">
+    <link href="{{ asset('assets/css/sipacak-genz.css') }}?v=20261127-genz-v4" rel="stylesheet">
 </head>
 @php($isAuth = request()->routeIs('login', 'register', 'password.request', 'password.reset', 'password.otp.verify', 'password.otp.reset'))
 <body class="{{ $isAuth ? 'auth-body' : (auth()->check() && auth()->user()->role === 'petugas' ? 'petugas-app' : '') }}">
