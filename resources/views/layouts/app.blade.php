@@ -17,7 +17,7 @@
     <link href="{{ asset('assets/css/sipacak-orange-theme.css') }}?v=20261127-v2" rel="stylesheet">
     @stack('styles')
     <link href="{{ asset('assets/css/sipacak-final-polish.css') }}?v=20261127-v2" rel="stylesheet">
-    <link href="{{ asset('assets/css/sipacak-petugas-refresh.css') }}?v=20261127-v2" rel="stylesheet">
+    <link href="{{ asset('assets/css/sipacak-petugas-refresh.css') }}?v=20261127-v8" rel="stylesheet">
 </head>
 @php($isAuth = request()->routeIs('login', 'register', 'password.request', 'password.reset', 'password.otp.verify', 'password.otp.reset'))
 <body class="{{ $isAuth ? 'auth-body' : (auth()->check() && auth()->user()->role === 'petugas' ? 'petugas-app' : '') }}">
@@ -45,7 +45,7 @@
     <div class="container">
         <a class="navbar-brand app-brand" href="{{ auth()->check() ? route('dashboard') : route('login') }}">
             <span class="app-brand-mark"><i class="bi bi-grid-1x2-fill"></i></span>
-            <span>SIPACAK<small>Laporan lapangan dan administrasi BPS Kabupaten Ogan Ilir</small></span>
+            <span class="app-brand-copy">SIPACAK<small>Sistem Laporan Administrasi Cepat Akurat<br>BPS Kabupaten Ogan Ilir</small></span>
         </a>
         @auth
         <div class="ms-auto profile-menu dropdown">

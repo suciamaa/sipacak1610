@@ -22,7 +22,7 @@
                 <label class="form-label" for="petugas_id">Petugas</label>
                 <select id="petugas_id" class="form-select @error('petugas_id') is-invalid @enderror" name="petugas_id" @disabled($punyaProgress) required>
                     @foreach($petugas as $p)
-                        <option value="{{ $p->id }}" @selected((int) old('petugas_id', $penugasan->petugas_id) === $p->id)>{{ $p->nama_lengkap }} ({{ $p->user->username ?: $p->user->email }})</option>
+                        <option value="{{ $p->id }}" @selected((int) old('petugas_id', $penugasan->petugas_id) === $p->id)>{{ $p->nama_lengkap }} ({{ $p->user->email }})</option>
                     @endforeach
                 </select>
                 @error('petugas_id')<div class="invalid-feedback">{{ $message }}</div>@enderror

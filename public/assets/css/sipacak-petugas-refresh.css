@@ -168,3 +168,37 @@ body.petugas-app{
 @media(max-width:900px){.petugas-app .pt-hero-inner{width:min(100% - 48px,720px)!important;grid-template-columns:1fr!important;gap:24px!important;padding:31px 0!important}.petugas-app .pt-hero-copy{max-width:100%}.petugas-app .pt-hero-summary{max-width:none}}
 @media(max-width:767px){.petugas-app .app-navbar{min-height:64px!important;padding:7px 0!important}.petugas-app .app-navbar .container{padding-inline:16px!important;min-height:48px;gap:8px}.petugas-app .app-navbar .app-brand{font-size:1rem!important;gap:9px}.petugas-app .app-navbar .app-brand-mark{width:38px!important;height:38px!important;flex-basis:38px;border-radius:11px!important}.petugas-app .app-navbar .app-brand small{display:none!important}.petugas-app .app-navbar .profile-trigger{padding:4px!important;border:0!important;background:transparent!important;box-shadow:none!important;gap:0}.petugas-app .app-navbar .profile-text{display:none!important}.petugas-app .app-navbar .profile-avatar{width:38px!important;height:38px!important}.petugas-app .pt-hero-inner{width:calc(100% - 36px)!important;padding:27px 0 25px!important;gap:20px!important}.petugas-app .pt-hero-kicker{font-size:.61rem;margin-bottom:12px;letter-spacing:.09em}.petugas-app .pt-hero h1{font-size:2rem!important;margin-bottom:9px!important}.petugas-app .pt-hero-copy>p{font-size:.88rem!important;line-height:1.6!important}.petugas-app .pt-hero-note{margin-top:13px;font-size:.73rem}.petugas-app .pt-hero-summary{padding:14px;border-radius:15px}.petugas-app .pt-hero .pt-stats{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}.petugas-app .pt-hero .pt-stat{min-height:96px;padding:10px 8px!important;border-radius:11px!important}.petugas-app .pt-hero .pt-stat-label{font-size:.61rem!important;margin-bottom:6px}.petugas-app .pt-hero .pt-stat strong{font-size:1.5rem!important}.petugas-app .pt-hero .pt-stat small{font-size:.58rem!important}}
 @media(max-width:380px){.petugas-app .pt-hero .pt-stats{grid-template-columns:1fr 1fr!important}.petugas-app .pt-hero .pt-stat:last-child{grid-column:1/-1;min-height:76px}.petugas-app .pt-hero h1{font-size:1.75rem!important}}
+
+
+/* Navbar brand copy and consistent button alignment — v8 */
+.petugas-app .app-navbar .app-brand-copy{display:block;min-width:0;line-height:1.12}
+.petugas-app .app-navbar .app-brand small{display:block!important;max-width:360px!important;margin-top:5px!important;color:#89796a!important;font-size:.67rem!important;font-weight:550!important;line-height:1.45!important;letter-spacing:0!important;white-space:normal!important}
+.petugas-app .app-navbar .app-brand small br{display:block}
+/* Normalize button/link-button alignment across all Petugas screens. */
+.petugas-app button,
+.petugas-app input[type=button],
+.petugas-app input[type=submit],
+.petugas-app input[type=reset],
+.petugas-app a.btn,
+.petugas-app .btn,
+.petugas-app [role=button]{box-sizing:border-box}
+.petugas-app button:not(.dropdown-item),
+.petugas-app input[type=button],
+.petugas-app input[type=submit],
+.petugas-app input[type=reset],
+.petugas-app a.btn,
+.petugas-app .btn,
+.petugas-app [role=button]{display:inline-flex;align-items:center;justify-content:center;text-align:center;vertical-align:middle;line-height:1.25;gap:.45rem}
+.petugas-app button:not(.dropdown-item) > i,
+.petugas-app a.btn > i,
+.petugas-app .btn > i,
+.petugas-app [role=button] > i{display:inline-flex;align-items:center;justify-content:center;line-height:1;flex:0 0 auto}
+.petugas-app .btn-sm{min-height:34px;padding-block:6px}
+.petugas-app .btn:not(.btn-sm){min-height:40px}
+.petugas-app .dropdown-menu .dropdown-item{display:flex;align-items:center;text-align:left}
+@media(max-width:767px){
+ .petugas-app .app-navbar .app-brand{align-items:center}
+ .petugas-app .app-navbar .app-brand small{display:block!important;max-width:min(58vw,260px)!important;font-size:.57rem!important;line-height:1.35!important;margin-top:4px!important}
+ .petugas-app .app-navbar .app-brand-copy{font-size:.96rem!important}
+ .petugas-app .btn-sm{min-height:34px}
+}
