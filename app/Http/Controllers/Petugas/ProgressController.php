@@ -145,21 +145,30 @@ class ProgressController extends Controller
                 ->with('status', 'Progress pada tanggal tersebut sudah tersedia. Anda dapat melanjutkan atau mengedit detail yang ada.');
         }
 
-        $day = DB::transaction(function () use ($data, $penugasan, $request) {
-            $day = ProgressHarian::firstOrCreate([
-                'penugasan_id' => $penugasan->id,
-                'tanggal' => $data['tanggal'],
-            ]);
-            $this->syncDetails($day, $data, $penugasan, !$day->wasRecentlyCreated);
-            $this->syncSelections($day);
-            $this->invalidateDocs($penugasan, [$day->tanggal->toDateString()]);
-            $this->audit($request, 'create', $day, null, [
-                'tanggal' => $day->tanggal->toDateString(),
-                'jumlah_detail' => count($data['details']),
-            ]);
+        $disk = Storage::disk('local');
+        $uploadedPaths = [];
+        try {
+            $day = DB::transaction(function () use ($data, $penugasan, $request, &$uploadedPaths) {
+                $day = ProgressHarian::firstOrCreate([
+                    'penugasan_id' => $penugasan->id,
+                    'tanggal' => $data['tanggal'],
+                ]);
+                $this->syncDetails($day, $data, $penugasan, !$day->wasRecentlyCreated, $uploadedPaths);
+                $this->syncSelections($day);
+                $this->invalidateDocs($penugasan, [$day->tanggal->toDateString()]);
+                $this->audit($request, 'create', $day, null, [
+                    'tanggal' => $day->tanggal->toDateString(),
+                    'jumlah_detail' => count($data['details']),
+                ]);
 
-            return $day;
-        });
+                return $day;
+            });
+        } catch (\Throwable $exception) {
+            foreach ($uploadedPaths as $orphanPath) {
+                $disk->delete($orphanPath);
+            }
+            throw $exception;
+        }
 
         $this->refreshAutomaticLpd($penugasan, $day);
         return redirect()->route('petugas.progress.index', $penugasan)->with('status', 'Progress harian berhasil disimpan. Dokumen LPD diproses otomatis.');
@@ -221,19 +230,28 @@ class ProgressController extends Controller
         $data = $this->validatePayload($request, $penugasan, true, $progress);
         $before = $progress->load('details')->toArray();
 
-        DB::transaction(function () use ($data, $progress, $penugasan, $request, $before) {
-            $other = ProgressHarian::where('penugasan_id', $penugasan->id)
-                ->whereDate('tanggal', $data['tanggal'])
-                ->where('id', '!=', $progress->id)->exists();
-            abort_if($other, 422, 'Sudah ada progress pada tanggal tersebut untuk penugasan ini.');
+        $disk = Storage::disk('local');
+        $uploadedPaths = [];
+        try {
+            DB::transaction(function () use ($data, $progress, $penugasan, $request, $before, &$uploadedPaths) {
+                $other = ProgressHarian::where('penugasan_id', $penugasan->id)
+                    ->whereDate('tanggal', $data['tanggal'])
+                    ->where('id', '!=', $progress->id)->exists();
+                abort_if($other, 422, 'Sudah ada progress pada tanggal tersebut untuk penugasan ini.');
 
-            $oldDate = $progress->tanggal->toDateString();
-            $progress->update(['tanggal' => $data['tanggal']]);
-            $this->syncDetails($progress, $data, $penugasan, true);
-            $this->syncSelections($progress);
-            $this->invalidateDocs($penugasan, [$oldDate, $data['tanggal']]);
-            $this->audit($request, 'update', $progress, $before, $progress->fresh()->load('details')->toArray());
-        });
+                $oldDate = $progress->tanggal->toDateString();
+                $progress->update(['tanggal' => $data['tanggal']]);
+                $this->syncDetails($progress, $data, $penugasan, true, $uploadedPaths);
+                $this->syncSelections($progress);
+                $this->invalidateDocs($penugasan, [$oldDate, $data['tanggal']]);
+                $this->audit($request, 'update', $progress, $before, $progress->fresh()->load('details')->toArray());
+            });
+        } catch (\Throwable $exception) {
+            foreach ($uploadedPaths as $orphanPath) {
+                $disk->delete($orphanPath);
+            }
+            throw $exception;
+        }
 
         $this->refreshAutomaticLpd($penugasan, $progress->fresh());
         return redirect()->route('petugas.progress.index', $penugasan)->with('status', 'Progress berhasil diperbarui. Dokumen LPD diproses otomatis.');
@@ -249,6 +267,9 @@ class ProgressController extends Controller
         if (!empty($nestedPhotos)) {
             $request->files->set('foto', $nestedPhotos);
         }
+        // Metadata dikirim dengan indeks yang sama seperti input file agar foto galeri
+        // dan kamera tetap dapat dipasangkan meskipun ada baris upload kosong.
+        $documentationMetadata = $request->input('sls.1.dokumentasi_metadata', []);
 
         $outputRules = [];
 
@@ -328,6 +349,40 @@ class ProgressController extends Controller
             'foto.*.max' => 'Ukuran setiap foto maksimal 250 KB.',
             'foto.*.mimes' => 'Foto hanya boleh menggunakan format JPG atau PNG.',
         ]);
+
+        $validatedMetadata = [];
+        foreach ((array) $documentationMetadata as $fileIndex => $rawMetadata) {
+            if ($rawMetadata === null || trim((string) $rawMetadata) === '') {
+                continue;
+            }
+            $meta = json_decode((string) $rawMetadata, true);
+            if (!is_array($meta)) {
+                $this->validationError('foto', 'Metadata dokumentasi tidak valid. Silakan pilih foto kembali.');
+            }
+            $source = $meta['capture_source'] ?? null;
+            if (!in_array($source, ['camera', 'gallery'], true)) {
+                $this->validationError('foto', 'Sumber foto dokumentasi tidak valid.');
+            }
+            if ($source === 'camera') {
+                $lat = filter_var($meta['latitude'] ?? null, FILTER_VALIDATE_FLOAT);
+                $lng = filter_var($meta['longitude'] ?? null, FILTER_VALIDATE_FLOAT);
+                $accuracy = filter_var($meta['gps_accuracy'] ?? null, FILTER_VALIDATE_FLOAT);
+                $capturedAt = $meta['captured_at'] ?? null;
+                if ($lat === false || $lat < -90 || $lat > 90 ||
+                    $lng === false || $lng < -180 || $lng > 180 ||
+                    $accuracy === false || $accuracy <= 0 ||
+                    !is_string($capturedAt) || strtotime($capturedAt) === false ||
+                    ($meta['captured_timezone'] ?? null) !== 'Asia/Jakarta') {
+                    $this->validationError('foto', 'Data GPS atau waktu foto tidak valid. Silakan ambil foto kembali.');
+                }
+                $maxAccuracy = (float) config('sipacak.gps_max_accuracy', 50);
+                if ($accuracy > $maxAccuracy) {
+                    $this->validationError('foto', 'Akurasi GPS melebihi batas ' . $maxAccuracy . ' meter. Ambil lokasi kembali.');
+                }
+            }
+            $validatedMetadata[$fileIndex] = $meta;
+        }
+        $data['dokumentasi_metadata'] = $validatedMetadata;
 
         $existingDetails = [];
         foreach ($data['details'] as $index => $detailData) {
@@ -533,7 +588,7 @@ class ProgressController extends Controller
         return preg_replace('/[^A-Z0-9]/', '', mb_strtoupper(trim($value)));
     }
 
-    private function syncDetails(ProgressHarian $day, array $data, Penugasan $assignment, bool $editing = false): void
+    private function syncDetails(ProgressHarian $day, array $data, Penugasan $assignment, bool $editing = false, ?array &$uploadedPaths = null): void
     {
         $keep = [];
         $first = null;
@@ -575,14 +630,31 @@ class ProgressController extends Controller
             }
         }
 
-        foreach ($data['foto'] ?? [] as $file) {
+        foreach ($data['foto'] ?? [] as $fileIndex => $file) {
             $path = $file->store('sipacak/dokumentasi/' . $assignment->id, 'local');
-            $first->dokumentasi()->create([
-                'nama_file' => $file->getClientOriginalName(),
-                'file_path' => $path,
-                'mime_type' => $file->getMimeType(),
-                'ukuran' => $file->getSize(),
-            ]);
+            if ($uploadedPaths !== null) {
+                $uploadedPaths[] = $path;
+            }
+            try {
+                $meta = $data['dokumentasi_metadata'][$fileIndex] ?? ['capture_source' => 'gallery'];
+                $isCamera = ($meta['capture_source'] ?? 'gallery') === 'camera';
+                $first->dokumentasi()->create([
+                    'nama_file' => $file->getClientOriginalName(),
+                    'file_path' => $path,
+                    'mime_type' => $file->getMimeType(),
+                    'ukuran' => $file->getSize(),
+                    'latitude' => $isCamera ? $meta['latitude'] : null,
+                    'longitude' => $isCamera ? $meta['longitude'] : null,
+                    'gps_accuracy' => $isCamera ? $meta['gps_accuracy'] : null,
+                    'captured_at' => $isCamera ? \Illuminate\Support\Carbon::parse($meta['captured_at']) : null,
+                    'captured_timezone' => $isCamera ? 'Asia/Jakarta' : null,
+                    'server_received_at' => now(),
+                    'capture_source' => $meta['capture_source'] ?? 'gallery',
+                ]);
+            } catch (\Throwable $exception) {
+                Storage::disk('local')->delete($path);
+                throw $exception;
+            }
         }
     }
 

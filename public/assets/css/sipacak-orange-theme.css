@@ -1,0 +1,60 @@
+/* SIPACAK · tema utama orange, secondary green & blue */
+:root{
+ --ink:#30271f;--ink-2:#514337;--ink-3:#817365;--paper:#fbf8f4;--surface:#fff;
+ --line:#eadfd3;--line-2:#f1e9e1;--blue:#e8791b;--blue-deep:#bd5710;--blue-soft:#fff0e2;
+ --green:#32845b;--green-soft:#e8f4ec;--orange:#e8791b;--orange-soft:#fff0e2;
+ --bs-primary:#e8791b;--bs-link-color:#c65f14;--bs-link-hover-color:#98430c;--bs-border-color:#eadfd3;
+ --sip-primary:#e8791b;--sip-primary-strong:#bd5710;--sip-primary-soft:#fff0e2;
+}
+body{background:#fbf8f4;color:var(--ink)}
+a{color:#c65f14}a:hover{color:#98430c}
+.btn-primary{background:#e8791b!important;border-color:#e8791b!important;color:#fff!important;box-shadow:0 6px 15px -9px rgba(190,86,15,.75)!important}
+.btn-primary:hover{background:#bd5710!important;border-color:#bd5710!important}
+.btn-success{background:#32845b!important;border-color:#32845b!important;color:#fff!important}
+.btn-success:hover{background:#246b48!important;border-color:#246b48!important}
+.btn-outline-primary{color:#c65f14!important;border-color:#e7b98f!important}
+.btn-outline-primary:hover{background:#fff0e2!important;color:#98430c!important;border-color:#e8791b!important}
+.btn-outline-success{color:#32845b;border-color:#9bc9ad}
+.form-control:focus,.form-select:focus{border-color:#e8791b!important;box-shadow:0 0 0 .22rem rgba(232,121,27,.16)!important}
+::selection{background:#ffe0c2;color:#30271f}
+.admin-sidebar{background:linear-gradient(180deg,#3a281e 0%,#4a3020 100%)!important}
+.admin-brand-mark,.app-brand-mark{background:linear-gradient(135deg,#f49a42,#d96613)!important}
+.admin-side-link.active{background:rgba(239,137,48,.19)!important;color:#ffd2a5!important;border-color:rgba(255,177,104,.25)!important}
+.admin-side-link:hover{background:rgba(255,255,255,.08)!important}
+.admin-topbar{border-bottom-color:#eadfd3!important}
+.app-navbar{background:linear-gradient(110deg,#bd5710 0%,#e8791b 58%,#f39a43 100%)!important}
+.app-navbar .navbar-brand,.app-navbar a{color:#fff}
+.badge.text-bg-success{background:#32845b!important}
+.nav-tabs .nav-link.active{color:#bd5710!important;border-color:#eadfd3 #eadfd3 #fff!important}
+.progress-bar{background-color:#32845b!important}
+/* Beranda administrator */
+.admin-welcome-hero{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);align-items:center;gap:28px;overflow:hidden;padding:clamp(28px,5vw,58px);border:1px solid #f0d9c3;border-radius:26px;background:linear-gradient(118deg,#fff8ef 0%,#fff 58%,#f3f8f4 100%);box-shadow:0 18px 50px rgba(92,57,27,.07)}
+.admin-welcome-copy{position:relative;z-index:2;max-width:690px}.admin-welcome-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#ffead6;color:#a94f12;font-size:.78rem;font-weight:750;letter-spacing:.02em}
+.admin-welcome-copy h1{margin:20px 0 14px;font-size:clamp(2.2rem,4.5vw,3.8rem);line-height:1.06;letter-spacing:-.045em}.admin-welcome-copy h1 span{color:#e8791b}.admin-welcome-copy p{max-width:620px;margin-bottom:25px;color:#75675b;font-size:1.04rem;line-height:1.8}
+.admin-welcome-art{position:relative;min-height:300px;display:grid;place-items:center}.welcome-orbit{position:absolute;border:1px solid rgba(232,121,27,.22);border-radius:50%;transform:rotate(-24deg)}.orbit-one{width:280px;height:220px}.orbit-two{width:360px;height:275px;border-color:rgba(50,132,91,.22);transform:rotate(28deg)}.welcome-icon{z-index:1;display:grid;place-items:center;width:142px;height:142px;border-radius:38px;background:linear-gradient(145deg,#f49a42,#d96514);color:#fff;font-size:4rem;box-shadow:0 24px 55px rgba(194,91,18,.25);transform:rotate(-7deg)}
+.welcome-float{position:absolute;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:11px 14px;border:1px solid #f0e2d5;border-radius:13px;background:#fff;color:#56483d;font-size:.82rem;font-weight:700;box-shadow:0 10px 30px rgba(71,49,31,.09)}.float-a{top:28px;left:0}.float-b{right:0;top:92px}.float-c{bottom:26px;left:12%}.welcome-float i{color:#32845b}
+.admin-welcome-section{display:flex;justify-content:space-between;align-items:end;margin:34px 0 18px}.admin-welcome-section h2{margin:5px 0;font-size:1.55rem}.admin-welcome-section p{margin:0;color:#817365}
+.admin-feature-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.admin-feature-card{padding:22px;border:1px solid #eadfd3;border-radius:18px;background:#fff;box-shadow:0 8px 26px rgba(92,57,27,.045);transition:transform .18s,box-shadow .18s}.admin-feature-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(92,57,27,.09)}.admin-feature-card>span{display:grid;place-items:center;width:46px;height:46px;margin-bottom:17px;border-radius:14px;background:#fff0e2;color:#d76a16;font-size:1.25rem}.admin-feature-card:nth-child(2)>span,.admin-feature-card:nth-child(4)>span{background:#e8f4ec;color:#32845b}.admin-feature-card:nth-child(3)>span{background:#eaf2f8;color:#2676a8}.admin-feature-card h3{margin-bottom:8px;font-size:1rem}.admin-feature-card p{margin:0;color:#817365;font-size:.87rem;line-height:1.65}
+@media(max-width:900px){.admin-feature-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-welcome-hero{grid-template-columns:1fr}.admin-welcome-art{min-height:250px}}
+@media(max-width:560px){.admin-feature-grid{grid-template-columns:1fr}.admin-welcome-art{min-height:220px;transform:scale(.88);margin:-10px 0}.admin-welcome-copy h1{font-size:2.2rem}.admin-welcome-hero{padding:24px 20px}}
+/* Override warna lama yang masih tertanam pada komponen legacy */
+.app-navbar,.auth-side,.auth-brand-panel,.auth-visual-panel{background:linear-gradient(112deg,#b9510d 0%,#e8791b 58%,#f2a04f 100%)!important}
+.login-brand-title,.admin-brand-mark,.auth-brand-mark{background:#e8791b!important}
+.admin-menu-toggle,.admin-topbar-kicker,.page-eyebrow,.muted-label,.progress-section-kicker{color:#bd5710!important}
+.admin-menu-toggle{border-color:#f0c9a7!important}
+.admin-sidebar .admin-side-link.active{color:#ffd7b2!important;box-shadow:inset 3px 0 #e8791b!important}
+.admin-stat-card .stat-value,.stat-card .stat-value,.stat-card .fs-3{color:#bd5710!important}
+.tone-blue,.feature-blue{color:#2676a8!important;background:#eaf2f8!important}
+.tone-orange,.feature-orange{color:#bd5710!important;background:#fff0e2!important}
+.tone-green,.feature-green{color:#32845b!important;background:#e8f4ec!important}
+.petugas-flow-symbol{color:#32845b!important;background:#e8f4ec!important}
+.progress-form .progress-date-card:before{background:linear-gradient(180deg,#e8791b,#f2a04f)!important}
+.progress-assignment-meta i,.table-scroll-hint span{color:#32845b!important}
+.btn-info{color:#fff!important;background:#2676a8!important;border-color:#2676a8!important}
+.btn-info:hover{background:#1c5e89!important;border-color:#1c5e89!important}
+.btn-outline-info{color:#2676a8!important;border-color:#a9c9dd!important}
+.btn-outline-info:hover{background:#2676a8!important;color:#fff!important}
+.form-check-input:checked{background-color:#e8791b!important;border-color:#e8791b!important}
+input[type=checkbox],input[type=radio]{accent-color:#e8791b}
+.page-link{color:#bd5710!important}.page-item.active .page-link{background:#e8791b!important;border-color:#e8791b!important;color:#fff!important}
+.badge.bg-primary,.text-bg-primary{background:#e8791b!important}.text-primary{color:#bd5710!important}.bg-primary{background-color:#e8791b!important}.border-primary{border-color:#e8791b!important}

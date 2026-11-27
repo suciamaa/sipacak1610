@@ -3,7 +3,7 @@
 <div class="admin-lpd-page">
     <div class="admin-lpd-heading">
         <div>
-            <a class="admin-lpd-back" href="{{ route('admin.administrasi.show', $kegiatan) }}"><i class="bi bi-arrow-left"></i> Administrasi Kegiatan</a>
+            <a class="admin-lpd-back" href="{{ route('admin.kegiatan.show', $kegiatan) }}"><i class="bi bi-arrow-left"></i> Kelola Kegiatan</a>
             <h2>Kelola LPD</h2>
             <p>Setiap progress yang tersimpan pada kegiatan <strong>{{ $kegiatan->nama_kegiatan }}</strong> otomatis dibuat menjadi dokumen LPD dan tersedia untuk diunduh.</p>
         </div>

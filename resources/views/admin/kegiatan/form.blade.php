@@ -9,4 +9,4 @@
         @endforeach
     </div>
     <small class="form-text text-muted">Pilih satu atau lebih role yang dapat mengikuti kegiatan ini.</small>
-</div><div class="col-12 mb-3"><label class="form-label">Deskripsi</label><textarea class="form-control" rows="3" name="deskripsi">{{ old('deskripsi',$kegiatan->deskripsi) }}</textarea></div></div><button class="btn btn-success">Simpan</button> <a class="btn btn-light" href="{{ route('admin.kegiatan.index') }}">Batal</a></form></div>@endsection
+</div><div class="col-12 mb-3"><label class="form-label">Deskripsi</label><textarea class="form-control" rows="3" name="deskripsi">{{ old('deskripsi',$kegiatan->deskripsi) }}</textarea></div></div><button class="btn btn-success">Simpan</button> <a class="btn btn-light" href="{{ route('admin.dashboard') }}">Batal</a></form></div>@endsection

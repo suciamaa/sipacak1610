@@ -9,7 +9,6 @@ use App\Models\Lpd;
 use App\Models\Petugas;
 use App\Models\Penugasan;
 use App\Models\ProgressHarian;
-use Illuminate\Pagination\LengthAwarePaginator;
 
 class DashboardController extends Controller
 {
@@ -29,37 +28,6 @@ class DashboardController extends Controller
 
     public function __invoke()
     {
-        $kegiatan = Kegiatan::withCount('penugasan')->orderByDesc('created_at')->get();
-        $progressByKegiatan = ProgressHarian::query()
-            ->join('penugasan', 'penugasan.id', '=', 'progress_harian.penugasan_id')
-            ->selectRaw('penugasan.kegiatan_id, COUNT(progress_harian.id) as total_progress')
-            ->groupBy('penugasan.kegiatan_id')
-            ->pluck('total_progress', 'kegiatan_id');
-
-        $kegiatanMonitoring = $kegiatan->map(function (Kegiatan $item) use ($progressByKegiatan) {
-            $item->progress_count = (int) ($progressByKegiatan[$item->id] ?? 0);
-            return $item;
-        });
-
-        $kegiatanAktifMonitoring = $kegiatanMonitoring
-            ->where('status', 'aktif')
-            ->values();
-
-        $perPage = 10;
-        $currentPage = LengthAwarePaginator::resolveCurrentPage();
-        $kegiatanTerbaru = new LengthAwarePaginator(
-            $kegiatanMonitoring->forPage($currentPage, $perPage)->values(),
-            $kegiatanMonitoring->count(),
-            $perPage,
-            $currentPage,
-            ['path' => request()->url(), 'query' => request()->query()]
-        );
-
-        $stats = self::statistics();
-        return view('admin.dashboard', $stats + [
-            'kegiatanMonitoring' => $kegiatanAktifMonitoring,
-            'kegiatanTerbaru' => $kegiatanTerbaru,
-            'maxProgress' => max(1, (int) $kegiatanAktifMonitoring->max('progress_count')),
-        ]);
+        return view('admin.dashboard');
     }
 }

@@ -1,0 +1,170 @@
+/* SIPACAK Petugas Refresh — coherent warm-orange interface */
+body.petugas-app{
+  --pt-orange:#df741b;--pt-orange-dark:#a94e10;--pt-orange-soft:#fff0e2;
+  --pt-green:#32845b;--pt-green-soft:#e9f4ed;--pt-blue:#2876a5;--pt-blue-soft:#eaf3f8;
+  --pt-ink:#30271f;--pt-muted:#796e63;--pt-line:#eadfd3;--pt-paper:#faf7f2;
+  background:var(--pt-paper)!important;color:var(--pt-ink)!important;
+  font-family:'Instrument Sans',sans-serif;
+}
+.petugas-app .app-navbar{
+  background:linear-gradient(110deg,#b9510d 0%,#df741b 58%,#ee963d 100%)!important;
+  min-height:88px;border-bottom:4px solid var(--pt-green);box-shadow:0 5px 20px rgba(100,55,20,.10)!important;
+}
+.petugas-app .app-navbar .container{max-width:1440px;padding-inline:28px}
+.petugas-app .app-brand{display:flex;align-items:center;gap:13px;color:#fff!important;font-size:1.2rem;font-weight:850;letter-spacing:-.02em}
+.petugas-app .app-brand-mark{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:rgba(255,255,255,.18)!important;color:#fff!important;font-size:1.3rem;border:1px solid rgba(255,255,255,.2)}
+.petugas-app .app-brand small{display:block;max-width:340px;margin-top:4px;color:rgba(255,255,255,.88)!important;font-size:.72rem;font-weight:500;line-height:1.4;letter-spacing:0}
+.petugas-app .profile-trigger{color:#2f241b!important}.petugas-app .profile-name{color:#2f241b!important;font-weight:800}.petugas-app .profile-role{color:#74451f!important}
+.petugas-app .profile-avatar{background:linear-gradient(135deg,#2876a5,#32845b)!important;color:#fff!important;border-radius:12px}
+.petugas-app .profile-dropdown{border:1px solid var(--pt-line);border-radius:15px;box-shadow:0 14px 35px rgba(50,35,20,.13)}
+.petugas-app .app-container{width:min(100% - 56px,1380px)!important;max-width:1380px!important;padding-top:34px!important;padding-bottom:42px!important}
+.petugas-app .app-footer{color:#978a7d!important;border-top:1px solid var(--pt-line);margin-top:35px;padding-top:18px!important;font-size:.75rem}
+.petugas-app h1,.petugas-app h2,.petugas-app h3,.petugas-app h4,.petugas-app h5{color:var(--pt-ink)!important;letter-spacing:-.025em}
+.petugas-app .page-eyebrow,.petugas-app .muted-label,.petugas-app .progress-section-kicker{color:var(--pt-orange-dark)!important;font-weight:800;letter-spacing:.11em}
+.petugas-app .text-secondary,.petugas-app .text-muted{color:var(--pt-muted)!important}
+/* Dashboard hero and assignments */
+.petugas-app .pt-hero{background:linear-gradient(115deg,#fff5e9 0%,#fff 64%,#edf5ef 100%)!important;border-bottom:1px solid #f0dfce!important;color:var(--pt-ink)!important}
+.petugas-app .pt-hero::before{opacity:.12!important;background-image:radial-gradient(rgba(223,116,27,.25) 1px,transparent 1px)!important;background-size:18px 18px!important}
+.petugas-app .pt-hero-inner{width:min(100% - 56px,1380px)!important;padding:38px 0 34px!important;grid-template-columns:minmax(0,1.25fr) minmax(300px,.9fr)!important;gap:34px}
+.petugas-app .pt-today{color:var(--pt-orange-dark)!important;font-weight:750}
+.petugas-app .pt-hero h1{color:var(--pt-ink)!important;font-size:clamp(2rem,3.4vw,3rem)!important;font-weight:850!important}
+.petugas-app .pt-hero p{color:var(--pt-muted)!important;line-height:1.7}
+.petugas-app .pt-stats{gap:10px!important}
+.petugas-app .pt-stat{border:1px solid var(--pt-line)!important;border-radius:16px!important;background:#fff!important;box-shadow:0 6px 18px rgba(74,48,25,.045)!important;padding:16px!important}
+.petugas-app .pt-stat strong{color:var(--pt-orange-dark)!important;font-size:1.8rem!important}
+.petugas-app .pt-stat span{color:var(--pt-muted)!important}
+.petugas-app .pt-list-head{margin:30px 0 16px!important}
+.petugas-app .pt-list-head h2{font-size:1.45rem!important;font-weight:850}
+.petugas-app .pt-list-head p{color:var(--pt-muted)!important}
+.petugas-app .pt-filters{display:flex;align-items:end;gap:12px;padding:16px;border:1px solid var(--pt-line);border-radius:17px;background:#fff;box-shadow:0 5px 18px rgba(74,48,25,.035);margin-bottom:18px}
+.petugas-app .pt-search-wrap{flex:1;min-width:220px}.petugas-app .pt-search-wrap>i{color:var(--pt-orange-dark)!important}
+.petugas-app .pt-filters .form-control,.petugas-app .pt-filters .form-select{min-height:43px;border-color:#e5d9cc;border-radius:10px;background-color:#fff;color:var(--pt-ink)}
+.petugas-app .pt-filter-control label{color:var(--pt-muted)!important;font-size:.75rem;font-weight:750;margin-bottom:5px}
+.petugas-app .pt-filter-submit,.petugas-app .pt-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:0 17px;border:1px solid var(--pt-orange);border-radius:11px;background:var(--pt-orange)!important;color:#fff!important;font-weight:800;text-decoration:none;box-shadow:0 5px 12px rgba(190,89,18,.14)}
+.petugas-app .pt-filter-submit:hover,.petugas-app .pt-btn:hover{background:var(--pt-orange-dark)!important;color:#fff!important}
+.petugas-app .pt-filter-reset{color:var(--pt-orange-dark)!important;font-weight:750}
+.petugas-app .pt-list{padding:0;margin:0;list-style:none;border:1px solid var(--pt-line);border-radius:18px;background:#fff;overflow:hidden;box-shadow:0 8px 24px rgba(74,48,25,.04)}
+.petugas-app .pt-item{grid-template-columns:minmax(0,1.5fr) minmax(220px,1fr) auto!important;gap:24px!important;padding:22px 24px 22px 28px!important}
+.petugas-app .pt-item::before{width:4px!important;background:var(--pt-orange)!important}
+.petugas-app .pt-item[data-role="PML"]::before{background:var(--pt-green)!important}
+.petugas-app .pt-item:hover{background:#fffaf5!important}
+.petugas-app .pt-name{font-size:1.06rem!important;font-weight:850!important;margin-bottom:9px!important}
+.petugas-app .pt-meta{color:var(--pt-muted)!important;gap:12px!important}
+.petugas-app .pt-role{background:var(--pt-orange-soft)!important;color:var(--pt-orange-dark)!important;border-radius:7px;padding:5px 9px;font-size:.68rem;font-weight:850}
+.petugas-app .pt-item[data-role="PML"] .pt-role{background:var(--pt-green-soft)!important;color:#246644!important}
+.petugas-app .pt-period b{color:var(--pt-ink)!important}.petugas-app .pt-period span{color:var(--pt-muted)!important}
+.petugas-app .pt-bar{height:7px!important;background:#f1e8de!important;border-radius:99px!important;overflow:hidden}
+.petugas-app .pt-bar i{background:linear-gradient(90deg,var(--pt-orange),#f2a34e)!important;border-radius:99px}
+.petugas-app .pt-status{display:inline-flex;padding:5px 9px;border-radius:99px;background:var(--pt-green-soft)!important;color:#246644!important;font-size:.7rem;font-weight:800}
+.petugas-app .pt-status.is-off{background:#f2eee9!important;color:#786d62!important}
+.petugas-app .pt-empty{padding:42px 22px!important;text-align:center;color:var(--pt-muted)}
+/* Progress list / assignment overview */
+.petugas-app .progress-overview-heading{align-items:flex-end!important;margin-bottom:26px!important}
+.petugas-app .progress-overview-copy h2{font-size:clamp(1.8rem,3vw,2.35rem)!important;color:var(--pt-ink)!important;font-weight:850!important;margin:8px 0 12px!important}
+.petugas-app .progress-back-button{display:inline-flex;align-items:center;min-height:39px;padding:8px 13px!important;border:1px solid #e6d8c9!important;border-radius:10px!important;background:#fff!important;color:var(--pt-orange-dark)!important;font-weight:750!important;box-shadow:none!important}
+.petugas-app .progress-back-button:hover{background:var(--pt-orange-soft)!important;border-color:#e9b98f!important;color:var(--pt-orange-dark)!important}
+.petugas-app .progress-assignment-meta{gap:9px!important;color:var(--pt-muted)!important}
+.petugas-app .progress-assignment-meta span:not(.progress-meta-divider){padding:8px 11px;border:1px solid var(--pt-line);border-radius:10px;background:#fff;color:#55483c}
+.petugas-app .progress-assignment-meta i{color:var(--pt-orange)!important}
+.petugas-app .progress-create-button{min-height:46px!important;padding:0 19px!important;border:1px solid var(--pt-orange)!important;border-radius:12px!important;background:var(--pt-orange)!important;color:#fff!important;font-weight:850!important;box-shadow:0 7px 17px rgba(190,89,18,.17)!important}
+.petugas-app .progress-create-button:hover{background:var(--pt-orange-dark)!important;color:#fff!important}
+.petugas-app .progress-history-card,.petugas-app .progress-download-area{border:1px solid var(--pt-line)!important;border-radius:19px!important;background:#fff!important;box-shadow:0 8px 26px rgba(74,48,25,.045)!important}
+.petugas-app .progress-history-heading{padding:22px 25px!important;border-bottom:1px solid #f0e8df!important;background:linear-gradient(110deg,#fffaf5,#fff)!important}
+.petugas-app .progress-history-heading .muted-label{color:var(--pt-orange-dark)!important}
+.petugas-app .progress-history-heading h5{color:var(--pt-ink)!important;font-size:1.1rem!important;font-weight:850!important}
+.petugas-app .progress-history-heading p{color:var(--pt-muted)!important;font-size:.84rem!important}
+.petugas-app .progress-history-icon{width:46px!important;height:46px!important;border-radius:14px!important;background:var(--pt-orange-soft)!important;color:var(--pt-orange-dark)!important}
+.petugas-app .progress-history-table{min-width:900px!important;margin:0!important;border-collapse:separate!important;border-spacing:0!important}
+.petugas-app .progress-history-table thead th{padding:16px 18px!important;background:#f8f2eb!important;color:#665546!important;border-bottom:1px solid #eadfd3!important;font-size:.74rem!important;font-weight:850!important;white-space:nowrap}
+.petugas-app .progress-history-table tbody td{padding:15px 18px!important;border-bottom:1px solid #f1ebe4!important;color:#51463b!important;font-size:.82rem!important}
+.petugas-app .progress-history-table tbody tr:last-child td{border-bottom:0!important}
+.petugas-app .progress-history-table tbody tr:hover td{background:#fffaf5!important}
+.petugas-app .progress-date-value{color:var(--pt-ink)!important;font-weight:800}
+.petugas-app .progress-row-actions{display:flex;justify-content:center;gap:7px;flex-wrap:wrap}
+.petugas-app .progress-row-actions .btn-outline-primary{color:var(--pt-orange-dark)!important;border-color:#e7b98f!important;background:#fff!important}
+.petugas-app .progress-row-actions .btn-outline-primary:hover{background:var(--pt-orange)!important;color:#fff!important}
+.petugas-app .progress-row-actions .btn-outline-danger{color:#a63e35!important;border-color:#e7c2bd!important}
+.petugas-app .empty-state{min-height:230px!important;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:34px!important;color:var(--pt-muted)!important;text-align:center}
+.petugas-app .empty-state-icon{display:grid;place-items:center;width:60px;height:60px;margin-bottom:4px;border-radius:18px;background:var(--pt-orange-soft)!important;color:var(--pt-orange-dark)!important;font-size:1.45rem}
+.petugas-app .empty-state strong{color:var(--pt-ink)!important;font-size:1.05rem}
+.petugas-app .empty-state p{color:var(--pt-muted)!important;font-size:.85rem}
+.petugas-app .progress-download-area{margin-top:20px;padding:22px 24px!important}
+.petugas-app .progress-download-intro .muted-label{color:var(--pt-orange-dark)!important}
+.petugas-app .progress-download-intro strong{color:var(--pt-ink)!important;font-size:1rem}
+.petugas-app .progress-download-intro small{color:var(--pt-muted)!important}
+.petugas-app .btn-download-kwitansi,.petugas-app .btn-download-lpd,.petugas-app .btn-download-pdf{border:1px solid var(--pt-orange)!important;background:var(--pt-orange)!important;color:#fff!important;border-radius:10px!important;font-weight:800!important}
+.petugas-app .btn-download-lpd{background:var(--pt-green)!important;border-color:var(--pt-green)!important}
+.petugas-app .btn-download-pdf{background:var(--pt-blue)!important;border-color:var(--pt-blue)!important}
+.petugas-app .download-menu-panel{border:1px solid var(--pt-line)!important;border-radius:14px!important;background:#fff!important;box-shadow:0 14px 34px rgba(50,35,20,.12)!important;padding:16px!important}
+.petugas-app .download-menu-panel .form-label{color:var(--pt-ink)!important;font-weight:750}
+.petugas-app .download-menu-panel .btn-outline-warning,.petugas-app .download-menu-panel .btn-outline-primary{background:#fff!important;color:var(--pt-orange-dark)!important;border-color:#e7b98f!important}
+/* Progress form and document list share the same surface language */
+.petugas-app .pf-crumbs a,.petugas-app .pf-btn-outline{color:var(--pt-orange-dark)!important;border-color:#e7b98f!important}
+.petugas-app .pf-hero{background:linear-gradient(110deg,#fff3e5,#fff 70%)!important;border:1px solid #f0ddc9!important;border-radius:19px!important}
+.petugas-app .pf-hero-icon,.petugas-app .pf-date-icon,.petugas-app .pf-round{background:var(--pt-orange-soft)!important;color:var(--pt-orange-dark)!important}
+.petugas-app .pf-panel,.petugas-app .pf-card,.petugas-app .pf-issue{border-color:var(--pt-line)!important;border-radius:16px!important;background:#fff!important;box-shadow:0 5px 18px rgba(74,48,25,.035)!important}
+.petugas-app .pf-banner,.petugas-app .pf-h2-bar:before{background:var(--pt-orange)!important}
+.petugas-app .pf-num,.petugas-app .pf-step-no{background:var(--pt-orange-soft)!important;color:var(--pt-orange-dark)!important}
+.petugas-app .pf-btn-primary{background:var(--pt-orange)!important;border-color:var(--pt-orange)!important;color:#fff!important}
+.petugas-app .pf-btn-primary:hover{background:var(--pt-orange-dark)!important}
+.petugas-app .doc-page-title{color:var(--pt-ink)!important;font-weight:850}
+.petugas-app .doc-table-wrap,.petugas-app .progress-day-card{border:1px solid var(--pt-line)!important;border-radius:16px!important;background:#fff!important;box-shadow:0 6px 20px rgba(74,48,25,.04)!important}
+.petugas-app .doc-table-wrap thead th{background:#f8f2eb!important;color:#665546!important}
+.petugas-app .doc-table-wrap tbody td{color:#51463b!important;border-color:#f1ebe4!important}
+/* Bootstrap and legacy color contrast normalization */
+.petugas-app .btn-primary,.petugas-app .btn-warning{background:var(--pt-orange)!important;border-color:var(--pt-orange)!important;color:#fff!important}
+.petugas-app .btn-success{background:var(--pt-green)!important;border-color:var(--pt-green)!important;color:#fff!important}
+.petugas-app .btn-info{background:var(--pt-blue)!important;border-color:var(--pt-blue)!important;color:#fff!important}
+.petugas-app .btn-outline-success{color:#246644!important;border-color:#9bc9ad!important;background:#fff!important}
+.petugas-app .btn-outline-success:hover{background:var(--pt-green)!important;color:#fff!important}
+.petugas-app .btn-outline-info{color:#23658d!important;border-color:#a9c9dd!important;background:#fff!important}
+.petugas-app .badge.bg-primary,.petugas-app .text-bg-primary{background:var(--pt-orange)!important;color:#fff!important}
+.petugas-app .badge.bg-success,.petugas-app .text-bg-success{background:var(--pt-green)!important;color:#fff!important}
+.petugas-app .badge.bg-info,.petugas-app .text-bg-info{background:var(--pt-blue)!important;color:#fff!important}
+.petugas-app .form-control,.petugas-app .form-select{border-color:#e4d8cb!important;color:var(--pt-ink)!important;background-color:#fff!important;border-radius:10px}
+.petugas-app .form-control:focus,.petugas-app .form-select:focus{border-color:var(--pt-orange)!important;box-shadow:0 0 0 .2rem rgba(223,116,27,.14)!important}
+.petugas-app .page-link{color:var(--pt-orange-dark)!important}.petugas-app .page-item.active .page-link{background:var(--pt-orange)!important;border-color:var(--pt-orange)!important;color:#fff!important}
+@media(max-width:900px){.petugas-app .pt-hero-inner{grid-template-columns:1fr!important}.petugas-app .pt-filters{flex-wrap:wrap}.petugas-app .pt-search-wrap{flex-basis:100%}.petugas-app .pt-item{grid-template-columns:1fr 1fr!important}.petugas-app .pt-action{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center}}
+@media(max-width:767px){.petugas-app .app-navbar{min-height:76px}.petugas-app .app-navbar .container{padding-inline:16px}.petugas-app .app-brand{font-size:1.02rem}.petugas-app .app-brand-mark{width:40px;height:40px}.petugas-app .app-brand small{max-width:205px;font-size:.62rem}.petugas-app .app-container{width:calc(100% - 28px)!important;padding-top:23px!important}.petugas-app .pt-hero-inner{width:calc(100% - 32px)!important;padding:27px 0!important}.petugas-app .pt-stats{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px!important}.petugas-app .pt-stat{padding:11px 9px!important}.petugas-app .pt-stat strong{font-size:1.35rem!important}.petugas-app .pt-stat span{font-size:.66rem!important;line-height:1.35}.petugas-app .pt-filters{display:grid;grid-template-columns:1fr 1fr;padding:12px}.petugas-app .pt-search-wrap{grid-column:1/-1;min-width:0}.petugas-app .pt-filter-submit{width:100%}.petugas-app .pt-item{grid-template-columns:1fr!important;gap:12px!important;padding:18px 17px 18px 21px!important}.petugas-app .pt-action{grid-column:auto;justify-content:space-between}.petugas-app .progress-overview-heading{align-items:stretch!important}.petugas-app .progress-create-button{width:100%;justify-content:center}.petugas-app .progress-history-heading{padding:18px!important}.petugas-app .progress-history-table-wrap{margin:0 10px 10px;border:1px solid #f0e8df;border-radius:12px}.petugas-app .progress-download-area{display:block!important;padding:18px!important}.petugas-app .progress-download-actions{display:grid;grid-template-columns:1fr;gap:10px;margin-top:14px}.petugas-app .progress-card-list{display:grid;gap:11px;padding:12px}.petugas-app .progress-day-card{padding:14px!important}.petugas-app .pf-actions{position:sticky;bottom:8px;z-index:10;background:rgba(250,247,242,.94);backdrop-filter:blur(10px);padding:10px;border:1px solid var(--pt-line);border-radius:14px}}
+@media(max-width:420px){.petugas-app .app-brand small{max-width:160px}.petugas-app .profile-text{display:none}.petugas-app .pt-stats{grid-template-columns:1fr 1fr}.petugas-app .pt-stat:last-child{grid-column:1/-1}}
+
+/* ===== Navbar + dashboard hero refinement v2 ===== */
+.petugas-app .navbar.app-navbar,.petugas-app .app-navbar.navbar-dark{min-height:74px!important;padding:10px 0!important;background:#fffdfb!important;background-image:none!important;border:0!important;border-bottom:1px solid #eee2d6!important;box-shadow:0 3px 14px rgba(70,43,20,.055)!important;position:relative;z-index:20}
+.petugas-app .app-navbar::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,#d96c17 0%,#eea04f 72%,#32845b 100%)!important}
+.petugas-app .app-navbar .container{max-width:1380px!important;padding-inline:clamp(18px,3vw,42px)!important;min-height:52px;display:flex;align-items:center;flex-wrap:nowrap;gap:18px}
+.petugas-app .app-navbar .app-brand{min-width:0;margin:0!important;display:flex;align-items:center;gap:12px;color:#33271e!important;font-size:1.12rem!important;font-weight:850!important;letter-spacing:-.035em!important;line-height:1.1}
+.petugas-app .app-navbar .app-brand-mark{flex:0 0 42px;width:42px!important;height:42px!important;border-radius:13px!important;display:grid;place-items:center;background:#e9781d!important;color:#fff!important;border:0!important;box-shadow:0 5px 12px rgba(217,108,23,.18)!important;font-size:1.08rem!important}
+.petugas-app .app-navbar .app-brand small{max-width:330px;margin-top:4px!important;color:#89796a!important;font-size:.68rem!important;font-weight:500!important;line-height:1.3!important}
+.petugas-app .app-navbar .profile-menu{margin-left:auto!important;flex:0 0 auto}
+.petugas-app .app-navbar .profile-trigger{display:flex;align-items:center;gap:11px;padding:5px 6px 5px 13px!important;border:1px solid #eee3d8!important;border-radius:13px!important;background:#fff!important;box-shadow:0 2px 8px rgba(55,39,24,.035);transition:border-color .16s,box-shadow .16s}
+.petugas-app .app-navbar .profile-trigger:hover{border-color:#e8bd99!important;box-shadow:0 4px 13px rgba(55,39,24,.07)}
+.petugas-app .app-navbar .profile-text{display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+.petugas-app .app-navbar .profile-name{color:#30271f!important;font-size:.82rem!important;font-weight:800!important;line-height:1.2}
+.petugas-app .app-navbar .profile-role{color:#92765d!important;font-size:.65rem!important;font-weight:750!important;letter-spacing:.07em;text-transform:uppercase}
+.petugas-app .app-navbar .profile-avatar{width:36px!important;height:36px!important;border-radius:10px!important;display:grid;place-items:center;background:#e9781d!important;color:#fff!important;font-size:1rem}
+.petugas-app .app-navbar .profile-dropdown{margin-top:9px!important;border:1px solid #eee2d6!important;border-radius:13px!important;box-shadow:0 16px 36px rgba(54,38,24,.14)!important;overflow:hidden}
+.petugas-app .app-navbar .profile-dropdown-head{padding:14px 16px!important;background:#fff9f3!important;border-bottom:1px solid #f1e7dd}
+.petugas-app .app-navbar .profile-dropdown-head small{color:#89796a!important}.petugas-app .app-navbar .profile-dropdown-head strong{color:#30271f!important}.petugas-app .app-navbar .profile-logout{color:#a94e10!important}
+
+.petugas-app .pt-hero{position:relative;overflow:hidden;margin:0!important;padding:0!important;border:0!important;border-bottom:1px solid #efdfce!important;border-radius:0!important;background:linear-gradient(115deg,#fff8f0 0%,#fffdfb 56%,#f2f7f1 100%)!important;color:#30271f!important}
+.petugas-app .pt-hero::before{content:"";position:absolute;inset:0 0 0 auto;width:min(42%,620px);opacity:.55!important;background:radial-gradient(circle at 70% 22%,rgba(232,120,29,.10),transparent 42%),radial-gradient(circle at 88% 85%,rgba(50,132,91,.09),transparent 38%)!important;pointer-events:none}
+.petugas-app .pt-hero-inner{position:relative;z-index:1;width:min(100% - 80px,1280px)!important;margin:0 auto!important;padding:38px 0 36px!important;display:grid!important;grid-template-columns:minmax(0,1.12fr) minmax(390px,.88fr)!important;align-items:center!important;gap:clamp(28px,5vw,76px)!important}
+.petugas-app .pt-hero-copy{min-width:0;max-width:650px}
+.petugas-app .pt-hero-kicker{display:flex;align-items:center;gap:9px;margin:0 0 15px;color:#a95617!important;font-size:.68rem;font-weight:850;letter-spacing:.12em}
+.petugas-app .pt-hero-kicker-dot{width:7px;height:7px;border-radius:50%;background:#df741b;box-shadow:0 0 0 4px #fce8d7}.petugas-app .pt-kicker-divider{color:#d4b69a;font-weight:500}
+.petugas-app .pt-hero h1{margin:0 0 12px!important;color:#30271f!important;font-size:clamp(2rem,3.5vw,3.15rem)!important;font-weight:850!important;letter-spacing:-.055em!important;line-height:1.08!important}
+.petugas-app .pt-hero h1 span{color:#d96c17!important}
+.petugas-app .pt-hero-copy>p{max-width:570px;margin:0!important;color:#74685d!important;font-size:.98rem!important;line-height:1.7!important}
+.petugas-app .pt-hero-note{display:flex;align-items:flex-start;gap:9px;max-width:560px;margin-top:19px;color:#7c6d5f;font-size:.78rem;line-height:1.5}
+.petugas-app .pt-hero-note i{flex:0 0 auto;margin-top:1px;color:#32845b;font-size:.95rem}
+.petugas-app .pt-hero-summary{min-width:0;padding:19px;border:1px solid #eee1d4;border-radius:18px;background:rgba(255,255,255,.88);box-shadow:0 12px 30px rgba(88,57,29,.065);backdrop-filter:blur(8px)}
+.petugas-app .pt-summary-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 14px;color:#8a6a4e;font-size:.66rem;font-weight:850;letter-spacing:.12em}
+.petugas-app .pt-summary-heading i{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;background:#fff0e2;color:#c46118;font-size:.95rem}
+.petugas-app .pt-hero .pt-stats{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:9px!important}
+.petugas-app .pt-hero .pt-stat{min-width:0;min-height:112px;padding:13px 12px!important;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;border:1px solid #f0e6dc!important;border-radius:13px!important;background:#fff!important;box-shadow:none!important}
+.petugas-app .pt-hero .pt-stat-label{display:block;margin:0 0 7px;color:#827365!important;font-size:.68rem!important;font-weight:700!important;line-height:1.3}
+.petugas-app .pt-hero .pt-stat strong{display:block;color:#bd5d16!important;font-size:1.8rem!important;font-weight:850!important;line-height:1.05!important;letter-spacing:-.04em}
+.petugas-app .pt-hero .pt-stat small{display:block;margin-top:5px;color:#9a8c7f!important;font-size:.65rem!important;line-height:1.25}
+@media(max-width:900px){.petugas-app .pt-hero-inner{width:min(100% - 48px,720px)!important;grid-template-columns:1fr!important;gap:24px!important;padding:31px 0!important}.petugas-app .pt-hero-copy{max-width:100%}.petugas-app .pt-hero-summary{max-width:none}}
+@media(max-width:767px){.petugas-app .app-navbar{min-height:64px!important;padding:7px 0!important}.petugas-app .app-navbar .container{padding-inline:16px!important;min-height:48px;gap:8px}.petugas-app .app-navbar .app-brand{font-size:1rem!important;gap:9px}.petugas-app .app-navbar .app-brand-mark{width:38px!important;height:38px!important;flex-basis:38px;border-radius:11px!important}.petugas-app .app-navbar .app-brand small{display:none!important}.petugas-app .app-navbar .profile-trigger{padding:4px!important;border:0!important;background:transparent!important;box-shadow:none!important;gap:0}.petugas-app .app-navbar .profile-text{display:none!important}.petugas-app .app-navbar .profile-avatar{width:38px!important;height:38px!important}.petugas-app .pt-hero-inner{width:calc(100% - 36px)!important;padding:27px 0 25px!important;gap:20px!important}.petugas-app .pt-hero-kicker{font-size:.61rem;margin-bottom:12px;letter-spacing:.09em}.petugas-app .pt-hero h1{font-size:2rem!important;margin-bottom:9px!important}.petugas-app .pt-hero-copy>p{font-size:.88rem!important;line-height:1.6!important}.petugas-app .pt-hero-note{margin-top:13px;font-size:.73rem}.petugas-app .pt-hero-summary{padding:14px;border-radius:15px}.petugas-app .pt-hero .pt-stats{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:7px!important}.petugas-app .pt-hero .pt-stat{min-height:96px;padding:10px 8px!important;border-radius:11px!important}.petugas-app .pt-hero .pt-stat-label{font-size:.61rem!important;margin-bottom:6px}.petugas-app .pt-hero .pt-stat strong{font-size:1.5rem!important}.petugas-app .pt-hero .pt-stat small{font-size:.58rem!important}}
+@media(max-width:380px){.petugas-app .pt-hero .pt-stats{grid-template-columns:1fr 1fr!important}.petugas-app .pt-hero .pt-stat:last-child{grid-column:1/-1;min-height:76px}.petugas-app .pt-hero h1{font-size:1.75rem!important}}

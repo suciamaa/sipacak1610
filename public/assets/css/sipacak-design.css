@@ -675,3 +675,16 @@ img,video{max-width:100%}
 .pt-filter-submit:hover{background:var(--blue-deep);color:#fff}
 .pt-filter-reset{border:1px solid var(--line);color:var(--ink-2);background:#fff}
 .pt-filter-reset:hover{background:#f4f7fa;color:var(--ink)}
+
+/* Dashboard admin tunggal */
+.dash-summary .ad-metric strong{font-size:1.9rem}
+.dash-summary .ad-metric small{font-size:.74rem;color:var(--ink-3)}
+.dash-tabs .nav-link{font-weight:650;color:var(--ink-3)}
+.dash-tabs .nav-link.active{color:var(--blue);font-weight:700}
+@media (max-width:991.98px){
+  .dash-summary .ad-metrics{grid-template-columns:repeat(2,minmax(0,1fr))!important;row-gap:16px}
+  .dash-summary .ad-metric{padding:2px 12px;border-left:0!important}
+  .dash-summary .ad-metric:nth-child(odd){padding-left:0}
+}
+.kegiatan-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.kegiatan-actions .btn{display:flex;align-items:center;justify-content:center;white-space:nowrap}

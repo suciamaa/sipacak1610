@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="mb-3"><a class="admin-lpd-back" href="{{ route('admin.administrasi.show', $kegiatan) }}"><i class="bi bi-arrow-left"></i> Administrasi Kegiatan</a></div>
+<div class="mb-3"><a class="admin-lpd-back" href="{{ route('admin.kegiatan.show', $kegiatan) }}"><i class="bi bi-arrow-left"></i> Kelola Kegiatan</a></div>
 <h2>Kelola Kwitansi · {{ $kegiatan->nama_kegiatan }}</h2>
 
 <div class="card p-3 mb-3">

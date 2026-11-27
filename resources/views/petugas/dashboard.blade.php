@@ -12,15 +12,19 @@
 @section('before_main')
 <section class="pt-hero" aria-label="Ringkasan petugas">
     <div class="pt-hero-inner">
-        <div>
-            <div class="pt-today"><i class="bi bi-calendar3"></i>{{ now()->translatedFormat('l, d F Y') }}</div>
-            <h1>Halo, {{ $namaDepan }}.</h1>
-            <p>@if($allAssignments->count())Pilih kegiatan di bawah untuk mengisi progress harian. LPD dan kwitansi disusun dari data yang Anda isi.@else Belum ada kegiatan untuk Anda. Admin akan menugaskan kegiatan dan wilayah kerja.@endif</p>
+        <div class="pt-hero-copy">
+            <div class="pt-hero-kicker"><span class="pt-hero-kicker-dot"></span> RUANG KERJA PETUGAS <span class="pt-kicker-divider">/</span> {{ now()->translatedFormat('l, d F Y') }}</div>
+            <h1>Selamat datang, <span>{{ $namaDepan }}</span>.</h1>
+            <p>@if($allAssignments->count())Semua penugasan lapangan Anda ada di sini. Pilih kegiatan untuk mencatat progress harian dan melengkapi administrasi.@else Belum ada penugasan untuk akun Anda. Kegiatan akan muncul di sini setelah admin menetapkan wilayah kerja.@endif</p>
+            <div class="pt-hero-note"><i class="bi bi-info-circle"></i><span>Catat progress secara berkala agar laporan kegiatan dan dokumen administrasi tetap mutakhir.</span></div>
         </div>
-        <div class="pt-stats" role="list">
-            <div class="pt-stat" role="listitem"><strong>{{ $allAssignments->count() }}</strong><span>Penugasan aktif</span></div>
-            <div class="pt-stat" role="listitem"><strong>{{ $totalWilayah }}</strong><span>Kecamatan kerja</span></div>
-            <div class="pt-stat" role="listitem"><strong>{{ $sisaHari === null ? '-' : $sisaHari }}</strong><span>{{ $sisaHari === null ? 'Belum ada tenggat' : 'Hari hingga kegiatan terdekat selesai' }}</span></div>
+        <div class="pt-hero-summary">
+            <div class="pt-summary-heading"><span>RINGKASAN PENUGASAN</span><i class="bi bi-clipboard2-check"></i></div>
+            <div class="pt-stats" role="list">
+                <div class="pt-stat" role="listitem"><span class="pt-stat-label">Penugasan</span><strong>{{ $allAssignments->count() }}</strong><small>kegiatan</small></div>
+                <div class="pt-stat" role="listitem"><span class="pt-stat-label">Wilayah kerja</span><strong>{{ $totalWilayah }}</strong><small>kecamatan</small></div>
+                <div class="pt-stat" role="listitem"><span class="pt-stat-label">Sisa waktu</span><strong>{{ $sisaHari === null ? '—' : $sisaHari }}</strong><small>{{ $sisaHari === null ? 'belum ada tenggat' : 'hari kalender' }}</small></div>
+            </div>
         </div>
     </div>
 </section>

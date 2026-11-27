@@ -240,12 +240,23 @@
                 <span class="pf-round"><i class="bi bi-camera-fill"></i></span>
                 <div class="pf-issue-body">
                     <div class="documentation-section">
-                        <div class="documentation-head"><div><span class="eyebrow">DOKUMENTASI</span><h4>Dokumentasi Foto</h4><p>Setiap foto maksimal 250 KB. Format JPG/JPEG atau PNG.</p></div></div>
+                        <div class="documentation-head"><div><span class="eyebrow">DOKUMENTASI</span><h4>Dokumentasi Foto</h4><p>Upload galeri tetap tersedia. Foto kamera dapat dilengkapi GPS dan watermark otomatis. Maksimal 250 KB per foto.</p></div></div>
                         <div class="documentation-list">
                             @foreach($existingPhotos as $photo)
                                 <div class="documentation-row documentation-existing" data-existing>
                                     <div class="documentation-preview"><img src="{{ route('petugas.progress.documentation', [$penugasan, $photo->id]) }}" alt="Dokumentasi tersimpan"></div>
-                                    <span class="documentation-file-name">{{ $photo->nama_file }}</span>
+                                    <div class="documentation-file-area">
+                                        <span class="documentation-file-name">{{ $photo->nama_file }}</span>
+                                        @if($photo->latitude !== null && $photo->longitude !== null)
+                                            <small class="doc-gps-saved">GPS: {{ number_format((float)$photo->latitude, 6, '.', '') }}, {{ number_format((float)$photo->longitude, 6, '.', '') }} · Akurasi {{ $photo->gps_accuracy }} m</small>
+                                            @if($photo->captured_at)
+                                                <small class="doc-gps-saved">Diambil: {{ $photo->captured_at->copy()->timezone($photo->captured_timezone ?: 'Asia/Jakarta')->format('d-m-Y H:i:s') }} WIB</small>
+                                            @endif
+                                            <a class="doc-map-link" href="https://www.google.com/maps?q={{ $photo->latitude }},{{ $photo->longitude }}" target="_blank" rel="noopener noreferrer">Lihat Lokasi</a>
+                                        @elseif($photo->capture_source === 'gallery')
+                                            <small class="doc-gps-saved">Foto galeri · tanpa metadata GPS</small>
+                                        @endif
+                                    </div>
                                     <input type="checkbox" hidden name="hapus_dokumentasi[]" value="{{ $photo->id }}" @checked(in_array($photo->id, old('hapus_dokumentasi', [])))>
                                     <button type="button" class="btn btn-small documentation-remove" data-remove-existing>{{ in_array($photo->id, old('hapus_dokumentasi', [])) ? 'Batal hapus' : 'Hapus' }}</button>
                                 </div>
@@ -553,42 +564,251 @@
         sync();
     }
 
-    /* ---------- dokumentasi foto: satu baris untuk setiap foto ---------- */
+    /* ---------- dokumentasi foto: galeri atau kamera + GPS + watermark ---------- */
     const docList = form.querySelector('[data-new-documentation-list]');
     const docAdd = form.querySelector('[data-add-documentation]');
     const photoMessage = form.querySelector('[data-photo-msg]');
+    const MAX_GPS_ACCURACY = @json((float) config('sipacak.gps_max_accuracy', 50));
+    const OFFICER_NAME = @json($penugasan->petugas->nama_lengkap ?? auth()->user()->name);
+    const ACTIVITY_NAME = @json($penugasan->kegiatan->nama_kegiatan);
+    let documentationIndex = 0;
+
+    const showPhotoMessage = (message, type = 'error') => {
+        photoMessage.textContent = message;
+        photoMessage.classList.toggle('doc-photo-warning', type === 'warning');
+    };
+    const getPosition = () => new Promise((resolve, reject) => {
+        if (!('geolocation' in navigator)) {
+            reject(new Error('unavailable'));
+            return;
+        }
+        navigator.geolocation.getCurrentPosition(resolve, reject, {
+            enableHighAccuracy: true, timeout: 15000, maximumAge: 0
+        });
+    });
+    const formatWib = date => new Intl.DateTimeFormat('id-ID', {
+        timeZone: 'Asia/Jakarta', day: '2-digit', month: 'long', year: 'numeric'
+    }).format(date);
+    const formatClockWib = date => {
+        const parts = new Intl.DateTimeFormat('en-GB', {
+            timeZone: 'Asia/Jakarta', hour: '2-digit', minute: '2-digit', second: '2-digit',
+            hourCycle: 'h23'
+        }).formatToParts(date);
+        const values = Object.fromEntries(parts.map(part => [part.type, part.value]));
+        return `${values.hour}:${values.minute}:${values.second}`;
+    };
+    const gpsErrorMessage = error => {
+        if (error?.code === 1) return 'Izin lokasi belum diberikan. Aktifkan akses lokasi pada browser untuk mengambil dokumentasi dengan GPS.';
+        if (error?.code === 3) return 'Pengambilan lokasi melebihi batas waktu. Silakan coba kembali.';
+        if (error?.code === 2 || error?.message === 'unavailable') return 'Lokasi GPS tidak tersedia. Pastikan GPS perangkat aktif dan coba kembali.';
+        return 'Lokasi GPS tidak dapat diambil. Periksa izin lokasi perangkat dan coba kembali.';
+    };
+    const wrapText = (ctx, text, maxWidth) => {
+        const words = String(text).split(/\s+/);
+        const lines = [];
+        let line = '';
+        words.forEach(word => {
+            const candidate = line ? `${line} ${word}` : word;
+            if (line && ctx.measureText(candidate).width > maxWidth) {
+                lines.push(line);
+                line = word;
+            } else line = candidate;
+        });
+        if (line) lines.push(line);
+        return lines;
+    };
+    async function makeWatermarkedImage(file, meta) {
+        const imageUrl = URL.createObjectURL(file);
+        try {
+            const img = new Image();
+            img.src = imageUrl;
+            await new Promise((resolve, reject) => {
+                img.onload = resolve;
+                img.onerror = reject;
+            });
+            const maxSide = 1920;
+            const scale = Math.min(1, maxSide / Math.max(img.naturalWidth, img.naturalHeight));
+            const canvas = document.createElement('canvas');
+            canvas.width = Math.max(1, Math.round(img.naturalWidth * scale));
+            canvas.height = Math.max(1, Math.round(img.naturalHeight * scale));
+            const ctx = canvas.getContext('2d', { alpha: false });
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+            const fontSize = Math.max(13, Math.round(Math.min(canvas.width, canvas.height) * 0.026));
+            const padding = Math.max(12, Math.round(fontSize * 0.8));
+            const lineGap = Math.round(fontSize * 1.38);
+            const maxTextWidth = canvas.width - padding * 2;
+            const lines = [
+                'SIPACAK',
+                `Nama Petugas: ${OFFICER_NAME}`,
+                `Kegiatan: ${ACTIVITY_NAME}`,
+                `Latitude: ${meta.latitude}`,
+                `Longitude: ${meta.longitude}`,
+                `Tanggal: ${meta.date_label}`,
+                `Jam: ${meta.time_label} WIB`,
+                `Akurasi GPS: ${meta.gps_accuracy} meter`
+            ];
+            ctx.font = `600 ${fontSize}px Arial, sans-serif`;
+            const wrapped = [];
+            lines.forEach((line, index) => {
+                const split = wrapText(ctx, line, maxTextWidth);
+                split.forEach((part, partIndex) => wrapped.push({ text: part, bold: index === 0, gap: index === 0 && partIndex === 0 ? fontSize * .2 : 0 }));
+            });
+            const panelHeight = padding * 2 + wrapped.reduce((sum, item) => sum + lineGap + item.gap, 0);
+            const panelY = Math.max(0, canvas.height - panelHeight);
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.68)';
+            ctx.fillRect(0, panelY, canvas.width, panelHeight);
+            let y = panelY + padding + fontSize;
+            wrapped.forEach(item => {
+                y += item.gap;
+                ctx.font = `${item.bold ? '700' : '500'} ${item.bold ? Math.round(fontSize * 1.12) : fontSize}px Arial, sans-serif`;
+                ctx.fillStyle = '#ffffff';
+                ctx.fillText(item.text, padding, y);
+                y += lineGap;
+            });
+            let blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', 0.88));
+            if (!blob) throw new Error('canvas');
+            let quality = 0.82;
+            while (blob.size > MAX_BYTES && quality >= 0.40) {
+                blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', quality));
+                quality -= 0.06;
+            }
+            if (!blob || blob.size > MAX_BYTES) throw new Error('size');
+            return new File([blob], `sipacak-${Date.now()}.jpg`, { type: 'image/jpeg', lastModified: Date.now() });
+        } finally {
+            URL.revokeObjectURL(imageUrl);
+        }
+    }
+
     function addDocumentationRow() {
         const current = docList.querySelectorAll('.new-documentation-row').length + form.querySelectorAll('.documentation-existing:not(.is-removed)').length;
-        if (current >= MAX_PHOTOS) { photoMessage.textContent = `Maksimal ${MAX_PHOTOS} foto dokumentasi.`; return; }
+        if (current >= MAX_PHOTOS) { showPhotoMessage(`Maksimal ${MAX_PHOTOS} foto dokumentasi.`); return; }
+        const index = documentationIndex++;
         const row = document.createElement('div');
         row.className = 'documentation-row new-documentation-row';
-        row.innerHTML = `<div class="documentation-preview"><span>Preview</span></div><div class="documentation-file-area"><span class="documentation-file-label">Pilih Foto</span><label class="documentation-file-wrap"><span class="documentation-choose-button">Pilih foto</span><span class="documentation-file-name"></span><input type="file" class="documentation-file" name="sls[1][dokumentasi_files][]" accept="image/jpeg,image/png" aria-label="Pilih Foto"></label></div><button type="button" class="btn btn-small documentation-remove">Hapus</button>`;
-        const input = row.querySelector('input[type=file]');
-        const preview = row.querySelector('.documentation-preview');
-        input.addEventListener('change', () => {
-            const file = input.files?.[0];
-            const fileName = row.querySelector('.documentation-file-name');
-            if (fileName) fileName.textContent = file ? file.name : '';
-            preview.innerHTML = '';
-            if (!file) { preview.innerHTML = '<span>Preview</span>'; return; }
-            if (!['image/jpeg','image/png'].includes(file.type) || file.size > MAX_BYTES) {
-                photoMessage.textContent = !['image/jpeg','image/png'].includes(file.type) ? 'Format foto harus JPG/JPEG atau PNG.' : 'Ukuran setiap foto maksimal 250 KB.';
-                input.value = ''; if (fileName) fileName.textContent = ''; preview.innerHTML = '<span>Preview</span>'; return;
+        row.innerHTML = `
+            <div class="documentation-preview doc-photo-preview"><span>Preview foto</span></div>
+            <div class="documentation-file-area doc-photo-controls">
+                <div class="doc-photo-actions">
+                    <button type="button" class="btn btn-small doc-gallery-btn">Upload Galeri</button>
+                    <button type="button" class="btn btn-small doc-camera-btn">Ambil Foto / GPS Ulang</button>
+                </div>
+                <span class="documentation-file-name doc-selected-name"></span>
+                <div class="doc-photo-status" aria-live="polite">Pilih sumber foto.</div>
+                <div class="doc-photo-info" hidden></div>
+                <a class="doc-map-link" target="_blank" rel="noopener noreferrer" hidden>Lihat Lokasi</a>
+                <input type="file" class="documentation-file doc-hidden-file" name="sls[1][dokumentasi_files][${index}]" accept="image/*" aria-label="Pilih Foto" hidden>
+                <input type="hidden" name="sls[1][dokumentasi_metadata][${index}]" value="">
+            </div>
+            <button type="button" class="btn btn-small documentation-remove">Hapus</button>`;
+        const input = row.querySelector('.documentation-file');
+        const preview = row.querySelector('.doc-photo-preview');
+        const metadataInput = row.querySelector('input[type=hidden]');
+        const status = row.querySelector('.doc-photo-status');
+        const info = row.querySelector('.doc-photo-info');
+        const mapLink = row.querySelector('.doc-map-link');
+        const name = row.querySelector('.doc-selected-name');
+        let sourceMode = 'gallery';
+        let processing = false;
+
+        const clearPreview = () => {
+            preview.innerHTML = '<span>Preview foto</span>';
+            info.hidden = true; info.innerHTML = '';
+            mapLink.hidden = true; mapLink.removeAttribute('href');
+        };
+        const choose = mode => {
+            sourceMode = mode;
+            input.value = '';
+            metadataInput.value = '';
+            clearPreview();
+            name.textContent = '';
+            status.textContent = mode === 'camera' ? 'Menunggu foto dari kamera...' : 'Menunggu pilihan foto galeri...';
+            input.removeAttribute('capture');
+            if (mode === 'camera') input.setAttribute('capture', 'environment');
+            input.click();
+        };
+        row.querySelector('.doc-gallery-btn').addEventListener('click', () => choose('gallery'));
+        row.querySelector('.doc-camera-btn').addEventListener('click', () => choose('camera'));
+        input.addEventListener('change', async () => {
+            const selectedFile = input.files?.[0];
+            if (!selectedFile) return;
+            if (!['image/jpeg', 'image/png'].includes(selectedFile.type)) {
+                showPhotoMessage('Format foto harus JPG/JPEG atau PNG.');
+                input.value = ''; return;
             }
-            photoMessage.textContent = '';
-            const img = document.createElement('img'); img.alt = 'Preview dokumentasi'; img.src = URL.createObjectURL(file); preview.appendChild(img);
+            processing = true;
+            row.classList.add('is-processing');
+            metadataInput.value = '';
+            clearPreview();
+            name.textContent = selectedFile.name;
+            status.textContent = sourceMode === 'camera' ? 'Mengambil lokasi GPS...' : 'Memproses foto galeri...';
+            try {
+                let finalFile = selectedFile;
+                let metadata = { capture_source: 'gallery' };
+                if (sourceMode === 'camera') {
+                    const capturedDate = new Date();
+                    if (Number.isNaN(capturedDate.getTime())) throw new Error('time-invalid');
+                    const position = await getPosition();
+                    const accuracy = Number(position.coords.accuracy);
+                    if (!Number.isFinite(accuracy) || accuracy <= 0) throw new Error('accuracy-invalid');
+                    if (accuracy > MAX_GPS_ACCURACY) {
+                        status.textContent = `Akurasi GPS ${Math.round(accuracy * 10) / 10} meter, melebihi batas ${MAX_GPS_ACCURACY} meter.`;
+                        showPhotoMessage(`Akurasi GPS masih ${Math.round(accuracy * 10) / 10} meter. Ambil lokasi kembali atau pindah ke area terbuka.`, 'warning');
+                        input.value = ''; name.textContent = ''; processing = false; row.classList.remove('is-processing'); return;
+                    }
+                    const lat = Number(position.coords.latitude).toFixed(7);
+                    const lng = Number(position.coords.longitude).toFixed(7);
+                    const dateLabel = formatWib(capturedDate);
+                    const timeLabel = formatClockWib(capturedDate);
+                    metadata = {
+                        capture_source: 'camera',
+                        latitude: Number(lat), longitude: Number(lng),
+                        gps_accuracy: accuracy,
+                        captured_at: capturedDate.toISOString(),
+                        captured_timezone: 'Asia/Jakarta'
+                    };
+                    const watermarkMeta = { ...metadata, date_label: dateLabel, time_label: timeLabel };
+                    finalFile = await makeWatermarkedImage(selectedFile, watermarkMeta);
+                    status.textContent = 'Foto kamera berhasil diproses dengan watermark GPS.';
+                    info.innerHTML = `<strong>${OFFICER_NAME}</strong><br>${ACTIVITY_NAME}<br>${lat}, ${lng}<br>${dateLabel} · ${timeLabel} WIB<br>Akurasi GPS: ${Math.round(accuracy * 10) / 10} meter`;
+                    info.hidden = false;
+                    mapLink.href = `https://www.google.com/maps?q=${encodeURIComponent(lat)},${encodeURIComponent(lng)}`;
+                    mapLink.hidden = false;
+                } else {
+                    status.textContent = 'Foto galeri dipilih. Tidak ada metadata GPS yang ditambahkan.';
+                }
+                const transfer = new DataTransfer();
+                transfer.items.add(finalFile);
+                input.files = transfer.files;
+                metadataInput.value = JSON.stringify(metadata);
+                const img = document.createElement('img');
+                img.alt = 'Preview dokumentasi foto';
+                img.src = URL.createObjectURL(finalFile);
+                preview.innerHTML = ''; preview.appendChild(img);
+                name.textContent = finalFile.name;
+                showPhotoMessage('');
+            } catch (error) {
+                input.value = '';
+                metadataInput.value = '';
+                name.textContent = '';
+                clearPreview();
+                if (error?.message === 'size') showPhotoMessage('Ukuran foto hasil watermark masih melebihi 250 KB. Silakan ambil foto dengan objek lebih sederhana atau resolusi lebih rendah.');
+                else if (error?.message === 'accuracy-invalid') showPhotoMessage('Nilai akurasi GPS tidak valid. Silakan ambil lokasi kembali.');
+                else if (error?.message === 'time-invalid') showPhotoMessage('Waktu perangkat tidak valid. Periksa tanggal dan jam HP.');
+                else if (error?.message === 'canvas') showPhotoMessage('Foto tidak dapat diproses untuk watermark. Silakan coba foto lain.');
+                else if (sourceMode === 'camera') showPhotoMessage(gpsErrorMessage(error));
+                else showPhotoMessage('Foto tidak dapat diproses. Silakan pilih foto lain.');
+                status.textContent = 'Foto belum siap disimpan.';
+            } finally {
+                processing = false;
+                row.classList.remove('is-processing');
+            }
         });
-        row.querySelector('.documentation-remove').addEventListener('click', () => { row.remove(); photoMessage.textContent = ''; });
+        row.querySelector('.documentation-remove').addEventListener('click', () => { row.remove(); showPhotoMessage(''); });
         docList.appendChild(row);
     }
     docAdd?.addEventListener('click', addDocumentationRow);
-    // Saat mengedit progress yang sudah memiliki dokumentasi tersimpan,
-    // jangan tampilkan baris upload kosong secara otomatis. Petugas tetap
-    // dapat menambahkan foto baru melalui tombol "+ Tambah Foto".
-    const hasExistingDocumentation = form.querySelector('.documentation-existing') !== null;
-    if (docList && docList.children.length === 0 && !hasExistingDocumentation) {
-        addDocumentationRow();
-    }
+    if (docList && docList.children.length === 0 && !form.querySelector('.documentation-existing')) addDocumentationRow();
     form.querySelectorAll('.documentation-existing input[type=checkbox]').forEach(box => {
         const row = box.closest('.documentation-existing');
         const button = row.querySelector('[data-remove-existing]');
@@ -596,7 +816,15 @@
         button.textContent = box.checked ? 'Batal hapus' : 'Hapus';
         button.addEventListener('click', () => { box.checked = !box.checked; row.classList.toggle('is-removed', box.checked); button.textContent = box.checked ? 'Batal hapus' : 'Hapus'; });
     });
-    const photoCount = () => form.querySelectorAll('.documentation-existing:not(.is-removed)').length + [...docList.querySelectorAll('input[type=file]')].filter(input => input.files?.length).length;
+    const photoCount = () => form.querySelectorAll('.documentation-existing:not(.is-removed)').length
+        + [...docList.querySelectorAll('input[type=file]')].filter(input => input.files?.length).length;
+    form.addEventListener('submit', event => {
+        if (form.querySelector('.new-documentation-row.is-processing')) {
+            event.preventDefault();
+            showPhotoMessage('Tunggu sampai proses foto selesai sebelum menyimpan progress.');
+            return;
+        }
+    });
 
     /* ---------- kartu: ciutkan, hapus, nomor ---------- */
     function setCollapsed(row, collapsed) {

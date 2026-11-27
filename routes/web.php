@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\{AuthenticatedSessionController,RegisteredUserController,PasswordResetOtpController};
-use App\Http\Controllers\Admin\{DashboardController as AdminDashboard, KegiatanController, PenugasanController, LpdController, KwitansiController, MonitoringController, AdministrasiController};
+use App\Http\Controllers\Admin\{DashboardController as AdminDashboard, KegiatanController, PenugasanController, LpdController, KwitansiController, MonitoringController};
 use App\Http\Controllers\Petugas\{DashboardController as PetugasDashboard, ProgressController, DokumenController};
 
 Route::get('/',fn()=>redirect()->route('login'))->name('home');
@@ -22,9 +22,11 @@ Route::middleware('auth')->group(function(){
  Route::get('/dashboard',fn()=>auth()->user()->role==='admin'?redirect()->route('admin.dashboard'):redirect()->route('petugas.dashboard'))->name('dashboard');
  Route::middleware(['role:admin'])->prefix('admin')->name('admin.')->group(function(){
   Route::get('/dashboard',AdminDashboard::class)->name('dashboard');
-  Route::get('/administrasi',[AdministrasiController::class,'index'])->name('administrasi.index');
-  Route::get('/administrasi/{kegiatan}',[AdministrasiController::class,'show'])->name('administrasi.show');
-  Route::resource('kegiatan',KegiatanController::class);
+  // Semua pengelolaan berpusat di Dashboard -> Kelola Kegiatan. Rute lama diarahkan ke sana.
+  Route::redirect('/administrasi','/admin/dashboard')->name('administrasi.index');
+  Route::get('/administrasi/{kegiatan}',fn(\App\Models\Kegiatan $kegiatan)=>redirect()->route('admin.kegiatan.show',$kegiatan))->name('administrasi.show');
+  Route::get('/kegiatan',[KegiatanController::class,'index'])->name('kegiatan.index');
+  Route::resource('kegiatan',KegiatanController::class)->except('index');
   Route::get('/kegiatan/{kegiatan}/penugasan/create',[PenugasanController::class,'create'])->name('penugasan.create');Route::post('/kegiatan/{kegiatan}/penugasan',[PenugasanController::class,'store'])->name('penugasan.store');Route::get('/penugasan/{penugasan}/edit',[PenugasanController::class,'edit'])->name('penugasan.edit');Route::put('/penugasan/{penugasan}',[PenugasanController::class,'update'])->name('penugasan.update');Route::delete('/penugasan/{penugasan}',[PenugasanController::class,'destroy'])->name('penugasan.destroy');
   Route::get('/kegiatan/{kegiatan}/lpd',[LpdController::class,'index'])->name('lpd.index');Route::get('/kegiatan/{kegiatan}/lpd/progress/{progress}',[LpdController::class,'showProgress'])->name('lpd.progress.show');Route::get('/kegiatan/{kegiatan}/lpd/progress/{progress}/photo/{photo}',[LpdController::class,'progressPhoto'])->name('lpd.progress.photo');Route::get('/kegiatan/{kegiatan}/lpd/{document}/download',[LpdController::class,'download'])->name('lpd.download');Route::post('/kegiatan/{kegiatan}/lpd/generate/{progress}',[LpdController::class,'generate'])->name('lpd.generate');
   

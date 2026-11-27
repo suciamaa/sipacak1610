@@ -314,3 +314,25 @@
   .pf .pf-grid-act{gap:8px}
   .pf .pf-actions{margin-inline:-10px;padding-inline:10px}
 }
+
+
+/* Dokumentasi kamera, GPS, dan preview watermark */
+.documentation-row .doc-photo-controls { min-width: 0; flex: 1; }
+.doc-photo-actions { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:8px; }
+.doc-photo-actions .btn { min-height:38px; }
+.doc-camera-btn { background:var(--primary, #176b57); color:#fff; border-color:var(--primary, #176b57); }
+.doc-gallery-btn { background:#fff; color:var(--text, #263238); border:1px solid #cbd5d1; }
+.doc-photo-preview { background:#f4f7f6; min-height:110px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.doc-photo-preview img { display:block; width:100%; height:auto; max-height:240px; object-fit:contain; }
+.doc-photo-status { color:#58665f; font-size:.82rem; margin:4px 0; }
+.doc-photo-info { background:#f1f7f4; border:1px solid #d8e9df; border-radius:9px; padding:9px 11px; margin:7px 0; font-size:.8rem; line-height:1.55; overflow-wrap:anywhere; }
+.doc-map-link { display:inline-block; color:#14765b; font-size:.82rem; font-weight:700; margin-top:5px; text-decoration:underline; }
+.doc-gps-saved { display:block; color:#52635b; font-size:.78rem; margin-top:4px; }
+.doc-photo-warning { color:#a45a00 !important; }
+.new-documentation-row.is-processing { opacity:.75; }
+@media (max-width:600px) {
+    .documentation-row.new-documentation-row { align-items:stretch; flex-wrap:wrap; }
+    .documentation-row.new-documentation-row .doc-photo-preview { width:100%; min-height:150px; }
+    .documentation-row.new-documentation-row .doc-photo-controls { width:100%; flex-basis:100%; }
+    .doc-photo-actions .btn { flex:1; min-height:44px; }
+}

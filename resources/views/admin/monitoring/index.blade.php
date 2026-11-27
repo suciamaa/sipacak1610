@@ -8,7 +8,7 @@
     $roleIcon = ['PPL' => 'bi-person-badge', 'PML' => 'bi-person-check', 'Supervisor' => 'bi-person-gear'];
     $totalHari = max($dates->count(), 1);
 @endphp
-<div class="mb-3"><a class="back-link" href="{{ route('admin.kegiatan.show', $kegiatan) }}"><i class="bi bi-arrow-left"></i> Detail Kegiatan</a></div>
+<div class="mb-3"><a class="back-link" href="{{ route('admin.kegiatan.show', $kegiatan) }}"><i class="bi bi-arrow-left"></i> Kelola Kegiatan</a></div>
 
 <div class="page-heading">
     <div>
