@@ -697,8 +697,8 @@
                 <div class="doc-photo-status" aria-live="polite">Pilih sumber foto.</div>
                 <div class="doc-photo-info" hidden></div>
                 <a class="doc-map-link" target="_blank" rel="noopener noreferrer" hidden>Lihat Lokasi</a>
-                <input type="file" class="documentation-file doc-hidden-file" name="sls[1][dokumentasi_files][${index}]" accept="image/*" aria-label="Pilih Foto" hidden>
-                <input type="hidden" name="sls[1][dokumentasi_metadata][${index}]" value="">
+                <input type="file" class="documentation-file doc-hidden-file" name="foto[${index}]" accept="image/*" aria-label="Pilih Foto" hidden>
+                <input type="hidden" name="dokumentasi_metadata[${index}]" value="">
             </div>
             <button type="button" class="btn btn-small documentation-remove">Hapus</button>`;
         const input = row.querySelector('.documentation-file');

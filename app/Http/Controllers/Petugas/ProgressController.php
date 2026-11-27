@@ -261,15 +261,8 @@ class ProgressController extends Controller
     {
         $kegiatan = $penugasan->kegiatan;
 
-        // Form dokumentasi menggunakan struktur sls[1][dokumentasi_files][];
-        // normalisasikan ke key foto agar alur validasi dan penyimpanan yang sudah ada tetap dipakai.
-        $nestedPhotos = $request->file('sls.1.dokumentasi_files', []);
-        if (!empty($nestedPhotos)) {
-            $request->files->set('foto', $nestedPhotos);
-        }
-        // Metadata dikirim dengan indeks yang sama seperti input file agar foto galeri
-        // dan kamera tetap dapat dipasangkan meskipun ada baris upload kosong.
-        $documentationMetadata = $request->input('sls.1.dokumentasi_metadata', []);
+        // Foto dan metadata dokumentasi menggunakan indeks yang sama.
+        $documentationMetadata = $request->input('dokumentasi_metadata', []);
 
         $outputRules = [];
 
